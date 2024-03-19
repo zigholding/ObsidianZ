@@ -70,20 +70,23 @@ if(res.length==0){
 > [!NOTE] 空链笔记
 
 ```dataviewjs
-let N=10;
+let N=3;
+let K=3; // 统计返链>K的空链
+let M=0;
 for(let page of dv.api.index.links.invMap.keys()){
 	if(!app.vault.fileMap[page]){
-		if(dv.api.index.links.invMap.get(page).size==0){
+		if(dv.api.index.links.invMap.get(page).size<K){
 			continue;
 		}
-		dv.span(`<br>[[${page}]]<br>`)
-		for(let x of dv.api.index.links.invMap.get(page)){
-			dv.span(`-----> [[${x}]]<br>`)
+		if(N>0){
+			dv.span(`<br>[[${page}]]<br>`)
+			for(let x of dv.api.index.links.invMap.get(page)){
+				dv.span(`-----> [[${x}]]<br>`)
+			}
+			N = N-1;
 		}
-		N = N-1;
-		if(N<=0){
-			break;
-		}
+		M = M+1;
 	}
 }
+dv.span(`<br>总共有${M}条（出链≥${K}）的空链笔记。`)
 ```
