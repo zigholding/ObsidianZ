@@ -10,10 +10,24 @@
           {
             "id": "4ea491b08a0dfda4",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ReadMe.md",
+                "file": "__template__/移动笔记.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true
+            }
+          },
+          {
+            "id": "9618d0a31464c92a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "__template__/今日事项4D.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ReadMe.md",
+                "file": "__template__/移动笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ReadMe.md",
+                "file": "__template__/移动笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ReadMe.md"
+                "file": "__template__/移动笔记.md"
               }
             }
           }
@@ -142,13 +156,15 @@
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false
     }
   },
   "active": "4ea491b08a0dfda4",
   "lastOpenFiles": [
+    "__template__/今日事项4D.md",
+    "__template__/移动笔记.md",
+    "ReadMe.md",
     "__files__/Pasted image 20240119222711.png",
     "__files__.md",
     "__files__",
@@ -166,7 +182,6 @@
     "__template__/Scripts/set_pre_note设置前置笔记.md",
     "__template__/Scripts/set_seq_notes.md",
     "__template__/Scripts/set_seq_notes_config.md",
-    "ReadMe.md",
     "__template__/Scripts/open_note_same_folder.md",
     "__template__/Scripts/set_seq_notes.js",
     "__config__",
