@@ -32,8 +32,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "2d0029f94e79d50e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "__template__/Obsidian 笔记整理.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -99,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "__template__/移动笔记.md",
+                "file": "__template__/Obsidian 笔记整理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "__template__/移动笔记.md",
+                "file": "__template__/Obsidian 笔记整理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "__template__/移动笔记.md"
+                "file": "__template__/Obsidian 笔记整理.md"
               }
             }
           }
@@ -160,10 +173,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "4ea491b08a0dfda4",
+  "active": "2d0029f94e79d50e",
   "lastOpenFiles": [
-    "__template__/今日事项4D.md",
     "__template__/移动笔记.md",
+    "__template__/今日事项4D.md",
     "ReadMe.md",
     "__files__/Pasted image 20240119222711.png",
     "__files__.md",

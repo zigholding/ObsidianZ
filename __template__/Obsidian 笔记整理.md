@@ -66,12 +66,11 @@ if(res.length==0){
 ```
 
 
-
 > [!NOTE] 空链笔记
 
 ```dataviewjs
 let N=3;
-let K=3; // 统计返链>K的空链
+let K=1; // 统计返链>K的空链
 let M=0;
 for(let page of dv.api.index.links.invMap.keys()){
 	if(!app.vault.fileMap[page]){
