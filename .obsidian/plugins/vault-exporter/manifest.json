@@ -1,0 +1,9 @@
+{
+	"id": "vault-exporter",
+	"name": "Vault Exporter",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Export current note to another Vault.",
+	"author": "ZigHolding",
+	"isDesktopOnly": true
+}
