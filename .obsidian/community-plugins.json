@@ -1,4 +1,10 @@
 [
   "dataview",
-  "templater-obsidian"
+  "templater-obsidian",
+  "note-chain",
+  "vault-exporter",
+  "recent-files-obsidian",
+  "obsidian-image-toolkit",
+  "obsidian-tasks-plugin",
+  "editing-toolbar"
 ]

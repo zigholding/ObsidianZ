@@ -8,45 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4ea491b08a0dfda4",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "__template__/移动笔记.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true
-            }
-          },
-          {
-            "id": "9618d0a31464c92a",
+            "id": "b612ee391eee6e90",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "__template__/今日事项4D.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2d0029f94e79d50e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "__template__/Obsidian 笔记整理.md",
+                "file": "ReadMe.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -85,11 +58,22 @@
             }
           },
           {
-            "id": "62bf58a2b5b6a6b0",
+            "id": "ff62060faac79c80",
             "type": "leaf",
             "state": {
-              "type": "bookmarks",
+              "type": "recent-files",
               "state": {}
+            }
+          },
+          {
+            "id": "640c18d00fcd0969",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
             }
           }
         ]
@@ -107,61 +91,34 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6b0ff1810e4de640",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "__template__/Obsidian 笔记整理.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "7e67050ea315c17e",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "__template__/Obsidian 笔记整理.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "640c18d00fcd0969",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
             "id": "009c2c51256d71e6",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "__template__/Obsidian 笔记整理.md"
+                "file": "ReadMe.md"
               }
+            }
+          }
+        ]
+      },
+      {
+        "id": "4edaf81c67c42d1c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "62bf58a2b5b6a6b0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -173,11 +130,17 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "2d0029f94e79d50e",
+  "active": "b612ee391eee6e90",
   "lastOpenFiles": [
-    "__template__/移动笔记.md",
-    "__template__/今日事项4D.md",
+    "00 Index/今日事项.md",
     "ReadMe.md",
+    "ObsidianZ.md",
+    "00 Index/Index.md",
+    "00 Index/IDX-笔记链.md",
+    "__files__/__files__.md",
+    "__template__/今日事项4D.md",
+    "__template__/Obsidian 笔记整理.md",
+    "__template__/移动笔记.md",
     "__files__/Pasted image 20240119222711.png",
     "__files__.md",
     "__files__",
