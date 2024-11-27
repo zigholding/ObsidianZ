@@ -4,22 +4,51 @@
     "type": "split",
     "children": [
       {
-        "id": "0c2aab3015c7a86c",
+        "id": "5d424c2871b30856",
         "type": "tabs",
         "children": [
           {
-            "id": "b612ee391eee6e90",
+            "id": "4d6434a860677d59",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "empty",
+              "state": {},
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "db9a2417936e515c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ReadMe.md",
+                "file": "__template__/sf.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "sf"
+            }
+          },
+          {
+            "id": "3650e58978506f9d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00 Index/Files - 入链.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Files - 入链"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -39,7 +68,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -48,39 +79,32 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#sfsfs",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
-            "id": "ff62060faac79c80",
+            "id": "62bf58a2b5b6a6b0",
             "type": "leaf",
             "state": {
-              "type": "recent-files",
-              "state": {}
-            }
-          },
-          {
-            "id": "640c18d00fcd0969",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 309.5
   },
   "right": {
     "id": "340c0e54248ba489",
@@ -91,34 +115,70 @@
         "type": "tabs",
         "children": [
           {
+            "id": "6b0ff1810e4de640",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "__template__/private-css.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for private-css"
+            }
+          },
+          {
+            "id": "7e67050ea315c17e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "__template__/__template__.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from __template__"
+            }
+          },
+          {
+            "id": "640c18d00fcd0969",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
             "id": "009c2c51256d71e6",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "ReadMe.md"
-              }
+                "file": "__template__/____八正道.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of ____八正道"
             }
           }
-        ]
-      },
-      {
-        "id": "4edaf81c67c42d1c",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "62bf58a2b5b6a6b0",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {}
-            }
-          }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -127,42 +187,63 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "modalforms:Edit forms": false,
+      "obsidian42-brat:BRAT": false
     }
   },
-  "active": "b612ee391eee6e90",
+  "active": "7d857280a885944d",
   "lastOpenFiles": [
-    "00 Index/今日事项.md",
-    "ReadMe.md",
-    "ObsidianZ.md",
-    "00 Index/Index.md",
-    "00 Index/IDX-笔记链.md",
+    "00 Index/Files - 目录.md",
+    "00 Index/Files - 空链笔记.md",
+    "00 Index/Files - 出链.md",
+    "00 Index/Files - 笔记网.md",
+    "00 Index/Files - 笔记链.md",
+    "readMe.md.md",
+    "00 Index/Files - 同名笔记.md",
     "__files__/__files__.md",
-    "__template__/今日事项4D.md",
-    "__template__/Obsidian 笔记整理.md",
-    "__template__/移动笔记.md",
-    "__files__/Pasted image 20240119222711.png",
-    "__files__.md",
+    "00 Index/00 Index.md",
+    "00 Index/Files - 历史回顾.md",
+    "00 Index/Files - 入链.md",
+    "00 Index/Files - 双链.md",
+    "00 Index/Files - 双链数量.md",
+    "__files__/Pasted image 20241103130822.png",
     "__files__",
-    "像种树一样写笔记/树苗笔记.md",
-    "像种树一样写笔记/瞬时笔记.md",
-    "像种树一样写笔记/幼芽笔记.md",
-    "像种树一样写笔记/种子笔记.md",
-    "像种树一样写笔记/永久笔记.md",
-    "像种树一样写笔记/像种树一样记笔记.md",
-    "__template__/Scripts/open_note_chain.md",
-    "__template__/Scripts/open_note_chain_config.md",
-    "像种树一样写笔记/常青笔记.md",
-    "__template__/Scripts/open_note_same_folder_config.md",
-    "__template__/Scripts/set_next_note设置后置笔记.md",
-    "__template__/Scripts/set_pre_note设置前置笔记.md",
-    "__template__/Scripts/set_seq_notes.md",
-    "__template__/Scripts/set_seq_notes_config.md",
-    "__template__/Scripts/open_note_same_folder.md",
+    "Pasted image 20241103130822.png.md",
+    "00 Index/今日事项Tab.md",
+    "00 Index/Files - 最近访问.md",
+    "00 Index/今日事项4D.md",
+    "00 Index/今日事项.md",
+    "00 Index/Index.md",
+    "00 Index/IDX-项目.md",
+    "00 Index/IDX-电脑常用命令.md",
+    "00 Index/公众号历史文章汇总.md",
+    "00 Index/IDX-Tag.md",
+    "00 Index/Folders - 目录文件数.md",
+    "00 Index/Files - 最近修改.md",
+    "00 Index/Cue & Sum.md",
+    "00 Index",
+    "__files__/Pasted image 20241009193636.png",
+    "__files__/Pasted image 20240517225951.png",
+    "__template__/a.canvas",
+    "像种树一样记笔记/像种树一样记笔记.canvas",
+    "__template__/____八正道.canvas",
+    "__template__/s.canvas",
+    "__template__/Scripts/css",
+    "40 学无止境/ZK/佛学术语/八正道.canvas",
+    "40 学无止境/ZK/佛学术语/八正道2.canvas",
+    "40 学无止境/ZK/佛学术语",
+    "40 学无止境/ZK",
+    "40 学无止境",
+    "__files__/Pasted image 20240616122945.png",
+    "__template__/PluginsHelper",
+    "__files__/Pasted image 20240427152343.png",
+    "__files__/Pasted image 20240427150542.png",
+    "__files__/Pasted image 20240414233300.png",
+    "__template__/初始化",
+    "__files__/Pasted image 20240119222711.png",
+    "__files__",
     "__template__/Scripts/set_seq_notes.js",
-    "__config__",
-    "__template__/Scripts/sort_tfiles.js",
-    "像种树一样写笔记",
     "__files__/Pasted image 20240119222751.png",
     "__files__/Pasted image 20240119222729.png"
   ]

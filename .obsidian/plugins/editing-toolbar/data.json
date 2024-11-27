@@ -28,14 +28,34 @@
           "icon": "down-arrow-with-tail"
         },
         {
+          "id": "note-chain:cmd_open_next_note_of_right_leaf",
+          "name": "Note Chain: Open next note of right leaf",
+          "icon": "corner-right-down"
+        },
+        {
           "id": "note-chain:cmd_open_prev_note_of_right_leaf",
           "name": "Note Chain: Open prev note of right leaf",
           "icon": "corner-right-up"
         },
+		{
+          "id": "note-chain:longform2notechain",
+          "name": "Note Chain: Reset note chain by longform",
+          "icon": "link-glyph"
+        },
         {
-          "id": "note-chain:cmd_open_next_note_of_right_leaf",
-          "name": "Note Chain: Open next note of right leaf",
-          "icon": "corner-right-down"
+          "id": "note-chain:longform4notechain",
+          "name": "Note Chain: Reset longform scenes by note chain",
+          "icon": "view"
+        },
+        {
+          "id": "note-chain:cmd_file_rename",
+          "name": "Note Chain: File - rename file",
+          "icon": "wrench"
+        },
+		{
+          "id": "note-chain:cmd_file_show_in_system_explorer",
+          "name": "Note Chain: File - show in system explorer (desktop only)",
+          "icon": "book-open"
         }
       ]
     },
@@ -54,6 +74,7 @@
           "name": "Editing Toolbar: Toggle superscript",
           "icon": "superscript-glyph"
         },
+        
         {
           "id": "editing-toolbar:subscript",
           "name": "Editing Toolbar: Toggle subscript",
@@ -168,7 +189,7 @@
   "cMenuVisibility": true,
   "cMenuBottomValue": 4.25,
   "cMenuNumRows": 12,
-  "cMenuWidth": 324,
+  "cMenuWidth": 322,
   "cMenuFontColor": "#ff0000",
   "cMenuBackgroundColor": "#d3f8b6",
   "autohide": false,

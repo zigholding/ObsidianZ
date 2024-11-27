@@ -61,6 +61,11 @@ var en_default = {
   "Failed to create file: ": "Failed to create file: ",
   "Open in modal window error": "Open in modal window error",
   "Open in modal window": "Open in modal window",
+  "Delete linked attachment": "Delete linked attachment",
+  "Confirm deletion": "Confirm deletion",
+  "Are you sure you want to delete: ": "Are you sure you want to delete: ",
+  "File moved to trash": "File moved to trash",
+  "Failed to delete file": "Failed to delete file",
   // General settings
   "Open with": "Open with",
   "Drag & Drop": "Drag & Drop",
@@ -186,6 +191,11 @@ var zh_cn_default = {
   "Failed to create file: ": "\u521B\u5EFA\u6587\u4EF6\u5931\u8D25: ",
   "Open in modal window error": "\u5728\u6A21\u6001\u7A97\u53E3\u4E2D\u6253\u5F00\u9519\u8BEF",
   "Open in modal window": "\u5728\u6A21\u6001\u7A97\u53E3\u4E2D\u6253\u5F00",
+  "Delete linked attachment": "\u5220\u9664\u94FE\u63A5\u9644\u4EF6",
+  "Confirm deletion": "\u786E\u8BA4\u5220\u9664",
+  "Are you sure you want to delete: ": "\u786E\u5B9A\u8981\u5220\u9664\uFF1F",
+  "File moved to trash": "\u6587\u4EF6\u79FB\u81F3\u5E9F\u7EB8\u7BD3",
+  "Failed to delete file": "\u5220\u9664\u6587\u4EF6\u5931\u8D25",
   // General settings
   "Open with": "\u6253\u5F00\u65B9\u5F0F",
   "Drag & Drop": "\u62D6\u62FD",
@@ -1308,10 +1318,54 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   //         }
   //     });
   // }
+  isInFencedCodeBlock(editor, pos) {
+    const currentLine = pos.line;
+    let fenceCount = 0;
+    for (let i = 0; i <= currentLine; i++) {
+      const line = editor.getLine(i).trim();
+      if (line.startsWith("```")) {
+        fenceCount++;
+      }
+    }
+    return fenceCount % 2 === 1;
+  }
   registerAltClickHandler() {
     this.altClickHandler = (evt) => {
       var _a;
+      if (evt.altKey && evt.ctrlKey && evt.button === 0) {
+        return;
+      }
       if (evt.altKey && evt.button === 0) {
+        const activefileView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
+        if (!activefileView)
+          return;
+        const editor = activefileView.editor;
+        const cursor = editor.getCursor();
+        if (this.isInFencedCodeBlock(editor, cursor)) {
+          this.app.commands.executeCommandById("vscode-editor:edit-fence");
+          const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+              console.log("Mutation:", mutation);
+              mutation.addedNodes.forEach((node) => {
+                console.log("Added node:", node);
+                if (node instanceof HTMLElement) {
+                  console.log("Node classes:", node.classList);
+                  if (node.classList.contains("modal")) {
+                    console.log("Found modal, adding classes");
+                    node.classList.add("modal");
+                    node.classList.add("modal-opener");
+                    observer.disconnect();
+                  }
+                }
+              });
+            });
+          });
+          observer.observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+          return;
+        }
         const activeView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
         let targetElement = evt.target;
         let altText = targetElement.getAttribute("alt");
@@ -1377,6 +1431,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
           parentPath = view.file.parent.path;
         }
         this.addCreateFileMenuItem(menu, parentPath);
+        this.addDeleteAttachmentMenuItem(menu, editor);
       })
     );
   }
@@ -1562,7 +1617,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       if (excelPlugin) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("Excel").setIcon("table").onClick(async () => {
-            await this.createFileAndInsertLink("excel:excel-autocreate", false);
+            await this.createFileAndInsertLink("excel:excel-autocreate", true);
           })
         );
       }
@@ -1570,13 +1625,12 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       if (SheetPlugin) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("Sheet Plus").setIcon("grid").onClick(async () => {
-            await this.createFileAndInsertLink("sheet-plus:spreadsheet-autocreation", false);
+            await this.createFileAndInsertLink("sheet-plus:spreadsheet-autocreation", true);
           })
         );
       }
       const vscodePlugin = this.getPlugin("vscode-editor");
-      const codePlugin = this.getPlugin("code-files");
-      if (vscodePlugin || codePlugin) {
+      if (vscodePlugin) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("Code File").setIcon("file-code").onClick(async () => {
             await this.createCodeFileAndOpenInModal();
@@ -1593,6 +1647,52 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       }
     });
   }
+  addDeleteAttachmentMenuItem(menu, editor) {
+    const cursor = editor.getCursor();
+    const line = editor.getLine(cursor.line);
+    const linkMatch = this.findLinkAtPosition(line, cursor.ch);
+    if (linkMatch) {
+      const [filePath] = linkMatch.split("|");
+      const [filePathWithoutAnchor] = filePath.split("#");
+      const file = this.app.metadataCache.getFirstLinkpathDest(filePathWithoutAnchor, "");
+      if (file && file instanceof import_obsidian4.TFile) {
+        menu.addItem((item) => {
+          item.setTitle(t("Delete linked attachment")).setIcon("trash").onClick(() => {
+            const modal = new import_obsidian4.Modal(this.app);
+            modal.titleEl.setText(t("Confirm deletion"));
+            const content = modal.contentEl.createDiv();
+            content.setText(t("Are you sure you want to delete: ") + file.path);
+            const buttonContainer = content.createDiv({ cls: "modal-button-container" });
+            buttonContainer.createEl("button", { text: t("Cancel") }).onclick = () => modal.close();
+            buttonContainer.createEl(
+              "button",
+              { text: t("Delete"), cls: "mod-warning" }
+            ).onclick = async () => {
+              try {
+                await this.app.fileManager.trashFile(file);
+                const startIndex = line.indexOf("![[");
+                const isEmbed = startIndex !== -1;
+                const from = {
+                  line: cursor.line,
+                  ch: isEmbed ? startIndex : line.indexOf("[[")
+                };
+                const to = {
+                  line: cursor.line,
+                  ch: line.indexOf("]]") + 2
+                };
+                editor.replaceRange("", from, to);
+                new import_obsidian4.Notice(t("File moved to trash"));
+                modal.close();
+              } catch (error) {
+                new import_obsidian4.Notice(t("Failed to delete file"));
+              }
+            };
+            modal.open();
+          });
+        });
+      }
+    }
+  }
   async createFileAndInsertLink(commandId, isEmbed) {
     const previousView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
     let previousEditor = null;
@@ -1601,9 +1701,9 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       previousEditor = previousView.editor;
       previousCursor = previousEditor.getCursor();
     }
+    this.app.commands.executeCommandById(commandId);
     const newLeaf = this.app.workspace.getLeaf(true);
     this.app.workspace.setActiveLeaf(newLeaf, { focus: true });
-    this.app.commands.executeCommandById(commandId);
     const activeFile = await this.waitForActiveFile();
     if (activeFile && previousEditor && previousCursor) {
       const fileName = activeFile.name;
@@ -1682,10 +1782,6 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       observer.observe(document.body, { childList: true, subtree: true });
       setTimeout(() => {
         this.app.commands.executeCommandById("vscode-editor:create");
-        const codePlugin = this.getPlugin("code-files");
-        if (codePlugin) {
-          this.app.commands.executeCommandById("code-files:create");
-        }
       }, 0);
       setTimeout(() => {
         observer.disconnect();
@@ -1756,7 +1852,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
     if (activeView) {
       const editor = activeView.editor;
       const cursor = editor.getCursor();
-      const linkText = `[[${filePath}]]`;
+      const linkText = `![[${filePath}]]`;
       editor.replaceRange(linkText, cursor);
     }
   }
@@ -1874,7 +1970,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
     return target.getAttribute("data-href") || target.getAttribute("href") || target.getAttribute("data-path") || target.getAttribute("filesource") || target.getAttribute("src") || ((_a = target.textContent) == null ? void 0 : _a.trim()) || "";
   }
   findLinkAtPosition(line, position) {
-    const linkRegex = /\[\[([^\]]+)\]\]|\[([^\]]+)\]\(([^)]+)\)|(https?:\/\/[^\s]+)/g;
+    const linkRegex = /!?\[\[([^\]]+)\]\]|\[([^\]]+)\]\(([^)]+)\)|(https?:\/\/[^\s]+)/g;
     let match;
     while ((match = linkRegex.exec(line)) !== null) {
       if (match.index <= position && position <= match.index + match[0].length) {

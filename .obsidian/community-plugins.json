@@ -1,10 +1,13 @@
 [
-  "dataview",
   "templater-obsidian",
-  "note-chain",
+  "obsidian42-brat",
+  "obsidian-snippet-downloader",
   "vault-exporter",
-  "recent-files-obsidian",
-  "obsidian-image-toolkit",
-  "obsidian-tasks-plugin",
-  "editing-toolbar"
+  "mehrmaid",
+  "editing-toolbar",
+  "modal-opener",
+  "modalforms",
+  "note-chain",
+  "quickadd",
+  "dataview"
 ]

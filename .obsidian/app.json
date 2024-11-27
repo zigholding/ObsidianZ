@@ -1,3 +1,5 @@
 {
-  "propertiesInDocument": "source"
+  "livePreview": true,
+  "propertiesInDocument": "source",
+  "alwaysUpdateLinks": true
 }
