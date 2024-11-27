@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
+                "file": "readMe.md.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "示例：通过 ModalOpener 实现富文本输入框"
+              "title": "readMe.md"
             }
           }
         ],
@@ -179,8 +179,11 @@
   },
   "active": "2065733fca4bf327",
   "lastOpenFiles": [
-    "__scripts__/tpl/callout 插入.md",
+    "__files__/Pastet image 20241127204527.png",
+    "readMe.md.md",
+    "__files__/Pasted image 20241127204624.png",
     "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
+    "__scripts__/tpl/callout 插入.md",
     "__files__/Pasted image 20241127203740.png",
     "__files__/临时输入.md",
     "__files__/Pasted image 20241127203717.png",
@@ -192,7 +195,6 @@
     "__scripts__/tpl",
     "__files__/__files__.md",
     "Untitled",
-    "readMe.md.md",
     "__scripts__/@知更鸟在屋顶",
     "__files__",
     "00 Index/Files - 笔记链.md",
@@ -201,8 +203,6 @@
     "__scripts__/js/ModalOpener.js",
     "__files__/Pasted image 20241126194741.png",
     "Pasted image 20241126193914.png.md",
-    "__files__/Pasted image 20241126193914.png",
-    "__files__/Pasted image 20241126193451.png",
     "00 Index/Files - 入链.md",
     "__scripts__/js",
     "__scripts__/__scripts__.md",
