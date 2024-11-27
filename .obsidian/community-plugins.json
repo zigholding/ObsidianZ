@@ -1,6 +1,5 @@
 [
   "templater-obsidian",
-  "obsidian42-brat",
   "obsidian-snippet-downloader",
   "vault-exporter",
   "mehrmaid",
@@ -9,5 +8,7 @@
   "modalforms",
   "note-chain",
   "quickadd",
-  "dataview"
+  "dataview",
+  "customjs",
+  "oz-clear-unused-images"
 ]

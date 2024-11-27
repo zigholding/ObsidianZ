@@ -1,5 +1,7 @@
 {
   "livePreview": true,
   "propertiesInDocument": "source",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "__files__"
 }

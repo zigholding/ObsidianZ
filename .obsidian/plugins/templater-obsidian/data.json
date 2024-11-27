@@ -1,6 +1,6 @@
 {
   "command_timeout": 5,
-  "templates_folder": "__template__",
+  "templates_folder": "__scripts__",
   "templates_pairs": [
     [
       "",
@@ -11,11 +11,18 @@
   "auto_jump_to_cursor": false,
   "enable_system_commands": true,
   "shell_path": "",
-  "user_scripts_folder": "__template__/Scripts",
+  "user_scripts_folder": "__scripts__/tpl",
   "enable_folder_templates": true,
   "folder_templates": [
     {
       "folder": "",
+      "template": ""
+    }
+  ],
+  "enable_file_templates": false,
+  "file_templates": [
+    {
+      "regex": ".*",
       "template": ""
     }
   ],

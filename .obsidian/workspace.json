@@ -20,35 +20,21 @@
             }
           },
           {
-            "id": "db9a2417936e515c",
+            "id": "2065733fca4bf327",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "__template__/sf.md",
+                "file": "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "sf"
-            }
-          },
-          {
-            "id": "3650e58978506f9d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00 Index/Files - 入链.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Files - 入链"
+              "title": "示例：通过 ModalOpener 实现富文本输入框"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -188,26 +174,47 @@
       "daily-notes:Open today's daily note": false,
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false,
-      "modalforms:Edit forms": false,
-      "obsidian42-brat:BRAT": false
+      "modalforms:Edit forms": false
     }
   },
-  "active": "7d857280a885944d",
+  "active": "2065733fca4bf327",
   "lastOpenFiles": [
+    "__scripts__/tpl/callout 插入.md",
+    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
+    "__files__/Pasted image 20241127203740.png",
+    "__files__/临时输入.md",
+    "__files__/Pasted image 20241127203717.png",
+    "__files__/Pasted image 20241127203406.png",
+    "__files__/Pasted image 20241127203309.png",
+    "__files__/Pasted image 20241127203202.png",
+    "__files__/Pasted image 20241127203103.png",
+    "__files__/Pasted image 20241127202340.png",
+    "__scripts__/tpl",
+    "__files__/__files__.md",
+    "Untitled",
+    "readMe.md.md",
+    "__scripts__/@知更鸟在屋顶",
+    "__files__",
+    "00 Index/Files - 笔记链.md",
+    "00 Index/00 Index.md",
+    "__scripts__/js/ModalOpener.md",
+    "__scripts__/js/ModalOpener.js",
+    "__files__/Pasted image 20241126194741.png",
+    "Pasted image 20241126193914.png.md",
+    "__files__/Pasted image 20241126193914.png",
+    "__files__/Pasted image 20241126193451.png",
+    "00 Index/Files - 入链.md",
+    "__scripts__/js",
+    "__scripts__/__scripts__.md",
+    "__scripts__",
     "00 Index/Files - 目录.md",
     "00 Index/Files - 空链笔记.md",
     "00 Index/Files - 出链.md",
     "00 Index/Files - 笔记网.md",
-    "00 Index/Files - 笔记链.md",
-    "readMe.md.md",
     "00 Index/Files - 同名笔记.md",
-    "__files__/__files__.md",
-    "00 Index/00 Index.md",
     "00 Index/Files - 历史回顾.md",
-    "00 Index/Files - 入链.md",
     "00 Index/Files - 双链.md",
     "00 Index/Files - 双链数量.md",
-    "__files__/Pasted image 20241103130822.png",
     "__files__",
     "Pasted image 20241103130822.png.md",
     "00 Index/今日事项Tab.md",
@@ -215,36 +222,13 @@
     "00 Index/今日事项4D.md",
     "00 Index/今日事项.md",
     "00 Index/Index.md",
-    "00 Index/IDX-项目.md",
-    "00 Index/IDX-电脑常用命令.md",
-    "00 Index/公众号历史文章汇总.md",
-    "00 Index/IDX-Tag.md",
-    "00 Index/Folders - 目录文件数.md",
-    "00 Index/Files - 最近修改.md",
-    "00 Index/Cue & Sum.md",
     "00 Index",
-    "__files__/Pasted image 20241009193636.png",
-    "__files__/Pasted image 20240517225951.png",
     "__template__/a.canvas",
     "像种树一样记笔记/像种树一样记笔记.canvas",
     "__template__/____八正道.canvas",
     "__template__/s.canvas",
     "__template__/Scripts/css",
     "40 学无止境/ZK/佛学术语/八正道.canvas",
-    "40 学无止境/ZK/佛学术语/八正道2.canvas",
-    "40 学无止境/ZK/佛学术语",
-    "40 学无止境/ZK",
-    "40 学无止境",
-    "__files__/Pasted image 20240616122945.png",
-    "__template__/PluginsHelper",
-    "__files__/Pasted image 20240427152343.png",
-    "__files__/Pasted image 20240427150542.png",
-    "__files__/Pasted image 20240414233300.png",
-    "__template__/初始化",
-    "__files__/Pasted image 20240119222711.png",
-    "__files__",
-    "__template__/Scripts/set_seq_notes.js",
-    "__files__/Pasted image 20240119222751.png",
-    "__files__/Pasted image 20240119222729.png"
+    "40 学无止境/ZK/佛学术语/八正道2.canvas"
   ]
 }
