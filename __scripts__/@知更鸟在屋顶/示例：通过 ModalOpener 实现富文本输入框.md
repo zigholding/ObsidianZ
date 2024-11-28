@@ -1,6 +1,7 @@
 ---
 words:
   2024-11-27: 126
+  2024-11-28: 154
 ---
 
 
@@ -28,3 +29,11 @@ let ctx1 = await ModalOpener.prompt_by_modal_opener(
 tR+=ctx1
 ```
 
+
+由于标题都是“临时输入”，显示没什么用，可以通过 css 隐藏。
+
+```css
+.modal-opener-content .inline-title {
+    display: none;
+}
+```
