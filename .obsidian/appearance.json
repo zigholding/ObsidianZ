@@ -1,4 +1,7 @@
 {
   "accentColor": "",
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "workspace"
+  ]
 }
