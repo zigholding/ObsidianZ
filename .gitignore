@@ -7,3 +7,5 @@
 .trash
 .obsidian/plugins/note-chain
 .obsidian/plugins/vault-exporter/
+.stfolder
+.stignore
