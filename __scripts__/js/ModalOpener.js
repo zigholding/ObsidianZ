@@ -56,6 +56,7 @@ class ModalOpener {
 	}
 	
 	async editor_current_section(by_suggester=false){
+		console.clear()
 		let section = await this.get_current_section(by_suggester)
 		if(!section){return}
 		let tfile = app.workspace.getActiveFile()
@@ -63,7 +64,8 @@ class ModalOpener {
 		let curr = ctx.slice(section.position.start.offset,section.position.end.offset)
 		let nctx;
 		if(section.type=='callout'){
-			nctx = await this.prompt_by_modal_opener(curr.replace(/^>\s*/,'').replace(/\n>\s*/g,'\n'))
+			curr = curr.replace(/^>\s*/,'').replace(/\n>[ ]*/g,'\n')
+			nctx = await this.prompt_by_modal_opener(curr)
 			if(nctx!=''){
 				nctx = '> '+nctx
 				nctx = nctx.replace(/\n/g,'\n> ')
