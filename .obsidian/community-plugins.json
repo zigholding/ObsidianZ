@@ -6,9 +6,9 @@
   "editing-toolbar",
   "modal-opener",
   "modalforms",
-  "note-chain",
   "quickadd",
   "dataview",
   "customjs",
-  "oz-clear-unused-images"
+  "oz-clear-unused-images",
+  "note-chain"
 ]
