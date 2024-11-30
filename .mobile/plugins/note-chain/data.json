@@ -1,0 +1,15 @@
+{
+  "PrevChain": "10",
+  "NextChain": "10",
+  "auto_notechain": false,
+  "refreshDataView": true,
+  "refreshTasks": true,
+  "isSortFileExplorer": true,
+  "isFolderFirst": true,
+  "suggesterNotesMode": "",
+  "wordcout": true,
+  "wordcountxfolder": "__scripts__/tpl",
+  "modal_default_width": 800,
+  "modal_default_height": 600,
+  "avata": "avata"
+}
