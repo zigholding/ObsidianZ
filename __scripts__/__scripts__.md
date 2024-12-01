@@ -1,4 +1,4 @@
 ---
-FolderPrevNote: "[[readMe]]"
+FolderPrevNote: "[[ObsidianZ]]"
 FolderPrevNoteOffset: 0.5
 ---

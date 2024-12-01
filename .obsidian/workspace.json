@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
+                "file": "readMe.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "示例：通过 ModalOpener 编辑笔记块"
+              "title": "readMe"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
+                "file": "__scripts__/tpl/callout 插入.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 示例：通过 ModalOpener 编辑笔记块"
+              "title": "Backlinks for callout 插入"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
+                "file": "__scripts__/tpl/callout 插入.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 示例：通过 ModalOpener 编辑笔记块"
+              "title": "Outgoing links from callout 插入"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md"
+                "file": "__scripts__/tpl/callout 插入.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of 示例：通过 ModalOpener 编辑笔记块"
+              "title": "Outline of callout 插入"
             }
           }
         ]
@@ -164,7 +164,21 @@
   },
   "active": "b0e3b2530bb16278",
   "lastOpenFiles": [
-    "__files__/临时输入.md",
-    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md"
+    "ObsidianZ.md",
+    "__files__/Pasted image 20241201203516.png",
+    "readMe.md",
+    "assets",
+    "__files__/Pasted image 20241201202649.png",
+    "__files__/Pasted image 20241201202614.png",
+    "__files__/Pasted image 20241201202436.png",
+    "__files__/Pasted image 20241201202235.png",
+    "__files__/Pasted image 20241201201310.png",
+    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
+    "__scripts__/@知更鸟在屋顶/《sf》.md",
+    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
+    "__scripts__/@知更鸟在屋顶/示例：test.md",
+    "__files__/Pasted image 20241201150301.png",
+    "__scripts__/tpl/callout 插入.md",
+    "__files__/临时输入.md"
   ]
 }

@@ -1,14 +1,13 @@
 [
   "templater-obsidian",
   "obsidian-snippet-downloader",
-  "vault-exporter",
   "mehrmaid",
   "editing-toolbar",
   "modal-opener",
   "modalforms",
   "quickadd",
-  "dataview",
   "customjs",
   "oz-clear-unused-images",
-  "note-chain"
+  "note-chain",
+  "vault-exporter"
 ]
