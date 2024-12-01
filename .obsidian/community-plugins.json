@@ -8,6 +8,7 @@
   "quickadd",
   "customjs",
   "oz-clear-unused-images",
-  "note-chain",
-  "vault-exporter"
+  "vault-exporter",
+  "copy-document-as-html",
+  "note-chain"
 ]
