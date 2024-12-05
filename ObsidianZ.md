@@ -12,6 +12,8 @@ vexporter:
   UseGitLink: true
 ---
 
+https://github.com/zigholding/ObsidianZ
+
 ## 将示例库添加到自己的库里？
 
 在文件列表中，右键点击 `__scripts__` 文件夹，选择 `Mirror to other vault`，在弹窗中输入自己库的路径：

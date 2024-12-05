@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "readMe.md",
+                "file": "__scripts__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "readMe"
+              "title": "示例：通过脚本笔记设置快捷键"
             }
           }
         ]
@@ -164,7 +164,13 @@
   },
   "active": "b0e3b2530bb16278",
   "lastOpenFiles": [
+    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
+    "__scripts__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
+    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
     "ObsidianZ.md",
+    "__files__/Pasted image 20241205194904.png",
+    "__files__/Pasted image 20241205193823.png",
+    "__scripts__/js/hotkeys.js",
     "readMe.md",
     "__files__/Pasted image 20241201203516.png",
     "assets",
@@ -173,9 +179,7 @@
     "__files__/Pasted image 20241201202436.png",
     "__files__/Pasted image 20241201202235.png",
     "__files__/Pasted image 20241201201310.png",
-    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
     "__scripts__/@知更鸟在屋顶/《sf》.md",
-    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
     "__scripts__/@知更鸟在屋顶/示例：test.md",
     "__files__/Pasted image 20241201150301.png",
     "__scripts__/tpl/callout 插入.md",
