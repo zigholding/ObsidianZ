@@ -8,6 +8,7 @@ vexporter:
   RemoveMeta: true
   UseGitLink: true
 NextNote: "[[示例：通过脚本笔记设置快捷键]]"
+status: 🌴
 ---
 
 

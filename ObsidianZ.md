@@ -10,6 +10,13 @@ vexporter:
   Assets: ./__files__
   RemoveMeta: true
   UseGitLink: true
+status: 🌱
+notechain:
+  display: "{status}{notechain.alias[1]|$0}"
+  alias: 
+    - ObsidianZ 库说明
+    - ObsidianZ 使用说明
+  bgcolor: red
 ---
 
 https://github.com/zigholding/ObsidianZ

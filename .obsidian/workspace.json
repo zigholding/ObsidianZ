@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "__scripts__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
+                "file": "ObsidianZ.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "示例：通过脚本笔记设置快捷键"
+              "title": "ObsidianZ"
             }
           }
         ]
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 454.5
   },
   "right": {
     "id": "bd6c252ab2f3e3e6",
@@ -164,14 +164,17 @@
   },
   "active": "b0e3b2530bb16278",
   "lastOpenFiles": [
-    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
-    "__scripts__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
-    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
+    "readMe.md",
+    "__scripts__/@知更鸟在屋顶/@知更鸟在屋顶.md",
+    "__scripts__/__scripts__.md",
     "ObsidianZ.md",
+    "__scripts__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
+    "__scripts__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas",
+    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
+    "__scripts__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
     "__files__/Pasted image 20241205194904.png",
     "__files__/Pasted image 20241205193823.png",
     "__scripts__/js/hotkeys.js",
-    "readMe.md",
     "__files__/Pasted image 20241201203516.png",
     "assets",
     "__files__/Pasted image 20241201202649.png",

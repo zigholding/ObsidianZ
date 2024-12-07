@@ -92,7 +92,9 @@ var en_default = {
   "Copied to clipboard": "Link copied to clipboard",
   "Behavior": "Behavior",
   "Disable external click close": "Disable external click close",
-  'Use only the "Close" button and "Esc" to close.': 'Use only the "Close" button and "Esc" to close',
+  "Use only the Close button and Esc to close.": "Use only the Close button and Esc to close",
+  "Disable Excalidraw Esc": "Disable Excalidraw Esc",
+  "Disable Esc key to close modal when editing Excalidraw": "Disable Esc key to close modal when editing Excalidraw",
   "Refresh view on close": "Refresh view on close",
   "Refresh views when closing modal window, currently only refreshing after editing Canvas and Markmind file": "Refresh views when closing modal, currently only refreshing after editing Canvas and Markmind file",
   "Prevents duplicate tabs": "Prevents duplicate tabs",
@@ -222,7 +224,9 @@ var zh_cn_default = {
   "Copied to clipboard": "\u94FE\u63A5\u5DF2\u590D\u5236\u5230\u526A\u5207\u677F",
   "Behavior": "\u884C\u4E3A",
   "Disable external click close": "\u7981\u7528\u5916\u90E8\u70B9\u51FB\u5173\u95ED",
-  'Use only the "Close" button and "Esc" to close.': "\u4EC5\u4F7F\u7528 \u201C\u5173\u95ED\u201D \u6309\u94AE\u548C Esc \u5173\u95ED",
+  "Use only the Close button and Esc to close.": "\u4EC5\u4F7F\u7528 \u201C\u5173\u95ED\u201D \u6309\u94AE\u548C Esc \u952E\u5173\u95ED",
+  "Disable Excalidraw Esc": "\u7981\u7528 Excalidraw Esc",
+  "Disable Esc key to close modal when editing Excalidraw": "\u5728\u7F16\u8F91 Excalidraw \u65F6\u7981\u7528 Esc \u952E\u5173\u95ED\u6A21\u6001\u7A97\u53E3",
   "Refresh view on close": "\u5173\u95ED\u540E\u5237\u65B0\u89C6\u56FE",
   "Refresh views when closing modal window, currently only refreshing after editing Canvas and Markmind file": "\u5173\u95ED\u6A21\u6001\u7A97\u53E3\u65F6\u5237\u65B0\u89C6\u56FE\uFF0C\u76EE\u524D\u4EC5\u5728\u7F16\u8F91Canvas\u548CMarkmind\u6587\u4EF6\u540E\u5237\u65B0",
   "Prevents duplicate tabs": "\u9632\u6B62\u91CD\u590D\u6807\u7B7E\u9875",
@@ -420,6 +424,11 @@ var _ModalWindow = class extends import_obsidian2.Modal {
       this.displayLinkContent(this.link);
     }
     this.scope.register([], "Escape", (evt) => {
+      var _a;
+      const excalidrawView = (_a = this.app.workspace.getLeavesOfType("excalidraw").first()) == null ? void 0 : _a.view;
+      if (this.plugin.settings.disableExcalidrawEsc && excalidrawView) {
+        return;
+      }
       evt.preventDefault();
       this.close();
     });
@@ -442,16 +451,15 @@ var _ModalWindow = class extends import_obsidian2.Modal {
     }
   }
   onClose() {
+    var _a, _b;
     const modalOpener = this.containerEl.querySelector(".modal-opener");
     if (modalOpener && this.plugin.settings.enableRefreshOnClose) {
-      const workspaceLeafContent = modalOpener.querySelector(".workspace-leaf-content");
-      if (workspaceLeafContent) {
-        const dataType = workspaceLeafContent.getAttribute("data-type");
-        if (dataType === "canvas" || dataType === "mindmapview") {
-          setTimeout(() => {
-            this.refreshMarkdownViews();
-          }, this.plugin.settings.delayInMs);
-        }
+      const canvasView = (_a = this.app.workspace.getLeavesOfType("canvas").first()) == null ? void 0 : _a.view;
+      const mindmapView = (_b = this.app.workspace.getLeavesOfType("mindmapview").first()) == null ? void 0 : _b.view;
+      if (canvasView || mindmapView) {
+        setTimeout(() => {
+          this.refreshMarkdownViews();
+        }, this.plugin.settings.delayInMs);
       }
     }
     const modalBgElement = this.containerEl.querySelector(".modal-bg.modal-opener-bg");
@@ -896,6 +904,7 @@ var DEFAULT_SETTINGS = {
   dragThreshold: 200,
   enableAnimation: true,
   onlyCloseButton: false,
+  disableExcalidrawEsc: true,
   customCommands: [],
   showFileViewHeader: false,
   showLinkViewHeader: false,
@@ -958,8 +967,12 @@ var ModalOpenerSettingTab = class extends import_obsidian3.PluginSettingTab {
       }));
     }
     new import_obsidian3.Setting(containerEl).setName(t("Behavior")).setHeading();
-    new import_obsidian3.Setting(containerEl).setName(t("Disable external click close")).setDesc(t('Use only the "Close" button and "Esc" to close.')).addToggle((toggle) => toggle.setValue(this.plugin.settings.onlyCloseButton).onChange(async (value) => {
+    new import_obsidian3.Setting(containerEl).setName(t("Disable external click close")).setDesc(t("Use only the Close button and Esc to close.")).addToggle((toggle) => toggle.setValue(this.plugin.settings.onlyCloseButton).onChange(async (value) => {
       this.plugin.settings.onlyCloseButton = value;
+      await this.plugin.saveSettings();
+    }));
+    new import_obsidian3.Setting(containerEl).setName(t("Disable Excalidraw Esc")).setDesc(t("Disable Esc key to close modal when editing Excalidraw")).addToggle((toggle) => toggle.setValue(this.plugin.settings.disableExcalidrawEsc).onChange(async (value) => {
+      this.plugin.settings.disableExcalidrawEsc = value;
       await this.plugin.saveSettings();
     }));
     new import_obsidian3.Setting(containerEl).setName(t("Refresh view on close")).setDesc(t("Refresh views when closing modal window, currently only refreshing after editing Canvas and Markmind file")).addToggle((toggle) => toggle.setValue(this.plugin.settings.enableRefreshOnClose).onChange(async (value) => {
@@ -1247,13 +1260,13 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       target = target.closest(".internal-embed") || target;
     }
     if (this.isPreviewModeLink(target)) {
-      console.log("111111");
       evt.preventDefault();
       evt.stopImmediatePropagation();
       const link = this.getPreviewModeLinkText(target);
       const isFolderLink = target.classList.contains("has-folder-note");
       const app = this.app;
       const folderPlugin = app.plugins.plugins["folder-notes"];
+      console.log(link);
       if (!folderPlugin || !isFolderLink) {
         this.openInFloatPreview(link);
       } else {
@@ -1331,52 +1344,32 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   }
   registerAltClickHandler() {
     this.altClickHandler = (evt) => {
-      var _a;
+      var _a, _b, _c;
       if (evt.altKey && evt.ctrlKey && evt.button === 0) {
         return;
       }
       if (evt.altKey && evt.button === 0) {
-        const activefileView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
-        if (!activefileView)
-          return;
-        const editor = activefileView.editor;
-        const cursor = editor.getCursor();
-        if (this.isInFencedCodeBlock(editor, cursor)) {
-          this.app.commands.executeCommandById("vscode-editor:edit-fence");
-          const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-              console.log("Mutation:", mutation);
-              mutation.addedNodes.forEach((node) => {
-                console.log("Added node:", node);
-                if (node instanceof HTMLElement) {
-                  console.log("Node classes:", node.classList);
-                  if (node.classList.contains("modal")) {
-                    console.log("Found modal, adding classes");
-                    node.classList.add("modal");
-                    node.classList.add("modal-opener");
-                    observer.disconnect();
-                  }
-                }
-              });
-            });
-          });
-          observer.observe(document.body, {
-            childList: true,
-            subtree: true
-          });
-          return;
-        }
         const activeView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
         let targetElement = evt.target;
         let altText = targetElement.getAttribute("alt");
-        console.log("Clicked element:", targetElement);
-        console.log("Classes:", targetElement.classList);
         if (activeView) {
+          if (activeView.getMode() === "source") {
+            const editor = activeView.editor;
+            const cursor = editor.getCursor();
+            if (this.isInFencedCodeBlock(editor, cursor)) {
+              this.app.commands.executeCommandById("vscode-editor:edit-fence");
+              return;
+            }
+          }
           if (this.isPreviewModeLink(targetElement)) {
             this.handlePreviewModeLink(evt);
           } else {
             if (activeView.getMode() === "source") {
               if (targetElement.closest("svg")) {
+                this.handlePreviewModeLink(evt);
+                return;
+              }
+              if (targetElement.closest(".rich-foot")) {
                 this.handlePreviewModeLink(evt);
                 return;
               }
@@ -1391,8 +1384,13 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
             }
           }
         } else {
-          const link = (_a = targetElement.textContent) == null ? void 0 : _a.trim().replace(/\[\[(.*?)\]\]/, "$1");
-          if (link) {
+          const canvasView = (_a = this.app.workspace.getLeavesOfType("canvas").first()) == null ? void 0 : _a.view;
+          const excalidrawView = (_b = this.app.workspace.getLeavesOfType("excalidraw").first()) == null ? void 0 : _b.view;
+          if (canvasView && this.isPreviewModeLink(targetElement)) {
+            this.handlePreviewModeLink(evt);
+          }
+          const link = (_c = targetElement.textContent) == null ? void 0 : _c.trim().replace(/\[\[(.*?)\]\]/, "$1");
+          if (excalidrawView && link) {
             this.openInFloatPreview(link);
           }
         }
@@ -1963,7 +1961,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
     }
   }
   isPreviewModeLink(target) {
-    return target.tagName === "A" && (target.classList.contains("external-link") || target.classList.contains("internal-link")) || target.classList.contains("auto-card-link-card") || target.classList.contains("recent-files-title-content") || target.classList.contains("metadata-link-inner") || target.classList.contains("has-folder-note") || target.classList.contains("homepage-button") || target.classList.contains("view-header-breadcrumb") || target.classList.contains("internal-embed") || target.classList.contains("file-embed-title") || target.classList.contains("embed-title") || target.classList.contains("markdown-embed-link") || target.classList.contains("markdown-embed-content") || target.classList.contains("canvas-minimap") || Array.from(target.classList).some((cls) => cls.startsWith("excalidraw-svg")) || target.classList.contains("svg");
+    return target.tagName === "A" && (target.classList.contains("external-link") || target.classList.contains("internal-link")) || target.classList.contains("auto-card-link-card") || target.classList.contains("recent-files-title-content") || target.classList.contains("metadata-link-inner") || target.classList.contains("has-folder-note") || target.classList.contains("homepage-button") || target.classList.contains("view-header-breadcrumb") || target.classList.contains("cm-hmd-internal-link") || target.classList.contains("internal-embed") || target.classList.contains("file-embed-title") || target.classList.contains("embed-title") || target.classList.contains("markdown-embed-link") || target.classList.contains("markdown-embed-content") || target.classList.contains("canvas-minimap") || Array.from(target.classList).some((cls) => cls.startsWith("excalidraw-svg")) || target.classList.contains("svg");
   }
   getPreviewModeLinkText(target) {
     var _a;
