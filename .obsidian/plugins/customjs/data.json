@@ -1,6 +1,6 @@
 {
   "jsFiles": "",
-  "jsFolder": "__scripts__/js",
+  "jsFolder": "__plugins__/_customJS_",
   "startupScriptNames": [],
   "registeredInvocableScriptNames": [],
   "rerunStartupScriptsOnFileChange": false

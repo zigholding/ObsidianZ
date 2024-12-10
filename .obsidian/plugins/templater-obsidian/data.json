@@ -1,6 +1,6 @@
 {
   "command_timeout": 5,
-  "templates_folder": "__scripts__",
+  "templates_folder": "__plugins__/_templater_",
   "templates_pairs": [
     [
       "",
@@ -11,7 +11,7 @@
   "auto_jump_to_cursor": false,
   "enable_system_commands": true,
   "shell_path": "",
-  "user_scripts_folder": "__scripts__/tpl",
+  "user_scripts_folder": "__plugins__/_templater_/@用户函数",
   "enable_folder_templates": true,
   "folder_templates": [
     {
