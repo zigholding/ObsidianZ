@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
+                "file": "ObsidianZ.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "执行当前脚本笔记"
+              "title": "ObsidianZ"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "__scripts__/tpl/callout 插入.md",
+                "file": "ObsidianZ.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for callout 插入"
+              "title": "Backlinks for ObsidianZ"
             }
           },
           {
@@ -139,18 +139,18 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "__scripts__/tpl/callout 插入.md"
+                "file": "ObsidianZ.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of callout 插入"
+              "title": "Outline of ObsidianZ"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -164,34 +164,45 @@
   },
   "active": "b0e3b2530bb16278",
   "lastOpenFiles": [
-    "__plugins__/_templater_/@脚本笔记/move_next_level.md",
+    "readMe.md",
+    "ObsidianZ.md",
+    "02 InBox/如何使用Obsidian示例库？不！它背后有个更大的问题.md",
+    "__plugins__/__plugins__.md",
+    "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
+    "__plugins__/_templater_/_templater_.md",
+    "__plugins__/_customJS_/_customJS_.md",
+    "__files__/Pasted image 20241211193618.png",
+    "__files__/Pasted image 20241211193545.png",
+    "__files__/Pasted image 20241211193118.png",
+    "__files__/Pasted image 20241211193016.png",
+    "02 InBox",
+    "__files__/software/Obsidian-1.7.7-arm64.AppImage",
+    "__files__/software/Obsidian-1.7.7.exe",
+    "__files__/software/Obsidian-1.7.7.apk",
+    "__files__/software/Obsidian-1.7.7.AppImage",
+    "__files__/software/syncthing-windows-amd64-v1.28.1.zip",
+    "__files__/software/Git-2.47.1-64-bit.exe",
+    "__files__/software/Git-2.47.1-32-bit.exe",
+    "__files__/software",
+    "__files__/新建文件夹",
     "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
+    "__plugins__/_templater_/@脚本笔记/move_next_level.md",
     "__plugins__/_templater_/@脚本笔记/move_none_level.md",
     "__plugins__/_templater_/@脚本笔记/move_prev_level.md",
-    "__plugins__/__plugins__.md",
-    "ObsidianZ.md",
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas",
-    "readMe.md",
-    "__plugins__/_customJS_/_customJS_.md",
     "__scripts__/__scripts__.md",
     "__scripts__/tpl/callout 插入.md",
-    "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
     "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
     "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
     "__files__/Pasted image 20241205194904.png",
     "__files__/Pasted image 20241205193823.png",
-    "__scripts__/js/hotkeys.js",
     "__files__/Pasted image 20241201203516.png",
-    "assets",
     "__files__/Pasted image 20241201202649.png",
     "__files__/Pasted image 20241201202614.png",
     "__files__/Pasted image 20241201202436.png",
-    "__files__/Pasted image 20241201202235.png",
-    "__files__/Pasted image 20241201201310.png",
     "__scripts__/@知更鸟在屋顶/《sf》.md",
     "__scripts__/@知更鸟在屋顶/示例：test.md",
-    "__files__/Pasted image 20241201150301.png",
     "__files__/临时输入.md"
   ]
 }

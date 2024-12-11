@@ -12,16 +12,41 @@ vexporter:
   UseGitLink: true
 status: 🌱
 notechain:
-  display: "<status><notechain.alias[1]|$0>"
-  alias: 
-    - ObsidianZ 库说明
-    - ObsidianZ 使用说明
-  style: red
+  display: "<status><notechain.alias[0]|$0>"
+  alias: ObsidianZ 库说明
 ---
 
-https://github.com/zigholding/ObsidianZ
+[github](https://github.com/zigholding/ObsidianZ) | [gitee](git clone https://gitee.com/zigholding/ObsidianZ.git)
 
 ## 将示例库添加到自己的库里？
+
+### 下载示例库
+
+从官网（https://git-scm.com）下载安装 git：
+
+![[Pasted image 20241211193016.png]]
+
+安装成功后，搜索并运行 `Git Bash` ：
+
+![[Pasted image 20241211193118.png]]
+
+在弹出窗口，通过 `cd` 命令切换到存放示例库的文件夹，然后通过 `git clone` 下载示例库：
+- `github`：`git clone https://github.com/zigholding/ObsidianZ.git`
+- `gitee`：`git clone https://gitee.com/zigholding/ObsidianZ.git`
+
+可以看到，目录下多了一个 `ObsidianZ`文件夹。再用 Obsidian 打开示例库即可。
+
+![[Pasted image 20241211193545.png]]
+
+如果==示例库有更新==，切换到示例库下，运行 `git pull origin master` 即可。
+
+完整的截图如下所示：
+
+![[Pasted image 20241211193618.png]]
+
+### 使用 `VaultExpoter` 同步
+
+接下来，你就可以使用 `VaultExpoter` 将对你有用的笔记和插件，导致自己的库中。
 
 在文件列表中，右键点击 `__scripts__` 文件夹，选择 `Mirror to other vault`，在弹窗中输入自己库的路径：
 
