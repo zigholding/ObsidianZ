@@ -4,9 +4,9 @@ words:
   2024-11-28: 89
   2024-11-30: 88
   2024-12-01: 229
-  2024-12-13: 431
+  2024-12-13: 429
 vexporter:
-  Dir: D:\github\ObsidianZ-final
+  Dir: D:\iLanix\isync\ObsidianZ
   Name: readMe
   Assets: ./__files__
   RemoveMeta: true
@@ -14,11 +14,11 @@ vexporter:
 status: 🌱
 notechain:
   display: <level><notechain.alias[0]|$0>
-PrevNote: "[[__plugins__]]"
+PrevNote: "[[git]]"
 NextNote: "[[readMe]]"
 ---
 
-[github](https://github.com/zigholding/ObsidianZ) | [gitee](git clone https://gitee.com/zigholding/ObsidianZ.git)
+[github](https://github.com/zigholding/ObsidianZ) | [gitee](https://gitee.com/zigholding/ObsidianZ.git)
 
 ## 将示例库添加到自己的库里？
 
