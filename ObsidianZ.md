@@ -8,14 +8,12 @@ words:
 vexporter:
   Dir: D:\iLanix\isync\ObsidianZ
   Name: readMe
-  Assets: ./__files__
+  Assets: ./__plugins__/_attachments_
   RemoveMeta: true
   UseGitLink: true
 status: 🌱
 notechain:
   display: <level><notechain.alias[0]|$0>
-PrevNote: "[[git]]"
-NextNote: "[[readMe]]"
 ---
 
 [github](https://github.com/zigholding/ObsidianZ) | [gitee](https://gitee.com/zigholding/ObsidianZ.git)

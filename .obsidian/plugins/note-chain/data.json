@@ -11,7 +11,7 @@
   "isFolderFirst": true,
   "suggesterNotesMode": "item_get_brothers",
   "wordcout": true,
-  "wordcountxfolder": "__plugins__/_templater_/@模板",
+  "wordcountxfolder": "__plugins__/_templater_/@模板\n/",
   "modal_default_width": 800,
   "modal_default_height": 600,
   "avata": "avata"
