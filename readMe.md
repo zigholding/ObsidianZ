@@ -1,3 +1,6 @@
+---
+PrevNote: "[[ObsidianZ]]"
+---
 
 [github](https://github.com/zigholding/ObsidianZ) | [gitee](git clone https://gitee.com/zigholding/ObsidianZ.git)
 

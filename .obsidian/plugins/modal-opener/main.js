@@ -62,8 +62,7 @@ var en_default = {
   "Open in modal window error": "Open in modal window error",
   "Open in modal window": "Open in modal window",
   "Delete linked attachment": "Delete linked attachment",
-  "Confirm deletion": "Confirm deletion",
-  "Are you sure you want to delete: ": "Are you sure you want to delete: ",
+  "Confirm deletion?": "Confirm deletion?",
   "File moved to trash": "File moved to trash",
   "Failed to delete file": "Failed to delete file",
   // General settings
@@ -93,7 +92,7 @@ var en_default = {
   "Behavior": "Behavior",
   "Disable external click close": "Disable external click close",
   "Use only the Close button and Esc to close.": "Use only the Close button and Esc to close",
-  "Disable Excalidraw Esc": "Disable Excalidraw Esc",
+  "Excalidraw Disables the Esc key": "Excalidraw Disables the Esc key",
   "Disable Esc key to close modal when editing Excalidraw": "Disable Esc key to close modal when editing Excalidraw",
   "Refresh view on close": "Refresh view on close",
   "Refresh views when closing modal window, currently only refreshing after editing Canvas and Markmind file": "Refresh views when closing modal, currently only refreshing after editing Canvas and Markmind file",
@@ -115,6 +114,8 @@ var en_default = {
   "Show file metadata in the modal window": "Show file metadata in the modal window",
   "Hide tab header": "Hide tab header",
   "Hides the tab header associated with the modal window": "Hides the tab header associated with the modal window",
+  "Menu item": "Menu item",
+  "Toggle menu items to show or hide in the right-click context menu": "Toggle menu items to show or hide in the right-click context menu",
   "Custom commands": "Custom commands",
   "Add custom command": "Add custom command",
   "Add a new custom command": "Commands can be used with other plugins, such as Commander",
@@ -194,8 +195,7 @@ var zh_cn_default = {
   "Open in modal window error": "\u5728\u6A21\u6001\u7A97\u53E3\u4E2D\u6253\u5F00\u9519\u8BEF",
   "Open in modal window": "\u5728\u6A21\u6001\u7A97\u53E3\u4E2D\u6253\u5F00",
   "Delete linked attachment": "\u5220\u9664\u94FE\u63A5\u9644\u4EF6",
-  "Confirm deletion": "\u786E\u8BA4\u5220\u9664",
-  "Are you sure you want to delete: ": "\u786E\u5B9A\u8981\u5220\u9664\uFF1F",
+  "Confirm deletion?": "\u786E\u8BA4\u5220\u9664\uFF1F",
   "File moved to trash": "\u6587\u4EF6\u79FB\u81F3\u5E9F\u7EB8\u7BD3",
   "Failed to delete file": "\u5220\u9664\u6587\u4EF6\u5931\u8D25",
   // General settings
@@ -225,7 +225,7 @@ var zh_cn_default = {
   "Behavior": "\u884C\u4E3A",
   "Disable external click close": "\u7981\u7528\u5916\u90E8\u70B9\u51FB\u5173\u95ED",
   "Use only the Close button and Esc to close.": "\u4EC5\u4F7F\u7528 \u201C\u5173\u95ED\u201D \u6309\u94AE\u548C Esc \u952E\u5173\u95ED",
-  "Disable Excalidraw Esc": "\u7981\u7528 Excalidraw Esc",
+  "Excalidraw Disables the Esc key": "Excalidraw \u7981\u7528 Esc \u952E",
   "Disable Esc key to close modal when editing Excalidraw": "\u5728\u7F16\u8F91 Excalidraw \u65F6\u7981\u7528 Esc \u952E\u5173\u95ED\u6A21\u6001\u7A97\u53E3",
   "Refresh view on close": "\u5173\u95ED\u540E\u5237\u65B0\u89C6\u56FE",
   "Refresh views when closing modal window, currently only refreshing after editing Canvas and Markmind file": "\u5173\u95ED\u6A21\u6001\u7A97\u53E3\u65F6\u5237\u65B0\u89C6\u56FE\uFF0C\u76EE\u524D\u4EC5\u5728\u7F16\u8F91Canvas\u548CMarkmind\u6587\u4EF6\u540E\u5237\u65B0",
@@ -247,6 +247,8 @@ var zh_cn_default = {
   "Show file metadata in the modal window": "\u5728\u6A21\u6001\u7A97\u53E3\u4E2D\u663E\u793A\u6587\u4EF6\u5143\u6570\u636E",
   "Hide tab header": "\u9690\u85CF\u6807\u7B7E\u9875\u5934\u90E8",
   "Hides the tab header associated with the modal window": "\u9690\u85CF\u4E0E\u6A21\u6001\u7A97\u53E3\u5173\u8054\u7684\u6807\u7B7E\u9875\u5934\u90E8",
+  "Menu item": "\u83DC\u5355\u9879",
+  "Toggle menu items to show or hide in the right-click context menu": "\u5207\u6362\u83DC\u5355\u9879\u4EE5\u5728\u53F3\u952E\u5355\u51FB\u4E0A\u4E0B\u6587\u83DC\u5355\u4E2D\u663E\u793A\u6216\u9690\u85CF",
   "Custom commands": "\u81EA\u5B9A\u4E49\u547D\u4EE4",
   "Add custom command": "\u6DFB\u52A0\u81EA\u5B9A\u4E49\u547D\u4EE4",
   "Add a new custom command": "\u547D\u4EE4\u53EF\u4EE5\u4E0E\u5176\u4ED6\u63D2\u4EF6\u642D\u914D\u4F7F\u7528\uFF0C\u4F8B\u5982 Commander",
@@ -724,8 +726,14 @@ var _ModalWindow = class extends import_obsidian2.Modal {
         const leafContent = this.containerEl.querySelector(".modal-opener-content .workspace-leaf-content");
         if (leafContent) {
           const dataType = leafContent.getAttribute("data-type");
-          if (dataType == "canvas" || dataType == "excalidraw") {
-            heightAdjustment = dataType === "canvas" ? 1 : dataType === "excalidraw" ? 2 : 1;
+          if (dataType == "canvas" || dataType == "excalidraw" || dataType == "tldraw-view") {
+            if (dataType === "canvas") {
+              heightAdjustment = 1;
+            } else if (dataType === "excalidraw") {
+              heightAdjustment = 2;
+            } else if (dataType === "tldraw-view") {
+              heightAdjustment = -1;
+            }
           } else {
             const editingPlugin = this.getPlugin("editing-toolbar");
             const toolbarPlugin = this.getPlugin("note-toolbar");
@@ -914,7 +922,19 @@ var DEFAULT_SETTINGS = {
   delayInMs: 100,
   enableRefreshOnClose: true,
   showFloatingButton: true,
-  viewOfDisplayButton: "both"
+  viewOfDisplayButton: "both",
+  enabledCommands: {
+    markdown: true,
+    canvas: true,
+    excalidraw: true,
+    diagrams: true,
+    tldraw: true,
+    excel: true,
+    sheetPlus: true,
+    vscode: true,
+    markmind: true,
+    dataloom: true
+  }
 };
 var ModalOpenerSettingTab = class extends import_obsidian3.PluginSettingTab {
   constructor(app, plugin) {
@@ -971,7 +991,7 @@ var ModalOpenerSettingTab = class extends import_obsidian3.PluginSettingTab {
       this.plugin.settings.onlyCloseButton = value;
       await this.plugin.saveSettings();
     }));
-    new import_obsidian3.Setting(containerEl).setName(t("Disable Excalidraw Esc")).setDesc(t("Disable Esc key to close modal when editing Excalidraw")).addToggle((toggle) => toggle.setValue(this.plugin.settings.disableExcalidrawEsc).onChange(async (value) => {
+    new import_obsidian3.Setting(containerEl).setName(t("Excalidraw Disables the Esc key")).setDesc(t("Disable Esc key to close modal when editing Excalidraw")).addToggle((toggle) => toggle.setValue(this.plugin.settings.disableExcalidrawEsc).onChange(async (value) => {
       this.plugin.settings.disableExcalidrawEsc = value;
       await this.plugin.saveSettings();
     }));
@@ -1023,6 +1043,77 @@ var ModalOpenerSettingTab = class extends import_obsidian3.PluginSettingTab {
       await this.plugin.saveSettings();
       this.plugin.applyStyles();
     }));
+    new import_obsidian3.Setting(containerEl).setName(t("Menu item")).setHeading();
+    new import_obsidian3.Setting(containerEl).setDesc(t("Toggle menu items to show or hide in the right-click context menu"));
+    const commandsContainer = containerEl.createDiv("command-toggle-container");
+    new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Markdown").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.markdown).onChange(async (value) => {
+      this.plugin.settings.enabledCommands.markdown = value;
+      await this.plugin.saveSettings();
+    }));
+    const canvasPlugin = this.app.internalPlugins.getEnabledPluginById("canvas");
+    if (canvasPlugin) {
+      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Canvas").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.canvas).onChange(async (value) => {
+        this.plugin.settings.enabledCommands.canvas = value;
+        await this.plugin.saveSettings();
+      }));
+    }
+    const excalidrawPlugin = this.plugin.getPlugin("obsidian-excalidraw-plugin");
+    const excalidrawymjrPlugin = this.plugin.getPlugin("obsidian-excalidraw-plugin-ymjr");
+    if (excalidrawPlugin || excalidrawymjrPlugin) {
+      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Excalidraw").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.excalidraw).onChange(async (value) => {
+        this.plugin.settings.enabledCommands.excalidraw = value;
+        await this.plugin.saveSettings();
+      }));
+    }
+    const diagramsPlugin = this.plugin.getPlugin("obsidian-diagrams-net");
+    if (diagramsPlugin) {
+      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Diagrams").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.diagrams).onChange(async (value) => {
+        this.plugin.settings.enabledCommands.diagrams = value;
+        await this.plugin.saveSettings();
+      }));
+    }
+    const tldrawPlugin = this.plugin.getPlugin("tldraw");
+    if (tldrawPlugin) {
+      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Tldraw").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.tldraw).onChange(async (value) => {
+        this.plugin.settings.enabledCommands.tldraw = value;
+        await this.plugin.saveSettings();
+      }));
+    }
+    const excelPlugin = this.plugin.getPlugin("excel");
+    if (excelPlugin) {
+      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Excel").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.excel).onChange(async (value) => {
+        this.plugin.settings.enabledCommands.excel = value;
+        await this.plugin.saveSettings();
+      }));
+    }
+    const SheetPlugin = this.plugin.getPlugin("sheet-plus");
+    if (SheetPlugin) {
+      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Sheet Plus").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.sheetPlus).onChange(async (value) => {
+        this.plugin.settings.enabledCommands.sheetPlus = value;
+        await this.plugin.saveSettings();
+      }));
+    }
+    const vscodePlugin = this.plugin.getPlugin("vscode-editor");
+    if (vscodePlugin) {
+      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Code File").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.vscode).onChange(async (value) => {
+        this.plugin.settings.enabledCommands.vscode = value;
+        await this.plugin.saveSettings();
+      }));
+    }
+    const markmindPlugin = this.plugin.getPlugin("obsidian-markmind");
+    if (markmindPlugin) {
+      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("MarkMind").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.markmind).onChange(async (value) => {
+        this.plugin.settings.enabledCommands.markmind = value;
+        await this.plugin.saveSettings();
+      }));
+    }
+    const dataloomPlugin = this.plugin.getPlugin("notion-like-tables");
+    if (dataloomPlugin) {
+      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Dataloom").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.dataloom).onChange(async (value) => {
+        this.plugin.settings.enabledCommands.dataloom = value;
+        await this.plugin.saveSettings();
+      }));
+    }
     new import_obsidian3.Setting(containerEl).setName(t("Custom commands")).setHeading();
     new import_obsidian3.Setting(containerEl).setName(t("Add custom command")).setDesc(t("Add a new custom command")).addButton((button) => button.setButtonText(t("Add")).onClick(() => {
       this.addCustomCommand();
@@ -1256,7 +1347,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   }
   handlePreviewModeLink(evt) {
     let target = evt.target;
-    if (target.classList.contains("canvas-minimap") || target.classList.contains("file-embed-title") || target.classList.contains("markdown-embed-link") || target.closest("svg")) {
+    if (target.classList.contains("canvas-minimap") || target.classList.contains("file-embed-title") || target.classList.contains("markdown-embed-link") || target.closest("svg") || target.closest(".ptl-tldraw-image-container") || target.closest(".dataloom-padding") || target.closest(".dataloom-bottom-bar") || target.closest('[data-viewport-type="element"]') || target.closest(".dataloom-bottom-bar")) {
       target = target.closest(".internal-embed") || target;
     }
     if (this.isPreviewModeLink(target)) {
@@ -1266,7 +1357,6 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       const isFolderLink = target.classList.contains("has-folder-note");
       const app = this.app;
       const folderPlugin = app.plugins.plugins["folder-notes"];
-      console.log(link);
       if (!folderPlugin || !isFolderLink) {
         this.openInFloatPreview(link);
       } else {
@@ -1555,13 +1645,15 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
     menu.addItem((item) => {
       item.setTitle(t("Create and edit in modal")).setIcon("file-plus");
       const subMenu = item.setSubmenu();
-      subMenu.addItem(
-        (subItem) => subItem.setTitle("Markdown").setIcon("file").onClick(() => {
-          this.createFileAndEditInModal(parentPath, "md");
-        })
-      );
+      if (this.settings.enabledCommands.markdown) {
+        subMenu.addItem(
+          (subItem) => subItem.setTitle("Markdown").setIcon("file").onClick(() => {
+            this.createFileAndEditInModal(parentPath, "md");
+          })
+        );
+      }
       const canvasPlugin = this.app.internalPlugins.getEnabledPluginById("canvas");
-      if (canvasPlugin) {
+      if (canvasPlugin && this.settings.enabledCommands.canvas) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("Canvas").setIcon("layout-dashboard").onClick(() => {
             this.createFileAndEditInModal(parentPath, "canvas");
@@ -1570,7 +1662,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       }
       const excalidrawPlugin = this.getPlugin("obsidian-excalidraw-plugin");
       const excalidrawymjrPlugin = this.getPlugin("obsidian-excalidraw-plugin-ymjr");
-      if (excalidrawPlugin || excalidrawymjrPlugin) {
+      if ((excalidrawPlugin || excalidrawymjrPlugin) && this.settings.enabledCommands.excalidraw) {
         subMenu.addSeparator();
         subMenu.addItem(
           (subItem) => subItem.setTitle("Excalidraw").setIcon("swords").onClick(async () => {
@@ -1603,16 +1695,27 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         );
       }
       const diagramsPlugin = this.getPlugin("obsidian-diagrams-net");
-      if (diagramsPlugin) {
+      if (diagramsPlugin && this.settings.enabledCommands.diagrams) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("Diagrams").setIcon("pencil-ruler").onClick(() => {
             this.app.commands.executeCommandById("obsidian-diagrams-net:app:diagrams-net-new-diagram");
           })
         );
       }
+      const tldrawPlugin = this.getPlugin("tldraw");
+      if (tldrawPlugin && this.settings.enabledCommands.tldraw) {
+        subMenu.addItem(
+          (subItem) => subItem.setTitle("Tldraw").setIcon("shapes").onClick(async () => {
+            await this.app.commands.executeCommandById("tldraw:embed-new-tldraw-file-.md-new-tab");
+            setTimeout(() => {
+              this.openCurrentContentInModal();
+            }, 500);
+          })
+        );
+      }
       subMenu.addSeparator();
       const excelPlugin = this.getPlugin("excel");
-      if (excelPlugin) {
+      if (excelPlugin && this.settings.enabledCommands.excel) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("Excel").setIcon("table").onClick(async () => {
             await this.createFileAndInsertLink("excel:excel-autocreate", true);
@@ -1620,7 +1723,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         );
       }
       const SheetPlugin = this.getPlugin("sheet-plus");
-      if (SheetPlugin) {
+      if (SheetPlugin && this.settings.enabledCommands.sheetPlus) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("Sheet Plus").setIcon("grid").onClick(async () => {
             await this.createFileAndInsertLink("sheet-plus:spreadsheet-autocreation", true);
@@ -1628,7 +1731,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         );
       }
       const vscodePlugin = this.getPlugin("vscode-editor");
-      if (vscodePlugin) {
+      if (vscodePlugin && this.settings.enabledCommands.vscode) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("Code File").setIcon("file-code").onClick(async () => {
             await this.createCodeFileAndOpenInModal();
@@ -1636,10 +1739,18 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         );
       }
       const markmindPlugin = this.getPlugin("obsidian-markmind");
-      if (markmindPlugin) {
+      if (markmindPlugin && this.settings.enabledCommands.markmind) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("MarkMind").setIcon("brain-circuit").onClick(async () => {
             await this.createFileAndInsertLink("obsidian-markmind:Create New MindMap", true);
+          })
+        );
+      }
+      const dataloomPlugin = this.getPlugin("notion-like-tables");
+      if (dataloomPlugin && this.settings.enabledCommands.dataloom) {
+        subMenu.addItem(
+          (subItem) => subItem.setTitle("Dataloom").setIcon("container").onClick(async () => {
+            await this.createFileAndInsertLink("notion-like-tables:create", true);
           })
         );
       }
@@ -1657,9 +1768,9 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         menu.addItem((item) => {
           item.setTitle(t("Delete linked attachment")).setIcon("trash").onClick(() => {
             const modal = new import_obsidian4.Modal(this.app);
-            modal.titleEl.setText(t("Confirm deletion"));
+            modal.titleEl.setText(t("Confirm deletion?"));
             const content = modal.contentEl.createDiv();
-            content.setText(t("Are you sure you want to delete: ") + file.path);
+            content.setText(file.path);
             const buttonContainer = content.createDiv({ cls: "modal-button-container" });
             buttonContainer.createEl("button", { text: t("Cancel") }).onclick = () => modal.close();
             buttonContainer.createEl(

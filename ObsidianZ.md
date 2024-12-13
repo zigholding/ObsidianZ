@@ -13,8 +13,9 @@ vexporter:
   UseGitLink: true
 status: 🌱
 notechain:
-  display: <status><notechain.alias[0]|$0>
+  display: <level><notechain.alias[0]|$0>
 PrevNote: "[[__plugins__]]"
+NextNote: "[[readMe]]"
 ---
 
 [github](https://github.com/zigholding/ObsidianZ) | [gitee](git clone https://gitee.com/zigholding/ObsidianZ.git)
