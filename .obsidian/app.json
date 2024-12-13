@@ -3,5 +3,5 @@
   "propertiesInDocument": "source",
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,
-  "attachmentFolderPath": "__files__"
+  "attachmentFolderPath": "__plugins__/_attachments_"
 }

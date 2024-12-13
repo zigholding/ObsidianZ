@@ -2,10 +2,9 @@
 FolderPrevNote: "[[readMe]]"
 FolderPrevNoteOffset: 0.5
 PrevNote: "[[修改显示名称]]"
-NextNote: "[[_customJS_]]"
+NextNote: "[[ObsidianZ]]"
 notechain:
   display: <level><$0>
-  style: green
 words:
   2024-12-09: 5
   2024-12-10: 54

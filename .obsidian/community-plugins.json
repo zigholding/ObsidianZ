@@ -10,5 +10,8 @@
   "oz-clear-unused-images",
   "vault-exporter",
   "copy-document-as-html",
-  "note-chain"
+  "note-chain",
+  "obsidian-excalidraw-plugin",
+  "dataview",
+  "recent-files-obsidian"
 ]

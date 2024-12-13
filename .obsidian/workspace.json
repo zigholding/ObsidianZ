@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ObsidianZ.md",
+                "file": "__plugins__/_templater_/@模板/@模板.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ObsidianZ"
+              "title": "@模板"
             }
           }
         ]
@@ -71,6 +71,16 @@
               "state": {},
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "61b9ce029c341a5f",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "clock",
+              "title": "Recent Files"
             }
           }
         ]
@@ -139,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ObsidianZ.md"
+                "file": "__plugins__/_templater_/@模板/@模板.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of ObsidianZ"
+              "title": "Outline of @模板"
             }
           }
         ],
@@ -150,7 +160,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -159,22 +170,23 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b0e3b2530bb16278",
+  "active": "e15731cb7fa19dc8",
   "lastOpenFiles": [
-    "readMe.md",
-    "ObsidianZ.md",
-    "02 InBox/如何使用Obsidian示例库？不！它背后有个更大的问题.md",
     "__plugins__/__plugins__.md",
+    "ObsidianZ.md",
+    "readMe.md",
+    "02 InBox/如何使用Obsidian示例库？不！它背后有个更大的问题.md",
     "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
     "__plugins__/_templater_/_templater_.md",
     "__plugins__/_customJS_/_customJS_.md",
-    "__files__/Pasted image 20241211193618.png",
-    "__files__/Pasted image 20241211193545.png",
-    "__files__/Pasted image 20241211193118.png",
-    "__files__/Pasted image 20241211193016.png",
+    "__plugins__/_attachments_/Pasted image 20241211193618.png",
+    "__plugins__/_attachments_/Pasted image 20241211193545.png",
+    "__plugins__/_attachments_/Pasted image 20241211193118.png",
+    "__plugins__/_attachments_/Pasted image 20241211193016.png",
     "02 InBox",
     "__files__/software/Obsidian-1.7.7-arm64.AppImage",
     "__files__/software/Obsidian-1.7.7.exe",
@@ -195,14 +207,14 @@
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
     "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
     "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
-    "__files__/Pasted image 20241205194904.png",
-    "__files__/Pasted image 20241205193823.png",
-    "__files__/Pasted image 20241201203516.png",
-    "__files__/Pasted image 20241201202649.png",
+    "__plugins__/_attachments_/Pasted image 20241205194904.png",
+    "__plugins__/_attachments_/Pasted image 20241205193823.png",
+    "__plugins__/_attachments_/Pasted image 20241201203516.png",
+    "__plugins__/_attachments_/Pasted image 20241201202649.png",
     "__files__/Pasted image 20241201202614.png",
-    "__files__/Pasted image 20241201202436.png",
+    "__plugins__/_attachments_/Pasted image 20241201202436.png",
     "__scripts__/@知更鸟在屋顶/《sf》.md",
     "__scripts__/@知更鸟在屋顶/示例：test.md",
-    "__files__/临时输入.md"
+    "__plugins__/_attachments_/临时输入.md"
   ]
 }

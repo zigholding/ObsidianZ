@@ -4,6 +4,7 @@ words:
   2024-11-28: 89
   2024-11-30: 88
   2024-12-01: 229
+  2024-12-13: 431
 vexporter:
   Dir: D:\github\ObsidianZ-final
   Name: readMe
@@ -12,8 +13,8 @@ vexporter:
   UseGitLink: true
 status: 🌱
 notechain:
-  display: "<status><notechain.alias[0]|$0>"
-  alias: ObsidianZ 库说明
+  display: <status><notechain.alias[0]|$0>
+PrevNote: "[[__plugins__]]"
 ---
 
 [github](https://github.com/zigholding/ObsidianZ) | [gitee](git clone https://gitee.com/zigholding/ObsidianZ.git)

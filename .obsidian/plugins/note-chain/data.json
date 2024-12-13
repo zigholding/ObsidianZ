@@ -9,9 +9,9 @@
   "refreshTasks": true,
   "isSortFileExplorer": true,
   "isFolderFirst": true,
-  "suggesterNotesMode": "",
+  "suggesterNotesMode": "item_get_brothers",
   "wordcout": true,
-  "wordcountxfolder": "__files__\n__scripts__/tpl\n/",
+  "wordcountxfolder": "__plugins__/_templater_/@模板",
   "modal_default_width": 800,
   "modal_default_height": 600,
   "avata": "avata"
