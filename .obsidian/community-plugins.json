@@ -8,10 +8,10 @@
   "quickadd",
   "customjs",
   "oz-clear-unused-images",
-  "vault-exporter",
   "copy-document-as-html",
   "note-chain",
   "obsidian-excalidraw-plugin",
   "dataview",
-  "recent-files-obsidian"
+  "recent-files-obsidian",
+  "vault-exporter"
 ]

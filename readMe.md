@@ -1,3 +1,8 @@
+---
+words:
+  2024-12-13: 474
+PrevNote: "[[ObsidianZ]]"
+---
 
 [github](https://github.com/zigholding/ObsidianZ) | [gitee](https://gitee.com/zigholding/ObsidianZ.git)
 
