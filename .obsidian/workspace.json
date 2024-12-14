@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "__plugins__/_templater_/@脚本笔记/reload_plugin.md",
+                "file": "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "reload_plugin"
+              "title": "执行当前脚本笔记"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "__plugins__/_templater_/@脚本笔记/reload_plugin.md"
+                "file": "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of reload_plugin"
+              "title": "Outline of 执行当前脚本笔记"
             }
           }
         ],
@@ -182,10 +182,12 @@
   },
   "active": "b0e3b2530bb16278",
   "lastOpenFiles": [
-    "__plugins__/_templater_/@脚本笔记/exec_current_note.md",
-    "__plugins__/_templater_/@脚本笔记/reload_plugin.md",
+    "__plugins__/_templater_/@脚本笔记/重启插件.md",
     "__plugins__/_templater_/@脚本笔记/move_prev_level.md",
+    "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
     "__plugins__/_templater_/@脚本笔记/@脚本笔记.md",
+    "__plugins__/_templater_/@脚本笔记/move_next_level.md",
+    "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
     "readMe.md",
     "test2/f.md",
     "test2",
@@ -199,7 +201,6 @@
     "__plugins__/_templater_/@模板/@模板.md",
     "__plugins__/__plugins__.md",
     "02 InBox/如何使用Obsidian示例库？不！它背后有个更大的问题.md",
-    "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
     "__plugins__/_templater_/_templater_.md",
     "__plugins__/_customJS_/_customJS_.md",
     "__plugins__/_attachments_/Pasted image 20241211193618.png",
@@ -214,7 +215,6 @@
     "__files__/software/syncthing-windows-amd64-v1.28.1.zip",
     "__files__/software/Git-2.47.1-64-bit.exe",
     "__files__/software/Git-2.47.1-32-bit.exe",
-    "__plugins__/_templater_/@脚本笔记/move_next_level.md",
     "__plugins__/_templater_/@脚本笔记/move_none_level.md",
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas",
     "__scripts__/__scripts__.md",

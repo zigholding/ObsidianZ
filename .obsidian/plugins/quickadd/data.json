@@ -15,7 +15,7 @@
       },
       "format": {
         "enabled": true,
-        "format": "```js quickadd\nlet nc=app.plugins.getPlugin('note-chain');\nv = await nc.utils.parse_templater(app,'exec_current_note.md');\n```"
+        "format": "```js quickadd\nlet nc=app.plugins.getPlugin('note-chain');\nv = await nc.utils.parse_templater(app,'执行当前脚本笔记.md');\n```"
       },
       "insertAfter": {
         "enabled": false,
