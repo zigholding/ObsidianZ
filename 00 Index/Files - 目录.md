@@ -4,7 +4,7 @@ tags:
   - conote
   - Index
 PrevNote: "[[Files - 空链笔记]]"
-NextNote: "[[Files - 入链]]"
+NextNote: "[[Files - 最近访问]]"
 words:
   2024-06-16: 57
   2024-09-06: 63

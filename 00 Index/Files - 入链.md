@@ -3,7 +3,7 @@ ctime: 2024-05-25 17:56
 tags:
   - conote
   - Index
-PrevNote: "[[Files - 目录]]"
+PrevNote: "[[Files - 最近访问]]"
 NextNote: "[[Files - 双链]]"
 words:
   2024-06-16: 49

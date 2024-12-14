@@ -5,9 +5,6 @@ tags:
   - Index
 PrevNote: "[[00 Index]]"
 NextNote: "[[Files - 笔记网]]"
-words:
-  2024-06-16: 52
-  2024-10-16: 64
 ---
 
 
