@@ -5,7 +5,7 @@ words:
 notechain:
   in_a_word: 已选笔记降低等级
 level: ""
-NextNote: "[[执行当前脚本笔记]]"
+NextNote: "[[exec_current_note]]"
 ---
 
 快捷键：`Alt+J`

@@ -6,7 +6,7 @@
       "type": "Capture",
       "command": true,
       "appendLink": false,
-      "captureTo": "__files__/临时输入.md",
+      "captureTo": "__plugins__/_templater_/@模板/临时输入.md",
       "captureToActiveFile": false,
       "createFileIfItDoesntExist": {
         "enabled": false,
@@ -15,7 +15,7 @@
       },
       "format": {
         "enabled": true,
-        "format": "```js quickadd\nlet nc=app.plugins.getPlugin('note-chain');\nv = await nc.utils.parse_templater(app,'执行当前脚本笔记.md');\n```"
+        "format": "```js quickadd\nlet nc=app.plugins.getPlugin('note-chain');\nv = await nc.utils.parse_templater(app,'exec_current_note.md');\n```"
       },
       "insertAfter": {
         "enabled": false,

@@ -1,6 +1,8 @@
 ---
 PrevNote: "[[move_prev_level]]"
-NextNote: "[[Req Arxiv]]"
+NextNote: "[[reload_plugin]]"
+notechain:
+  in_a_word: 执行当前脚本笔记
 words:
   2024-12-05: 34
   2024-12-06: 222
