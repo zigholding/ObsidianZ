@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "readMe.md",
+                "file": "__plugins__/_templater_/@脚本笔记/Files - 附件分类存放.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "readMe"
+              "title": "Files - 附件分类存放"
             }
           }
         ]
@@ -182,8 +182,9 @@
   },
   "active": "b0e3b2530bb16278",
   "lastOpenFiles": [
-    "ObsidianZ.md",
     "readMe.md",
+    "__plugins__/_templater_/@脚本笔记/Files - 附件分类存放.md",
+    "ObsidianZ.md",
     "__plugins__/_attachments_/Pasted image 20241217215234.png",
     "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
     "__plugins__/_templater_/@脚本笔记/重启插件.md",
