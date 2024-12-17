@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
+                "file": "readMe.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "执行当前脚本笔记"
+              "title": "readMe"
             }
           }
         ]
@@ -182,20 +182,21 @@
   },
   "active": "b0e3b2530bb16278",
   "lastOpenFiles": [
+    "ObsidianZ.md",
+    "readMe.md",
+    "__plugins__/_attachments_/Pasted image 20241217215234.png",
+    "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
     "__plugins__/_templater_/@脚本笔记/重启插件.md",
     "__plugins__/_templater_/@脚本笔记/move_prev_level.md",
-    "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
     "__plugins__/_templater_/@脚本笔记/@脚本笔记.md",
     "__plugins__/_templater_/@脚本笔记/move_next_level.md",
     "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
-    "readMe.md",
     "test2/f.md",
     "test2",
     "00 Index/Files - 最近访问.md",
     "00 Index/Files - 目录.md",
     "00 Index/Files - 笔记网.md",
     "00 Index/Files - 笔记链.md",
-    "ObsidianZ.md",
     "__files__",
     "git.md",
     "__plugins__/_templater_/@模板/@模板.md",
@@ -226,8 +227,6 @@
     "__plugins__/_attachments_/Pasted image 20241205193823.png",
     "__plugins__/_attachments_/Pasted image 20241201203516.png",
     "__plugins__/_attachments_/Pasted image 20241201202649.png",
-    "__files__/Pasted image 20241201202614.png",
-    "__plugins__/_attachments_/Pasted image 20241201202436.png",
-    "__scripts__/@知更鸟在屋顶/《sf》.md"
+    "__files__/Pasted image 20241201202614.png"
   ]
 }

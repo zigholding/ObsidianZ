@@ -29,7 +29,7 @@
 
 ### 使用 `VaultExpoter` 同步
 
-接下来，你就可以使用 `VaultExpoter` 将对你有用的笔记和插件，导致自己的库中。
+接下来，你就可以使用 `NoteSync` 将对你有用的笔记和插件，导致自己的库中。
 
 在文件列表中，右键点击 `__scripts__` 文件夹，选择 `Mirror to other vault`，在弹窗中输入自己库的路径：
 
@@ -40,13 +40,14 @@
 
 ![Pasted image 20241201202235.png](./__plugins__/_attachments_/Pasted%20image%2020241201202235.png)
 
-插件可以通过 `Vault Exporter: Export plugin`，选择要导入的插件，在弹窗中输入导入的插件路径。
+插件可以通过 `Note Sync: Export plugin`，选择要导入的插件，在弹窗中输入导入的插件路径。
 
 ![Pasted image 20241201202436.png](./__plugins__/_attachments_/Pasted%20image%2020241201202436.png)
 
 更常用的，可以将目录路径添加到设置项中，有多个目录路径时用换行分割。
 
-![Pasted image 20241201202649.png](./__plugins__/_attachments_/Pasted%20image%2020241201202649.png)
+![Pasted image 20241217215234.png](./__plugins__/_attachments_/Pasted%20image%2020241217215234.png)
+`Strict mode` 在同步时会删除目标目录中多出来的文件，保证两个目录内的文件是相同的。
 
 ## 示例
 
