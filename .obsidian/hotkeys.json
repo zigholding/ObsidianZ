@@ -626,5 +626,13 @@
       ],
       "key": "3"
     }
+  ],
+  "note-chain:cmd_set_frontmatter": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "Y"
+    }
   ]
 }
