@@ -9,9 +9,10 @@
   "customjs",
   "oz-clear-unused-images",
   "copy-document-as-html",
-  "note-chain",
   "obsidian-excalidraw-plugin",
   "dataview",
   "recent-files-obsidian",
-  "note-sync"
+  "note-sync",
+  "obsidian-image-toolkit",
+  "note-chain"
 ]
