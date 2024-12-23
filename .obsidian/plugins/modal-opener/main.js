@@ -116,6 +116,8 @@ var en_default = {
   "Hides the tab header associated with the modal window": "Hides the tab header associated with the modal window",
   "Menu item": "Menu item",
   "Toggle menu items to show or hide in the right-click context menu": "Toggle menu items to show or hide in the right-click context menu",
+  "Plugin is not enabled or installed": "Plugin is not enabled or installed",
+  "Details": "Details",
   "Custom commands": "Custom commands",
   "Add custom command": "Add custom command",
   "Add a new custom command": "Commands can be used with other plugins, such as Commander",
@@ -249,6 +251,8 @@ var zh_cn_default = {
   "Hides the tab header associated with the modal window": "\u9690\u85CF\u4E0E\u6A21\u6001\u7A97\u53E3\u5173\u8054\u7684\u6807\u7B7E\u9875\u5934\u90E8",
   "Menu item": "\u83DC\u5355\u9879",
   "Toggle menu items to show or hide in the right-click context menu": "\u5207\u6362\u83DC\u5355\u9879\u4EE5\u5728\u53F3\u952E\u5355\u51FB\u4E0A\u4E0B\u6587\u83DC\u5355\u4E2D\u663E\u793A\u6216\u9690\u85CF",
+  "Plugin is not enabled or installed": "\u63D2\u4EF6\u672A\u542F\u7528\u6216\u672A\u5B89\u88C5",
+  "Details": "\u8BE6\u60C5",
   "Custom commands": "\u81EA\u5B9A\u4E49\u547D\u4EE4",
   "Add custom command": "\u6DFB\u52A0\u81EA\u5B9A\u4E49\u547D\u4EE4",
   "Add a new custom command": "\u547D\u4EE4\u53EF\u4EE5\u4E0E\u5176\u4ED6\u63D2\u4EF6\u642D\u914D\u4F7F\u7528\uFF0C\u4F8B\u5982 Commander",
@@ -1057,63 +1061,60 @@ var ModalOpenerSettingTab = class extends import_obsidian3.PluginSettingTab {
         await this.plugin.saveSettings();
       }));
     }
-    const excalidrawPlugin = this.plugin.getPlugin("obsidian-excalidraw-plugin");
-    const excalidrawymjrPlugin = this.plugin.getPlugin("obsidian-excalidraw-plugin-ymjr");
-    if (excalidrawPlugin || excalidrawymjrPlugin) {
-      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Excalidraw").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.excalidraw).onChange(async (value) => {
-        this.plugin.settings.enabledCommands.excalidraw = value;
-        await this.plugin.saveSettings();
-      }));
-    }
-    const diagramsPlugin = this.plugin.getPlugin("obsidian-diagrams-net");
-    if (diagramsPlugin) {
-      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Diagrams").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.diagrams).onChange(async (value) => {
-        this.plugin.settings.enabledCommands.diagrams = value;
-        await this.plugin.saveSettings();
-      }));
-    }
-    const tldrawPlugin = this.plugin.getPlugin("tldraw");
-    if (tldrawPlugin) {
-      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Tldraw").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.tldraw).onChange(async (value) => {
-        this.plugin.settings.enabledCommands.tldraw = value;
-        await this.plugin.saveSettings();
-      }));
-    }
-    const excelPlugin = this.plugin.getPlugin("excel");
-    if (excelPlugin) {
-      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Excel").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.excel).onChange(async (value) => {
-        this.plugin.settings.enabledCommands.excel = value;
-        await this.plugin.saveSettings();
-      }));
-    }
-    const SheetPlugin = this.plugin.getPlugin("sheet-plus");
-    if (SheetPlugin) {
-      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Sheet Plus").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.sheetPlus).onChange(async (value) => {
-        this.plugin.settings.enabledCommands.sheetPlus = value;
-        await this.plugin.saveSettings();
-      }));
-    }
-    const vscodePlugin = this.plugin.getPlugin("vscode-editor");
-    if (vscodePlugin) {
-      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Code File").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.vscode).onChange(async (value) => {
-        this.plugin.settings.enabledCommands.vscode = value;
-        await this.plugin.saveSettings();
-      }));
-    }
-    const markmindPlugin = this.plugin.getPlugin("obsidian-markmind");
-    if (markmindPlugin) {
-      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("MarkMind").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.markmind).onChange(async (value) => {
-        this.plugin.settings.enabledCommands.markmind = value;
-        await this.plugin.saveSettings();
-      }));
-    }
-    const dataloomPlugin = this.plugin.getPlugin("notion-like-tables");
-    if (dataloomPlugin) {
-      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Dataloom").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.dataloom).onChange(async (value) => {
-        this.plugin.settings.enabledCommands.dataloom = value;
-        await this.plugin.saveSettings();
-      }));
-    }
+    this.createPluginSetting(
+      commandsContainer,
+      "obsidian-excalidraw-plugin",
+      "Excalidraw",
+      "excalidraw"
+    );
+    this.createPluginSetting(
+      commandsContainer,
+      "obsidian-excalidraw-plugin-ymjr",
+      "Excalidraw-ymjr",
+      "excalidraw"
+    );
+    this.createPluginSetting(
+      commandsContainer,
+      "obsidian-diagrams-net",
+      "Diagrams",
+      "diagrams"
+    );
+    this.createPluginSetting(
+      commandsContainer,
+      "tldraw",
+      "Tldraw",
+      "tldraw"
+    );
+    this.createPluginSetting(
+      commandsContainer,
+      "excel",
+      "Excel",
+      "excel"
+    );
+    this.createPluginSetting(
+      commandsContainer,
+      "sheet-plus",
+      "Sheet Plus",
+      "sheetPlus"
+    );
+    this.createPluginSetting(
+      commandsContainer,
+      "vscode-editor",
+      "Code File",
+      "vscode"
+    );
+    this.createPluginSetting(
+      commandsContainer,
+      "obsidian-markmind",
+      "MarkMind",
+      "markmind"
+    );
+    this.createPluginSetting(
+      commandsContainer,
+      "notion-like-tables",
+      "Dataloom",
+      "dataloom"
+    );
     new import_obsidian3.Setting(containerEl).setName(t("Custom commands")).setHeading();
     new import_obsidian3.Setting(containerEl).setName(t("Add custom command")).setDesc(t("Add a new custom command")).addButton((button) => button.setButtonText(t("Add")).onClick(() => {
       this.addCustomCommand();
@@ -1181,6 +1182,27 @@ var ModalOpenerSettingTab = class extends import_obsidian3.PluginSettingTab {
     await app.plugins.disablePlugin("modal-opener");
     await app.plugins.enablePlugin("modal-opener");
     app.setting.openTabById("modal-opener").display();
+  }
+  // 添加一个通用的创建插件设置的函数
+  createPluginSetting(container, pluginId, displayName, settingKey) {
+    const plugin = this.plugin.getPlugin(pluginId);
+    const setting = new import_obsidian3.Setting(container).setClass("command-toggle-item");
+    if (plugin) {
+      if (this.plugin.settings.enabledCommands[settingKey] === void 0) {
+        this.plugin.settings.enabledCommands[settingKey] = true;
+        this.plugin.saveSettings();
+      }
+      setting.setName(displayName).addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands[settingKey]).onChange(async (value) => {
+        this.plugin.settings.enabledCommands[settingKey] = value;
+        await this.plugin.saveSettings();
+      }));
+    } else {
+      setting.setName(displayName).setDesc(t("Plugin is not enabled or installed")).addButton((button) => button.setButtonText(t("Details")).onClick(async () => {
+        const repoUrl = pluginId === "obsidian-excalidraw-plugin-ymjr" ? "https://github.com/Bowen-0x00/obsidian-excalidraw-plugin-ymjr" : `https://obsidian.md/plugins?id=${pluginId}`;
+        window.open(repoUrl, "_blank");
+      }));
+    }
+    return setting;
   }
 };
 
@@ -1434,7 +1456,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   }
   registerAltClickHandler() {
     this.altClickHandler = (evt) => {
-      var _a, _b, _c;
+      var _a, _b;
       if (evt.altKey && evt.ctrlKey && evt.button === 0) {
         return;
       }
@@ -1442,6 +1464,8 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         const activeView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
         let targetElement = evt.target;
         let altText = targetElement.getAttribute("alt");
+        console.log("Clicked element:", targetElement);
+        console.log("Classes:", targetElement.classList);
         if (activeView) {
           if (activeView.getMode() === "source") {
             const editor = activeView.editor;
@@ -1456,6 +1480,10 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
           } else {
             if (activeView.getMode() === "source") {
               if (targetElement.closest("svg")) {
+                this.handlePreviewModeLink(evt);
+                return;
+              }
+              if (targetElement.closest("img")) {
                 this.handlePreviewModeLink(evt);
                 return;
               }
@@ -1474,14 +1502,12 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
             }
           }
         } else {
-          const canvasView = (_a = this.app.workspace.getLeavesOfType("canvas").first()) == null ? void 0 : _a.view;
-          const excalidrawView = (_b = this.app.workspace.getLeavesOfType("excalidraw").first()) == null ? void 0 : _b.view;
-          if (canvasView && this.isPreviewModeLink(targetElement)) {
-            this.handlePreviewModeLink(evt);
-          }
-          const link = (_c = targetElement.textContent) == null ? void 0 : _c.trim().replace(/\[\[(.*?)\]\]/, "$1");
+          const excalidrawView = (_a = this.app.workspace.getLeavesOfType("excalidraw").first()) == null ? void 0 : _a.view;
+          const link = (_b = targetElement.textContent) == null ? void 0 : _b.trim().replace(/\[\[(.*?)\]\]/, "$1");
           if (excalidrawView && link) {
             this.openInFloatPreview(link);
+          } else if (this.isPreviewModeLink(targetElement)) {
+            this.handlePreviewModeLink(evt);
           }
         }
       }
@@ -1536,28 +1562,28 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       var _a;
       if (link) {
         const activeView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
-        if (activeView && activeView.getMode() === "source") {
-          const editor = activeView.editor;
-          const cursor = editor.getCursor();
-          const line = editor.getLine(cursor.line);
-          const foundLink = this.findLinkAtPosition(line, cursor.ch);
-          if (foundLink) {
-            this.openInFloatPreview(foundLink);
-          } else {
-            this.openInFloatPreview(link);
-          }
-        } else if (activeView && activeView.getMode() === "preview") {
-          const selection = window.getSelection();
-          if (selection && selection.rangeCount > 0) {
-            const range = selection.getRangeAt(0);
-            const linkElement = (_a = range.startContainer.parentElement) == null ? void 0 : _a.closest("a");
-            if (linkElement) {
-              link = linkElement.getAttribute("data-href") || linkElement.getAttribute("href") || link;
-              this.openInFloatPreview(link);
+        if (activeView) {
+          const mode = activeView.getMode();
+          let linkToPreview = link;
+          if (mode === "source") {
+            const editor = activeView.editor;
+            const cursor = editor.getCursor();
+            const line = editor.getLine(cursor.line);
+            const foundLink = this.findLinkAtPosition(line, cursor.ch);
+            if (foundLink) {
+              linkToPreview = foundLink;
             }
-          } else {
-            this.openInFloatPreview(link);
+          } else if (mode === "preview") {
+            const selection = window.getSelection();
+            if (selection && selection.rangeCount > 0) {
+              const range = selection.getRangeAt(0);
+              const linkElement = (_a = range.startContainer.parentElement) == null ? void 0 : _a.closest("a");
+              if (linkElement) {
+                linkToPreview = linkElement.getAttribute("data-href") || linkElement.getAttribute("href") || linkToPreview;
+              }
+            }
           }
+          this.openInFloatPreview(linkToPreview);
         } else {
           this.openInFloatPreview(link);
         }
@@ -1567,6 +1593,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   addFolderFloatMenuItem(menu, link) {
     this.addFloatMenuItem(menu, link || "", t("Open in modal window"), () => {
       if (link) {
+        console.log("folder");
         this.folderNoteOpenInFloatPreview(link);
       }
     });
@@ -1574,6 +1601,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   addLinkFloatMenuItem(menu, link) {
     this.addFloatMenuItem(menu, link || "", t("Open in modal window"), () => {
       if (link) {
+        console.log("link");
         this.openInFloatPreview(link);
       }
     });
@@ -1645,7 +1673,10 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
     menu.addItem((item) => {
       item.setTitle(t("Create and edit in modal")).setIcon("file-plus");
       const subMenu = item.setSubmenu();
+      let group1Count = 0;
+      let group2Count = 0;
       if (this.settings.enabledCommands.markdown) {
+        group1Count++;
         subMenu.addItem(
           (subItem) => subItem.setTitle("Markdown").setIcon("file").onClick(() => {
             this.createFileAndEditInModal(parentPath, "md");
@@ -1654,16 +1685,20 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       }
       const canvasPlugin = this.app.internalPlugins.getEnabledPluginById("canvas");
       if (canvasPlugin && this.settings.enabledCommands.canvas) {
+        group1Count++;
         subMenu.addItem(
           (subItem) => subItem.setTitle("Canvas").setIcon("layout-dashboard").onClick(() => {
             this.createFileAndEditInModal(parentPath, "canvas");
           })
         );
       }
+      if (group1Count >= 1) {
+        subMenu.addSeparator();
+      }
       const excalidrawPlugin = this.getPlugin("obsidian-excalidraw-plugin");
       const excalidrawymjrPlugin = this.getPlugin("obsidian-excalidraw-plugin-ymjr");
       if ((excalidrawPlugin || excalidrawymjrPlugin) && this.settings.enabledCommands.excalidraw) {
-        subMenu.addSeparator();
+        group2Count++;
         subMenu.addItem(
           (subItem) => subItem.setTitle("Excalidraw").setIcon("swords").onClick(async () => {
             const initialLeafCount = this.app.workspace.getLeavesOfType("excalidraw").length;
@@ -1696,6 +1731,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       }
       const diagramsPlugin = this.getPlugin("obsidian-diagrams-net");
       if (diagramsPlugin && this.settings.enabledCommands.diagrams) {
+        group2Count++;
         subMenu.addItem(
           (subItem) => subItem.setTitle("Diagrams").setIcon("pencil-ruler").onClick(() => {
             this.app.commands.executeCommandById("obsidian-diagrams-net:app:diagrams-net-new-diagram");
@@ -1704,6 +1740,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       }
       const tldrawPlugin = this.getPlugin("tldraw");
       if (tldrawPlugin && this.settings.enabledCommands.tldraw) {
+        group2Count++;
         subMenu.addItem(
           (subItem) => subItem.setTitle("Tldraw").setIcon("shapes").onClick(async () => {
             await this.app.commands.executeCommandById("tldraw:embed-new-tldraw-file-.md-new-tab");
@@ -1713,7 +1750,9 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
           })
         );
       }
-      subMenu.addSeparator();
+      if (group2Count >= 1) {
+        subMenu.addSeparator();
+      }
       const excelPlugin = this.getPlugin("excel");
       if (excelPlugin && this.settings.enabledCommands.excel) {
         subMenu.addItem(
