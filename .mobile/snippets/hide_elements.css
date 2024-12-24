@@ -1,0 +1,28 @@
+.modal-opener-content .inline-title {
+    display: none;
+}
+
+
+.nav-header .clickable-icon.nav-action-button[aria-label="New note"]{
+    display: none;
+}
+
+.nav-header .clickable-icon.nav-action-button[aria-label="New folder"]{
+    display: none;
+}
+
+.nav-header .clickable-icon.nav-action-button[aria-label="Change sort order"]{
+    display: none;
+}
+
+.nav-header .clickable-icon.nav-action-button[aria-label="新建笔记"]{
+    display: none !important; 
+}
+
+.nav-header .clickable-icon.nav-action-button[aria-label="新建文件夹"]{
+    display: none !important;
+}
+
+.nav-header .clickable-icon.nav-action-button[aria-label="排序"]{
+    display: none !important;
+}

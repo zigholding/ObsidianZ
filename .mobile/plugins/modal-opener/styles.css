@@ -1,0 +1,212 @@
+
+/* .modal-tab-header-hidden .workspace-tab-header.is-active {
+    display: none !important;
+} */
+.popover.hover-popover{
+    z-index: 100 !important;
+}
+.menu {
+    z-index: 200 !important;
+}
+
+.modal-bg.modal-opener-bg.closable {
+    cursor: pointer;
+}
+
+.modal-bg.modal-opener-bg:not(.closable) {
+    pointer-events: none;
+}
+
+.modal.modal-opener {
+    pointer-events: auto;
+}
+
+.modal-iframe {
+    width: 100%;
+    height: 98%;
+    border: 0;
+    position: absolute;
+    top: 1;
+    left: 0;
+}
+
+.modal.modal-opener {
+    overflow: hidden;
+}
+
+.modal-opener .modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.modal-opener .modal-content {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.modal-opener-content .markdown-rendered {
+    overflow-x: hidden;
+    padding: 0;
+}
+
+.modal-opener-content {
+    min-height: var(--adjusted-modal-height, 81vh);
+    max-height: var(--adjusted-modal-height, 81vh);
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+    padding: 0;
+}
+
+.modal-opener-content .workspace-leaf-content[data-type="code-editor"] .view-content,
+.modal-opener-content .workspace-leaf-content[data-type="vscode-editor"] .view-content {
+    padding: 0;
+}
+
+.modal.modal-opener:has(.workspace-leaf-content[data-type="markdown"]) {
+    padding: 8px;
+}
+
+body:not(.show-file-view-header) .modal-opener-content .workspace-leaf-content:not([data-type="surfing-view"]) .view-header {
+    display: none;
+}
+
+body:not(.show-link-view-header) .modal-opener-content .workspace-leaf-content[data-type="surfing-view"] .view-header,
+body:not(.show-link-view-header) .modal-opener-content .wb-bookmark-bar {
+    display: none;
+}
+
+body:not(.show-metadata) .modal-opener-content .metadata-container {
+    display: none !important;
+} 
+
+.modal-animation-enabled .modal-container:has(.modal-opener-content),
+.modal-animation-enabled .modal-container:has(.monaco-editor),
+.modal-animation-enabled .modal-container:has(.diagrams-modal) {
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--background-modifier-border);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(var(--background-primary-rgb), 0.8);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* new file */
+.new-file-modal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.new-file-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.new-file-input {
+    flex-grow: 1;
+}
+
+.new-file-select {
+    width: auto;
+}
+
+.new-file-button-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.new-file-button {
+    padding: 5px 10px;
+}
+
+.new-file-button.confirm {
+    margin-top: 10px;
+    margin-right: 5px;
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+.new-file-button.cancel {
+    margin-top: 10px;
+}
+
+.new-file-modal-container .new-file-button-container .new-file-button.confirm:hover {
+    background-color: var(--interactive-accent-hover);
+}
+
+.custom-command-input {
+    width: 220px !important;
+}
+
+/* float button */
+
+.modal-opener .modal-opener-content {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-opener .floating-button-container,
+.modal-opener .floating-menu-container {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+}
+
+.modal-opener .floating-button {
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.modal-opener .floating-button:hover {
+    background-color: var(--interactive-accent-hover);
+}
+
+.modal-opener .floating-menu-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    bottom: 50px;
+    right: -10px;
+    border: 0;
+    padding: 5px;
+    background-color: transparent;
+}
+
+.modal-opener .menu-item {
+    margin: 5px;
+}
+
+
+/* command-toggle */
+
+.command-toggle-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-top: 12px;
+}
+
+.command-toggle-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-top: 0px solid var(--background-modifier-border);  /* 添加边框 */
+    border-right: 1px solid var(--background-modifier-border);
+}

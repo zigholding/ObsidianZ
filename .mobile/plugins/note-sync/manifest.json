@@ -1,0 +1,9 @@
+{
+	"id": "note-sync",
+	"name": "Note Sync",
+	"version": "0.5.0",
+	"minAppVersion": "1.7.7",
+	"description": "Sync notes or plugins between vaults.",
+	"author": "ZigHolding",
+	"isDesktopOnly": true
+}

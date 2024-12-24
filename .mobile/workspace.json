@@ -1,0 +1,232 @@
+{
+  "main": {
+    "id": "a211c08b5835aea1",
+    "type": "split",
+    "children": [
+      {
+        "id": "5f6ffa97adb99a5f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b0e3b2530bb16278",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "__plugins__/_templater_/@脚本笔记/move_prev_level.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "move_prev_level"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e9bf4b3f552bea53",
+    "type": "split",
+    "children": [
+      {
+        "id": "f9036605e9ec588b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e15731cb7fa19dc8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "a227f711584fd45f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "61b9ce029c341a5f",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "clock",
+              "title": "Recent Files"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 402.5
+  },
+  "right": {
+    "id": "bd6c252ab2f3e3e6",
+    "type": "split",
+    "children": [
+      {
+        "id": "67e734afd2c6eb6b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "91d19d56e6225344",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "ObsidianZ.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for ObsidianZ"
+            }
+          },
+          {
+            "id": "38c1aa330e2cdb26",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "__scripts__/tpl/callout 插入.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from callout 插入"
+            }
+          },
+          {
+            "id": "17530a0f0a13e374",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "ff0a95fef4b438a1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 执行当前脚本笔记"
+            }
+          }
+        ],
+        "currentTab": 3
+      },
+      {
+        "id": "680c5afbb4023306",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "45c1cb75abef19aa",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 446.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "b0e3b2530bb16278",
+  "lastOpenFiles": [
+    "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
+    "__plugins__/_templater_/@脚本笔记/重启插件.md",
+    "__plugins__/_templater_/@脚本笔记/move_prev_level.md",
+    "__plugins__/_templater_/@脚本笔记/move_none_level.md",
+    "__plugins__/_templater_/@脚本笔记/move_next_level.md",
+    "__plugins__/_attachments_/Pasted image 20241201202649.png",
+    "__plugins__/_templater_/@脚本笔记/Files - 附件分类存放.md",
+    "__plugins__/_attachments_/Pasted image 20241217221619.png",
+    "__plugins__/_attachments_/Pasted image 20241217221618.png",
+    "readMe.md",
+    "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
+    "ObsidianZ.md",
+    "__plugins__/_attachments_/Pasted image 20241217215234.png",
+    "__plugins__/_templater_/@脚本笔记/@脚本笔记.md",
+    "test2/f.md",
+    "test2",
+    "00 Index/Files - 最近访问.md",
+    "00 Index/Files - 目录.md",
+    "00 Index/Files - 笔记网.md",
+    "00 Index/Files - 笔记链.md",
+    "__files__",
+    "git.md",
+    "__plugins__/_templater_/@模板/@模板.md",
+    "__plugins__/__plugins__.md",
+    "02 InBox/如何使用Obsidian示例库？不！它背后有个更大的问题.md",
+    "__plugins__/_templater_/_templater_.md",
+    "__plugins__/_customJS_/_customJS_.md",
+    "__plugins__/_attachments_/Pasted image 20241211193618.png",
+    "__plugins__/_attachments_/Pasted image 20241211193545.png",
+    "__plugins__/_attachments_/Pasted image 20241211193118.png",
+    "__plugins__/_attachments_/Pasted image 20241211193016.png",
+    "02 InBox",
+    "__files__/software/Obsidian-1.7.7-arm64.AppImage",
+    "__files__/software/Obsidian-1.7.7.exe",
+    "__files__/software/Obsidian-1.7.7.apk",
+    "__files__/software/Obsidian-1.7.7.AppImage",
+    "__files__/software/syncthing-windows-amd64-v1.28.1.zip",
+    "__files__/software/Git-2.47.1-64-bit.exe",
+    "__files__/software/Git-2.47.1-32-bit.exe",
+    "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas",
+    "__scripts__/__scripts__.md",
+    "__scripts__/tpl/callout 插入.md",
+    "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
+    "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
+    "__plugins__/_attachments_/Pasted image 20241205194904.png",
+    "__plugins__/_attachments_/Pasted image 20241205193823.png"
+  ]
+}
