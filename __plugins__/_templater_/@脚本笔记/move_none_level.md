@@ -5,10 +5,11 @@ notechain:
   in_a_word: 已选笔记删除等级
 words:
   2024-12-10: 42
+  2024-12-23: 43
 level: ""
 ---
 
-快捷键：`Alt+K`
+快捷键：`Ctrl+Alt+K`
 
 ```js //templater
 let nc=app.plugins.plugins['note-chain']

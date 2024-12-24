@@ -2,13 +2,14 @@
 PrevNote: "[[@脚本笔记]]"
 words:
   2024-12-10: 55
+  2024-12-23: 56
 level: ""
 NextNote: "[[move_none_level]]"
 notechain:
   in_a_word: 已选笔记追加等级
 ---
 
-快捷键：`Alt+L`
+快捷键：`Ctrl+Alt+L`
 
 ```js //templater
 let nc=app.plugins.plugins['note-chain']

@@ -15,6 +15,10 @@
     display: none;
 }
 
+.nav-header .clickable-icon.nav-action-button[aria-label="Collapse all"]{
+    display: none;
+}
+
 .nav-header .clickable-icon.nav-action-button[aria-label="新建笔记"]{
     display: none !important; 
 }
@@ -24,5 +28,9 @@
 }
 
 .nav-header .clickable-icon.nav-action-button[aria-label="排序"]{
+    display: none !important;
+}
+
+.nav-header .clickable-icon.nav-action-button[aria-label="全部折叠"]{
     display: none !important;
 }

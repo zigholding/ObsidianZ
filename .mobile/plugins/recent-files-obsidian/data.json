@@ -1,16 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "重启插件",
+      "path": "__plugins__/_templater_/@脚本笔记/重启插件.md"
+    },
+    {
+      "basename": "Files - 笔记网",
+      "path": "00 Index/Files - 笔记网.md"
+    },
+    {
       "basename": "move_prev_level",
       "path": "__plugins__/_templater_/@脚本笔记/move_prev_level.md"
     },
     {
       "basename": "执行当前脚本笔记",
       "path": "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md"
-    },
-    {
-      "basename": "重启插件",
-      "path": "__plugins__/_templater_/@脚本笔记/重启插件.md"
     },
     {
       "basename": "move_none_level",

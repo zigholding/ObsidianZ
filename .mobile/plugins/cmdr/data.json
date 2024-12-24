@@ -28,6 +28,12 @@
       "icon": "lucide-notebook-pen",
       "name": "创建新笔记",
       "mode": "2d9b817b0d1896b6"
+    },
+    {
+      "id": "note-chain:create_new_note",
+      "icon": "lucide-pen",
+      "name": "新建笔记",
+      "mode": "any"
     }
   ],
   "hide": {

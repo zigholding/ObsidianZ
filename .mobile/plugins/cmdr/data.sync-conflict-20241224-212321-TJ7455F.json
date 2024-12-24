@@ -12,8 +12,14 @@
   "macros": [],
   "explorer": [
     {
+      "id": "note-chain:create_new_note",
+      "icon": "lucide-notebook-pen",
+      "name": "创建新笔记",
+      "mode": "2d9b817b0d1896b6"
+    },
+    {
       "id": "note-chain:cmd_reveal_note",
-      "icon": "lucide-locate-fixed",
+      "icon": "lucide-locate",
       "name": "定位当前笔记",
       "mode": "any"
     },
@@ -25,9 +31,10 @@
     },
     {
       "id": "note-chain:create_new_note",
-      "icon": "lucide-notebook-pen",
+      "icon": "lucide-pen-box",
       "name": "创建新笔记",
-      "mode": "2d9b817b0d1896b6"
+      "mode": "any",
+      "color": "#000000"
     }
   ],
   "hide": {
