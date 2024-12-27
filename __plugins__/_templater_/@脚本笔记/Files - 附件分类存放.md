@@ -1,6 +1,6 @@
 ---
 PrevNote: "[[重启插件]]"
-NextNote: "[[公众号文章链接]]"
+NextNote: "[[YAML - 将潜在链接变为现实]]"
 params:
   folders:
     - attachmentFolderPath
@@ -10,6 +10,7 @@ words:
   2024-12-15: 426
   2024-12-16: 429
   2024-12-17: 821
+  2024-12-26: 855
 ---
 
 
