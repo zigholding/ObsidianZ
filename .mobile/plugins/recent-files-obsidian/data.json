@@ -1,6 +1,30 @@
 {
   "recentFiles": [
     {
+      "basename": "s",
+      "path": "s.md"
+    },
+    {
+      "basename": "ObsidianZ",
+      "path": "ObsidianZ.md"
+    },
+    {
+      "basename": "YAML - 将潜在链接变为现实",
+      "path": "__plugins__/_templater_/@脚本笔记/YAML - 将潜在链接变为现实.md"
+    },
+    {
+      "basename": "Files - 附件分类存放",
+      "path": "__plugins__/_templater_/@脚本笔记/Files - 附件分类存放.md"
+    },
+    {
+      "basename": "示例：通过脚本笔记设置快捷键",
+      "path": "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md"
+    },
+    {
+      "basename": "Files - 目录",
+      "path": "00 Index/Files - 目录.md"
+    },
+    {
       "basename": "重启插件",
       "path": "__plugins__/_templater_/@脚本笔记/重启插件.md"
     },
@@ -25,20 +49,12 @@
       "path": "__plugins__/_templater_/@脚本笔记/move_next_level.md"
     },
     {
-      "basename": "Files - 附件分类存放",
-      "path": "__plugins__/_templater_/@脚本笔记/Files - 附件分类存放.md"
-    },
-    {
       "basename": "readMe",
       "path": "readMe.md"
     },
     {
       "basename": "@知更鸟在屋顶",
       "path": "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md"
-    },
-    {
-      "basename": "ObsidianZ",
-      "path": "ObsidianZ.md"
     },
     {
       "basename": "@脚本笔记",

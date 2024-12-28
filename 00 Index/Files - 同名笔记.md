@@ -1,5 +1,5 @@
 ---
-NextNote: "[[今日事项Tab]]"
+NextNote: "[[Files - 历史漫步]]"
 PrevNote: "[[Files - 双链数量]]"
 words:
   2024-10-25: 173

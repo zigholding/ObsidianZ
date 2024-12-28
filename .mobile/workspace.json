@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "__plugins__/_templater_/@脚本笔记/重启插件.md",
+                "file": "ObsidianZ.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "重启插件"
+              "title": "ObsidianZ"
+            }
+          },
+          {
+            "id": "62147ff67b208f95",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "s.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "s"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -180,54 +195,54 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b0e3b2530bb16278",
+  "active": "62147ff67b208f95",
   "lastOpenFiles": [
-    "00 Index/Files - 笔记网.md",
-    "__plugins__/_templater_/@脚本笔记/重启插件.md",
-    "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
+    "__plugins__/_attachments_/Pasted image 20241228093515.png",
+    "__plugins__/_attachments_/Pasted image 20241228093450.png",
+    "__plugins__/_attachments_/Pasted image 20241228092723.png",
+    "ObsidianZ.md",
+    "s.md",
+    "__plugins__/_templater_/@脚本笔记/YAML - 将潜在链接变为现实.md",
+    "__plugins__/_customJS_/NoteGallery.js",
+    "__plugins__/_customJS_/NoteGalleray.js",
+    "__plugins__/_customJS_/ModalOpener - 副本.js",
+    "__plugins__/_templater_/@脚本笔记/Files - 附件分类存放.md",
+    "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
     "__plugins__/_templater_/@脚本笔记/move_prev_level.md",
+    "__plugins__/_customJS_/yaml.js",
+    "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
+    "__plugins__/_templater_/@脚本笔记/重启插件.md",
     "__plugins__/_templater_/@脚本笔记/move_none_level.md",
     "__plugins__/_templater_/@脚本笔记/move_next_level.md",
-    "__plugins__/_templater_/@脚本笔记/Files - 附件分类存放.md",
-    "__plugins__/_templater_/@脚本笔记/@脚本笔记.md",
-    "__plugins__/_templater_/@用户函数/@用户函数.md",
-    "__plugins__/_templater_/@模板/临时输入.md",
-    "__plugins__/_templater_/@模板/@模板.md",
-    "__plugins__/_excalidraw_/font/Muyao-Softbrush-2.ttf",
-    "__plugins__/_excalidraw_/font/HanyiSentyYongleEncyclopedia-2020.ttf",
-    "__plugins__/_templater_/_templater_.md",
-    "__plugins__/_templater_/@脚本笔记",
-    "__plugins__/_templater_/@用户函数",
-    "__plugins__/_templater_/@模板",
-    "__plugins__/_excalidraw_/font",
-    "__plugins__/_customJS_/修改显示名称.md",
-    "__plugins__/_customJS_/_customJS_.md",
-    "__plugins__/_customJS_/ModalOpener.js",
-    "__plugins__/_customJS_/hotkeys.js",
-    "__plugins__/_attachments_/__files__.md",
+    "__plugins__/_attachments_/Pasted image 20241201202649.png",
+    "__plugins__/_attachments_/Pasted image 20241217221619.png",
+    "__plugins__/_attachments_/Pasted image 20241217221618.png",
+    "readMe.md",
+    "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
     "__plugins__/_attachments_/Pasted image 20241217215234.png",
+    "__plugins__/_templater_/@脚本笔记/@脚本笔记.md",
+    "test2/f.md",
+    "test2",
+    "00 Index/Files - 最近访问.md",
+    "00 Index/Files - 目录.md",
+    "00 Index/Files - 笔记网.md",
+    "00 Index/Files - 笔记链.md",
+    "__files__",
+    "git.md",
+    "__plugins__/_templater_/@模板/@模板.md",
+    "__plugins__/__plugins__.md",
+    "02 InBox/如何使用Obsidian示例库？不！它背后有个更大的问题.md",
+    "__plugins__/_templater_/_templater_.md",
+    "__plugins__/_customJS_/_customJS_.md",
     "__plugins__/_attachments_/Pasted image 20241211193618.png",
     "__plugins__/_attachments_/Pasted image 20241211193545.png",
     "__plugins__/_attachments_/Pasted image 20241211193118.png",
     "__plugins__/_attachments_/Pasted image 20241211193016.png",
-    "__plugins__/_attachments_/Pasted image 20241205194904.png",
-    "__plugins__/_attachments_/Pasted image 20241205193823.png",
-    "__plugins__/_attachments_/Pasted image 20241201203516.png",
-    "__plugins__/_attachments_/Pasted image 20241201202436.png",
-    "__plugins__/_attachments_/Pasted image 20241201202235.png",
-    "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
-    "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
-    "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
-    "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
-    "__plugins__/__plugins__.md",
-    "__plugins__/_templater_",
-    "__plugins__/_excalidraw_",
-    "readMe.md",
-    "ObsidianZ.md",
-    "test2/f.md",
-    "00 Index/Files - 最近访问.md",
-    "00 Index/Files - 目录.md",
-    "00 Index/Files - 笔记链.md",
-    "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas"
+    "02 InBox",
+    "__files__/software/Obsidian-1.7.7-arm64.AppImage",
+    "__files__/software/Obsidian-1.7.7.exe",
+    "__files__/software/Obsidian-1.7.7.apk",
+    "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas",
+    "__scripts__/__scripts__.md"
   ]
 }

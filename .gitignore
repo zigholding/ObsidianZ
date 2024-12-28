@@ -9,3 +9,5 @@
 .stignore
 .obsidian/plugins/recent-files-obsidian/data.json
 .obsidian/plugins/note-sync/data.json
+*sync-conflict*
+*tmp*
