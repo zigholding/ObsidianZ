@@ -8,7 +8,6 @@ NextNote: "[[今日事项4D]]"
 
 
 
-
 ```
 > [!NOTE]+ 历史漫步
 > 
@@ -29,6 +28,7 @@ let ng = await nc.utils.get_str_func(app,'cJS.NoteGallery')
 let N= nc.editor.get_frontmatter(
 	nc.chain.get_tfile('Files - 历史漫步'),'N'
 )
+if(!N){N=4}
 let dnote,tfiles = ng.get_daily_random_notes(N)
 let code = ng.code_block_for_notes(tfiles)
 dv.span(code)
@@ -42,7 +42,9 @@ let ng = await nc.utils.get_str_func(app,'cJS.NoteGallery')
 let N= nc.editor.get_frontmatter(
 	nc.chain.get_tfile('Files - 历史漫步'),'N'
 )
-let dnote,tfiles = ng.get_daily_random_notes(N)
+if(!N){N=4}
+let tfiles = ng.get_daily_random_notes(N)
+let dnote = nc.chain.get_last_daily_note()
 tfiles = tfiles.map(
   x=>dv.page(x.path)
 ).filter(x=>x)

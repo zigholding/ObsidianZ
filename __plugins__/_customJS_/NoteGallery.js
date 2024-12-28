@@ -25,7 +25,8 @@ class NoteGallery {
 			}
 		}
 
-		return Array.from(randomInts).sort((a, b) => a - b);  // 转换回数组并排序
+		let idxs =  Array.from(randomInts).sort((a, b) => a - b);  // 转换回数组并排序
+		return idxs
 	}
 	
 	get_daily_random_notes(n=5,before_today=true){
@@ -52,14 +53,15 @@ class NoteGallery {
 			return ''
 		}
 		
-		let query = `file: "${tfiles[0].basename}"`
+		let query = `(^${tfiles[0].name}$)`
 		for(let tfile of tfiles.slice(1)){
-			query = `${query} OR file: "${tfile.basename}"`
+			query = `${query}|(^${tfile.name}$)`
 		}
+		query = `file: /${query}/`
 		let code = 
 `
 ~~~note-gallery
-query: '${query}'
+query: "${query}"
 limit: ${tfiles.length}
 ~~~
 `
