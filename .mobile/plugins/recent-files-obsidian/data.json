@@ -1,12 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "s",
-      "path": "s.md"
-    },
-    {
       "basename": "ObsidianZ",
       "path": "ObsidianZ.md"
+    },
+    {
+      "basename": "Untitled",
+      "path": "tmp/Untitled.md"
+    },
+    {
+      "basename": "readMe",
+      "path": "readMe.md"
+    },
+    {
+      "basename": "s",
+      "path": "s.md"
     },
     {
       "basename": "YAML - 将潜在链接变为现实",
@@ -47,10 +55,6 @@
     {
       "basename": "move_next_level",
       "path": "__plugins__/_templater_/@脚本笔记/move_next_level.md"
-    },
-    {
-      "basename": "readMe",
-      "path": "readMe.md"
     },
     {
       "basename": "@知更鸟在屋顶",

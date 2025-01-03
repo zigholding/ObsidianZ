@@ -6,14 +6,15 @@ words:
   2024-12-01: 229
   2024-12-13: 429
 note-sync:
-  Dir: D:\github\ObsidianZ
-  Name: readMe
+  Dir: /storage/emulated/0/ObsidianZ
+  Name: readMe2
   Assets: ./__plugins__/_attachments_
   RemoveMeta: true
   UseGitLink: true
 status: 🌱
 notechain:
   display: <level><notechain.alias[0]|$0>
+PrevNote: "[[示例：通过脚本笔记设置快捷键]]"
 ---
 
 [github](https://github.com/zigholding/ObsidianZ) | [gitee](https://gitee.com/zigholding/ObsidianZ.git)
@@ -44,14 +45,11 @@ notechain:
 
 ![[Pasted image 20241211193618.png]]
 
-### 使用 `VaultExpoter` 同步
+### 使用 `NoteSync` 同步
 
 接下来，你就可以使用 `NoteSync` 将对你有用的笔记和插件，导致自己的库中。
 
-在文件列表中，右键点击 `__scripts__` 文件夹，选择 `Mirror to other vault`，在弹窗中输入自己库的路径：
-
-
-![[Pasted image 20241201201310.png]]
+在文件列表中，右键点击 `__scripts__` 文件夹，选择 `Sync to other vault`，在弹窗中输入自己库的路径：
 
 点击确认后，文件夹下的文件，以及笔记所含附件，都会复制到目标库中。
 
@@ -65,6 +63,34 @@ notechain:
 
 ![[Pasted image 20241217215234.png]]
 `Strict mode` 在同步时会删除目标目录中多出来的文件，保证两个目录内的文件是相同的。
+
+### 使用软链接同步
+
+如果使用的库仅在电脑端使用，不需要同步到手机端。
+
+那么使用软链接将是最佳选择！
+
+执行脚本笔记[[使用软链接将示例库添加到目标库]]，选择或输入要同步的目标库，脚本会在控制台打印创建 ObsidianZ 各文件夹的软链接，包括：
+- [[__plugins__]]
+- [[00 Index]]
+- `.obsidian/snippets`：配置文件夹
+- `.obsidian/plugins`：各插件的软链接
+- 其它文件：community-plugins.json、core-plugins.json、hotkeys.json。如果不想同步这些配置，在代码中删除或注释相应行；
+
+当然，如果你已经添加过软链接，或创建了同名笔记，会跳过创建命令。
+
+![[Pasted image 20241228092723.png]]
+
+所有的命令会复制到剪裁板中，可以到 `cmd` 中粘贴，也可以到控制台中复制需要的插件软链接命令。
+
+![[Pasted image 20241228093515.png]]
+
+执行成功后如下所示：
+
+![[Pasted image 20241228093450.png]]
+
+由于 `windows` 中软链接只能处理文件夹，对于文件的同步，使用 [[Note Sync]] 中的函数复制文件。
+
 
 ## 示例
 

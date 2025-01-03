@@ -1,22 +1,11 @@
 ---
 words:
   2024-12-28: 134
-PrevNote: "[[Files - 出链]]"
+PrevNote: "[[Files - 同名笔记]]"
 N: 4
 NextNote: "[[今日事项4D]]"
 ---
 
-
-
-```
-> [!NOTE]+ 历史漫步
-> 
-> ```dataviewjs
-> dv.span("<br>![[Files - 历史漫步#卡片|no-head]]<br>");
-> ```
-> 
-
-```
 
 ## 卡片
 
@@ -58,3 +47,16 @@ dv.table(
 )
 ```
 
+
+## 添加到日志
+
+
+```
+> [!NOTE]+ 历史漫步
+> 
+> ```dataviewjs
+> dv.span("<br>![[Files - 历史漫步#卡片|no-head]]<br>");
+> ```
+> 
+
+```

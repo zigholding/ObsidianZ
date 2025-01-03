@@ -11,14 +11,10 @@
             "id": "b0e3b2530bb16278",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00 Index/Files - 历史漫步.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Files - 历史漫步"
+              "title": "New tab"
             }
           }
         ]
@@ -77,7 +73,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 454.5
+    "width": 325.5
   },
   "right": {
     "id": "bd6c252ab2f3e3e6",
@@ -139,10 +135,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md"
+                "file": "__plugins__/@知更鸟在屋顶/示例：如何使用示例库.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of 执行当前脚本笔记"
+              "title": "Outline of 示例：如何使用示例库"
             }
           }
         ],
@@ -180,14 +176,31 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b0e3b2530bb16278",
+  "active": "e15731cb7fa19dc8",
   "lastOpenFiles": [
+    "tmp/Untitled.md",
+    "~syncthing~ObsidianZ.md.tmp",
+    "__plugins__/@知更鸟在屋顶/示例：如何使用示例库.md",
+    "__plugins__/_attachments2_/Pasted image 20241201203516.png",
+    "__plugins__/_attachments2_/Pasted image 20241217215234.png",
+    "__plugins__/_attachments2_/Pasted image 20241201202436.png",
+    "__plugins__/_attachments2_/Pasted image 20241201202235.png",
+    "__plugins__/_attachments2_/Pasted image 20241201201310.png",
+    "__plugins__/_attachments2_/Pasted image 20241211193618.png",
+    "__plugins__/_attachments2_/Pasted image 20241211193545.png",
+    "__plugins__/_attachments2_/Pasted image 20241211193118.png",
+    "__plugins__/_attachments2_/Pasted image 20241211193016.png",
+    "__plugins__/_attachments2_",
+    "readMe2.md",
     "ObsidianZ.md",
+    "__plugins__/_attachments_/Pasted image 20241228212130.png",
+    "__plugins__/_templater_/@脚本笔记/使用软链接将示例库添加到目标库.md",
+    "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
+    "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
     "readMe.md",
-    "tmp/s.md",
-    "tmp",
+    "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
     "00 Index/Files - 历史漫步.md",
-    "__files__/images/202411/ba0622ee52e2329fcd2df57e14323a1 1.jpg",
+    "tmp",
     "__files__/images/202411",
     "__files__/images",
     "__files__",
@@ -198,12 +211,7 @@
     "__plugins__/_templater_/@脚本笔记/重启插件.md",
     "__plugins__/_templater_/@脚本笔记/move_none_level.md",
     "__plugins__/_templater_/@脚本笔记/move_next_level.md",
-    "__plugins__/_attachments_/Pasted image 20241201202649.png",
     "__plugins__/_templater_/@脚本笔记/Files - 附件分类存放.md",
-    "__plugins__/_attachments_/Pasted image 20241217221619.png",
-    "__plugins__/_attachments_/Pasted image 20241217221618.png",
-    "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
-    "__plugins__/_attachments_/Pasted image 20241217215234.png",
     "__plugins__/_templater_/@脚本笔记/@脚本笔记.md",
     "test2/f.md",
     "test2",
@@ -212,21 +220,9 @@
     "00 Index/Files - 笔记网.md",
     "00 Index/Files - 笔记链.md",
     "git.md",
-    "__plugins__/_templater_/@模板/@模板.md",
-    "__plugins__/__plugins__.md",
-    "02 InBox/如何使用Obsidian示例库？不！它背后有个更大的问题.md",
-    "__plugins__/_templater_/_templater_.md",
-    "__plugins__/_customJS_/_customJS_.md",
-    "__plugins__/_attachments_/Pasted image 20241211193618.png",
-    "__plugins__/_attachments_/Pasted image 20241211193545.png",
-    "__plugins__/_attachments_/Pasted image 20241211193118.png",
-    "__plugins__/_attachments_/Pasted image 20241211193016.png",
     "02 InBox",
     "__files__/software/Obsidian-1.7.7-arm64.AppImage",
     "__files__/software/Obsidian-1.7.7.exe",
-    "__files__/software/Obsidian-1.7.7.apk",
-    "__files__/software/Obsidian-1.7.7.AppImage",
-    "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas",
-    "__plugins__/_attachments_/Pasted image 20241205194904.png"
+    "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas"
   ]
 }

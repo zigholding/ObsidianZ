@@ -3,6 +3,7 @@ PrevNote: "[[move_next_level]]"
 NextNote: "[[move_prev_level]]"
 notechain:
   in_a_word: 已选笔记删除等级
+  level: ""
 words:
   2024-12-10: 42
   2024-12-23: 43

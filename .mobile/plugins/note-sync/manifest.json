@@ -5,5 +5,5 @@
 	"minAppVersion": "1.7.7",
 	"description": "Sync notes or plugins between vaults.",
 	"author": "ZigHolding",
-	"isDesktopOnly": true
+	"isDesktopOnly": false
 }

@@ -5,7 +5,7 @@ words:
   2024-12-23: 46
 notechain:
   in_a_word: 已选笔记降低等级
-level: ""
+  level: ""
 NextNote: "[[执行当前脚本笔记]]"
 ---
 

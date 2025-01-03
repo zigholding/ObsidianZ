@@ -3,5 +3,7 @@
   "propertiesInDocument": "source",
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,
-  "attachmentFolderPath": "__plugins__/_attachments_"
+  "attachmentFolderPath": "__plugins__/_attachments_",
+  "trashOption": "local",
+  "newFileLocation": "current"
 }

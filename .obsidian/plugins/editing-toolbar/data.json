@@ -37,7 +37,7 @@
           "name": "Note Chain: Open prev note of right leaf",
           "icon": "corner-right-up"
         },
-		{
+        {
           "id": "note-chain:longform2notechain",
           "name": "Note Chain: Reset note chain by longform",
           "icon": "link-glyph"
@@ -52,7 +52,7 @@
           "name": "Note Chain: File - rename file",
           "icon": "wrench"
         },
-		{
+        {
           "id": "note-chain:cmd_file_show_in_system_explorer",
           "name": "Note Chain: File - show in system explorer (desktop only)",
           "icon": "book-open"
@@ -74,7 +74,6 @@
           "name": "Editing Toolbar: Toggle superscript",
           "icon": "superscript-glyph"
         },
-        
         {
           "id": "editing-toolbar:subscript",
           "name": "Editing Toolbar: Toggle subscript",

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "readMe.md",
+                "file": "ObsidianZ.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "readMe"
+              "title": "ObsidianZ"
             }
           }
         ]
@@ -95,7 +95,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "readMe.md",
+            "file": "ObsidianZ.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -146,5 +146,9 @@
     }
   },
   "active": "f39dc1b845048aa0",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "tmp/Untitled.md",
+    "ObsidianZ.md",
+    "readMe.md"
+  ]
 }
