@@ -2,7 +2,7 @@
 PrevNote: "[[Files - 出链]]"
 words:
   2024-10-15: 90
-NextNote: "[[Files - 目录]]"
+NextNote: "[[Files - 入链]]"
 ctime: 2024-09-01 12:22
 ---
 

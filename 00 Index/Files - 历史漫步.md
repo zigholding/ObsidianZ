@@ -1,9 +1,9 @@
 ---
 words:
   2024-12-28: 134
-PrevNote: "[[Files - 同名笔记]]"
+PrevNote: "[[Files - 笔记链]]"
 N: 4
-NextNote: "[[今日事项4D]]"
+NextNote: "[[Files - 目录]]"
 ---
 
 

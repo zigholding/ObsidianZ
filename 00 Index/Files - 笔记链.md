@@ -3,8 +3,8 @@ ctime: 2024-05-23 22:11
 tags:
   - conote
   - Index
-PrevNote: "[[00 Index]]"
-NextNote: "[[Files - 笔记网]]"
+PrevNote: "[[Files - 笔记网]]"
+NextNote: "[[Files - 历史漫步]]"
 words:
   2024-12-31: 64
 ---

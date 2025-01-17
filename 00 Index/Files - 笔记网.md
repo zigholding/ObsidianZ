@@ -9,8 +9,8 @@ paramLimit: 15
 paramXTags:
   - Period/Daily
 status: "[[Index|🧭]]"
-NextNote: "[[Files - 出链]]"
-PrevNote: "[[Files - 笔记链]]"
+NextNote: "[[Files - 笔记链]]"
+PrevNote: "[[00 Index]]"
 words:
   2024-06-16: 320
   2024-08-29: 323
