@@ -21,4 +21,7 @@ longform:
     - Files - 双链数量
     - Files - 同名笔记
   ignoredFiles: []
+words:
+  2025-01-21: 22
+  2025-01-22: 0
 ---

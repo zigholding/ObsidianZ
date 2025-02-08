@@ -2,7 +2,7 @@ class DeepSeek {
 	
 	constructor() {
 		this.url = 'https://api.deepseek.com/chat/completions';
-		this.api_key = '';
+		this.api_key = 'sk-59280165b0b24f9fb8a9a121724d3063';
 		this.model_name = 'deepseek-chat'
 	}
 	

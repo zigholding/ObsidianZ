@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "__plugins__/_templater_/@脚本笔记/LLM - 自动排序.md",
+                "file": "__plugins__/_templater_/@脚本笔记/从 gitee 下载示例库文件.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LLM - 自动排序"
+              "title": "从 gitee 下载示例库文件"
             }
           }
         ]
@@ -40,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -73,7 +74,8 @@
               "title": "Recent Files"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -180,10 +182,20 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b0e3b2530bb16278",
+  "active": "e15731cb7fa19dc8",
   "lastOpenFiles": [
-    "__plugins__/_templater_/@脚本笔记/LLM - 笔记总结.md",
+    "__plugins__/_attachments_/Pasted image 20250208223856.png",
+    "__plugins__/_templater_/@脚本笔记/渲染代码.md",
+    "__plugins__/_templater_/@脚本笔记/重启插件.md",
+    "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
+    "__plugins__/_templater_/@脚本笔记/从 gitee 下载示例库文件.md",
+    "__plugins__/_templater_/@脚本笔记/test.md",
+    "__plugins__/_templater_/@脚本笔记/Untitled.md",
+    "__plugins__/_attachments_/Pasted image 20250206150246.png",
+    "__files__",
+    "__plugins__/_templater_/@脚本笔记/@脚本笔记.md",
     "__plugins__/_templater_/@脚本笔记/LLM - 自动排序.md",
+    "__plugins__/_templater_/@脚本笔记/LLM - 笔记总结.md",
     "__plugins__/_templater_/@脚本笔记/LLM - 问问笔记.md",
     "__plugins__/_attachments_/Pasted image 20250117210821.png",
     "__plugins__/_templater_/@模板/临时输入.md",
@@ -200,7 +212,6 @@
     "__plugins__/_attachments2_/Pasted image 20241211193618.png",
     "__plugins__/_attachments2_/Pasted image 20241211193545.png",
     "__plugins__/_attachments2_/Pasted image 20241211193118.png",
-    "__plugins__/_attachments2_/Pasted image 20241211193016.png",
     "__plugins__/_attachments2_",
     "readMe2.md",
     "ObsidianZ.md",
@@ -212,20 +223,11 @@
     "tmp",
     "__files__/images/202411",
     "__files__/images",
-    "__files__",
     "00 Index/Files - 历史漫步2.md",
     "00 Index/Files - 历史回顾（列表）.md",
     "__plugins__/_templater_/@脚本笔记/move_prev_level.md",
-    "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
-    "__plugins__/_templater_/@脚本笔记/重启插件.md",
     "__plugins__/_templater_/@脚本笔记/move_none_level.md",
-    "__plugins__/_templater_/@脚本笔记/move_next_level.md",
-    "__plugins__/_templater_/@脚本笔记/Files - 附件分类存放.md",
-    "__plugins__/_templater_/@脚本笔记/@脚本笔记.md",
-    "test2/f.md",
     "test2",
-    "00 Index/Files - 最近访问.md",
-    "00 Index/Files - 目录.md",
     "02 InBox",
     "__files__/software/Obsidian-1.7.7-arm64.AppImage",
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas"

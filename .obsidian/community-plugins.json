@@ -10,11 +10,11 @@
   "oz-clear-unused-images",
   "copy-document-as-html",
   "obsidian-excalidraw-plugin",
-  "dataview",
   "recent-files-obsidian",
-  "note-sync",
   "obsidian-image-toolkit",
   "note-chain",
   "cmdr",
-  "note-gallery"
+  "note-gallery",
+  "dataview",
+  "note-sync"
 ]

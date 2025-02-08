@@ -90,6 +90,8 @@ var en_default = {
   "More options": "More options",
   "Copied to clipboard": "Link copied to clipboard",
   "Behavior": "Behavior",
+  "Single-click trigger": "Single-click trigger",
+  "If enabled, clicking links will open them in modal window without holding Alt.": "If enabled, clicking links will open them in modal window without holding Alt.",
   "Disable external click close": "Disable external click close",
   "Use only the Close button and Esc to close.": "Use only the Close button and Esc to close",
   "Excalidraw Disables the Esc key": "Excalidraw Disables the Esc key",
@@ -104,6 +106,8 @@ var en_default = {
   "Modal width": "Modal width",
   "Modal height": "Modal height",
   "Enter any valid CSS unit": "Enter any valid CSS unit",
+  "Enable modal window rounding": "Enable modal window rounding",
+  "Toggle to enable or disable modal window rounding": "Toggle to enable or disable modal window rounding",
   "Enable animation and blur": "Enable animation and blur",
   "Toggle to enable or disable animation and blur effects": "Toggle to enable or disable animation and blur effects",
   "Show view header of the file": "Show view header of the file",
@@ -114,7 +118,12 @@ var en_default = {
   "Show file metadata in the modal window": "Show file metadata in the modal window",
   "Hide tab header": "Hide tab header",
   "Hides the tab header associated with the modal window": "Hides the tab header associated with the modal window",
+  "Enable the right-click menu": "Enable the right-click menu",
+  "Show or hide the menu and its menu options": "Show or hide the menu and select menu items",
+  "Enable the delete Linked attachment menu item": "Enable the delete Linked attachment menu item",
   "Menu item": "Menu item",
+  "Modal window open delay": "Modal window open delay",
+  "Set the delay (in milliseconds) before opening modal window after creating new file.": "Set the delay (in milliseconds) before opening modal window after creating new file.",
   "Toggle menu items to show or hide in the right-click context menu": "Toggle menu items to show or hide in the right-click context menu",
   "Plugin is not enabled or installed": "Plugin is not enabled or installed",
   "Details": "Details",
@@ -131,7 +140,7 @@ var en_default = {
   "The command name already exists, please use a different name": "The command name already exists, please use a different name",
   "Command added successfully": "Command added successfully",
   "Please enter both command name and description": "Please enter both command name and description",
-  "Command deleted successfully. Please restart Obsidian for changes to take full effect.": "Command deleted successfully. Please restart Obsidian for changes to take full effect."
+  "Command deleted successfully. Please restart Obsidian for changes to take full effect.": "Command deleted successfully."
 };
 
 // src/lang/locale/en-gb.ts
@@ -225,6 +234,8 @@ var zh_cn_default = {
   "More options": "\u66F4\u591A\u9009\u9879",
   "Copied to clipboard": "\u94FE\u63A5\u5DF2\u590D\u5236\u5230\u526A\u5207\u677F",
   "Behavior": "\u884C\u4E3A",
+  "Single-click trigger": "\u5355\u51FB\u89E6\u53D1",
+  "If enabled, clicking links will open them in modal window without holding Alt.": "\u5982\u679C\u542F\u7528\uFF0C\u70B9\u51FB\u94FE\u63A5\u5C06\u5728\u6A21\u6001\u7A97\u53E3\u4E2D\u6253\u5F00\u94FE\u63A5\uFF0C\u800C\u4E0D\u9700\u8981\u6309\u4F4FAlt\u952E\u3002",
   "Disable external click close": "\u7981\u7528\u5916\u90E8\u70B9\u51FB\u5173\u95ED",
   "Use only the Close button and Esc to close.": "\u4EC5\u4F7F\u7528 \u201C\u5173\u95ED\u201D \u6309\u94AE\u548C Esc \u952E\u5173\u95ED",
   "Excalidraw Disables the Esc key": "Excalidraw \u7981\u7528 Esc \u952E",
@@ -239,6 +250,8 @@ var zh_cn_default = {
   "Modal width": "\u7A97\u53E3\u5BBD\u5EA6",
   "Modal height": "\u7A97\u53E3\u9AD8\u5EA6",
   "Enter any valid CSS unit": "\u8F93\u5165\u4EFB\u4F55\u6709\u6548\u7684CSS\u5355\u4F4D",
+  "Enable modal window rounding": "\u542F\u7528\u6A21\u6001\u7A97\u53E3\u5706\u89D2",
+  "Toggle to enable or disable modal window rounding": "\u5207\u6362\u4EE5\u542F\u7528\u6216\u7981\u7528\u6A21\u6001\u7A97\u53E3\u5706\u89D2\u6548\u679C",
   "Enable animation and blur": "\u542F\u7528\u52A8\u753B\u548C\u6A21\u7CCA",
   "Toggle to enable or disable animation and blur effects": "\u5207\u6362\u4EE5\u542F\u7528\u6216\u7981\u7528\u52A8\u753B\u548C\u6A21\u7CCA\u6548\u679C",
   "Show view header of the file": "\u663E\u793A\u6587\u4EF6\u7684\u89C6\u56FE\u6807\u9898",
@@ -249,7 +262,12 @@ var zh_cn_default = {
   "Show file metadata in the modal window": "\u5728\u6A21\u6001\u7A97\u53E3\u4E2D\u663E\u793A\u6587\u4EF6\u5143\u6570\u636E",
   "Hide tab header": "\u9690\u85CF\u6807\u7B7E\u9875\u5934\u90E8",
   "Hides the tab header associated with the modal window": "\u9690\u85CF\u4E0E\u6A21\u6001\u7A97\u53E3\u5173\u8054\u7684\u6807\u7B7E\u9875\u5934\u90E8",
+  "Enable the right-click menu": "\u542F\u7528\u53F3\u952E\u83DC\u5355",
+  "Show or hide the menu and its menu options": "\u663E\u793A\u6216\u9690\u85CF\u83DC\u5355\u53CA\u5176\u83DC\u5355\u9009\u9879",
+  "Enable the delete Linked attachment menu item": "\u542F\u7528\u5220\u9664\u94FE\u63A5\u9644\u4EF6\u83DC\u5355\u9009\u9879",
   "Menu item": "\u83DC\u5355\u9879",
+  "Modal window open delay": "\u6A21\u6001\u7A97\u53E3\u6253\u5F00\u5EF6\u8FDF",
+  "Set the delay (in milliseconds) before opening modal window after creating new file.": "\u5728\u521B\u5EFA\u65B0\u6587\u4EF6\u540E\u6253\u5F00\u6A21\u6001\u7A97\u53E3\u7684\u5EF6\u8FDF\uFF08\u4EE5\u6BEB\u79D2\u4E3A\u5355\u4F4D\uFF09\u3002",
   "Toggle menu items to show or hide in the right-click context menu": "\u5207\u6362\u83DC\u5355\u9879\u4EE5\u5728\u53F3\u952E\u5355\u51FB\u4E0A\u4E0B\u6587\u83DC\u5355\u4E2D\u663E\u793A\u6216\u9690\u85CF",
   "Plugin is not enabled or installed": "\u63D2\u4EF6\u672A\u542F\u7528\u6216\u672A\u5B89\u88C5",
   "Details": "\u8BE6\u60C5",
@@ -266,7 +284,7 @@ var zh_cn_default = {
   "The command name already exists, please use a different name": "\u547D\u4EE4\u540D\u79F0\u5DF2\u5B58\u5728\uFF0C\u8BF7\u4F7F\u7528\u4E0D\u540C\u7684\u540D\u79F0",
   "Command added successfully": "\u547D\u4EE4\u6DFB\u52A0\u6210\u529F",
   "Please enter both command name and description": "\u8BF7\u8F93\u5165\u547D\u4EE4\u540D\u79F0\u548C\u63CF\u8FF0",
-  "Command deleted successfully. Please restart Obsidian for changes to take full effect.": "\u547D\u4EE4\u5220\u9664\u6210\u529F\uFF0C\u8BF7\u91CD\u65B0\u542F\u52A8 Obsidian \u4EE5\u4F7F\u66F4\u6539\u751F\u6548\u3002"
+  "Command deleted successfully. Please restart Obsidian for changes to take full effect.": "\u547D\u4EE4\u5220\u9664\u6210\u529F\u3002"
 };
 
 // src/lang/locale/zh-tw.ts
@@ -309,10 +327,15 @@ var _ModalWindow = class extends import_obsidian2.Modal {
     super(plugin.app);
     this.handledLeaves = [];
     this.observer = null;
-    this.handleBackgroundClick = (event) => {
-      if (event.target === event.currentTarget) {
-        this.close();
+    this.isTabStacked = (element) => {
+      const innerContainer = element.closest(".workspace-tab-header-container-inner");
+      const outerContainer = element.closest(".workspace-tab-container");
+      if (innerContainer) {
+        return false;
+      } else if (outerContainer) {
+        return true;
       }
+      return false;
     };
     this.refreshMarkdownViews = async () => {
       const view = this.plugin.app.workspace.getActiveViewOfType(import_obsidian2.MarkdownView);
@@ -408,7 +431,6 @@ var _ModalWindow = class extends import_obsidian2.Modal {
         modalBgElement.classList.remove("closable");
       } else {
         modalBgElement.classList.add("closable");
-        modalBgElement.addEventListener("click", this.handleBackgroundClick);
       }
     }
     const modal = this.containerEl.lastChild;
@@ -458,6 +480,28 @@ var _ModalWindow = class extends import_obsidian2.Modal {
   }
   onClose() {
     var _a, _b;
+    if (this.associatedLeaf) {
+      const tabHeaderEl = this.associatedLeaf.tabHeaderEl;
+      if (tabHeaderEl && this.isTabStacked(tabHeaderEl)) {
+        const tabContainer = tabHeaderEl.closest(".workspace-tab-container");
+        if (tabContainer) {
+          const allTabs = Array.from(tabContainer.querySelectorAll(".workspace-tab-header"));
+          const currentIndex = allTabs.findIndex((tab) => tab === tabHeaderEl);
+          const nextTab = allTabs[currentIndex + 1];
+          if (nextTab) {
+            setTimeout(() => {
+              const currentLeaf = this.app.workspace.getLeaf(false);
+              nextTab.click();
+              setTimeout(() => {
+                if (currentLeaf) {
+                  this.app.workspace.setActiveLeaf(currentLeaf, { focus: true });
+                }
+              }, 50);
+            }, 200);
+          }
+        }
+      }
+    }
     const modalOpener = this.containerEl.querySelector(".modal-opener");
     if (modalOpener && this.plugin.settings.enableRefreshOnClose) {
       const canvasView = (_a = this.app.workspace.getLeavesOfType("canvas").first()) == null ? void 0 : _a.view;
@@ -467,10 +511,6 @@ var _ModalWindow = class extends import_obsidian2.Modal {
           this.refreshMarkdownViews();
         }, this.plugin.settings.delayInMs);
       }
-    }
-    const modalBgElement = this.containerEl.querySelector(".modal-bg.modal-opener-bg");
-    if (modalBgElement) {
-      modalBgElement.removeEventListener("click", this.handleBackgroundClick);
     }
     if (this.observer) {
       this.observer.disconnect();
@@ -591,7 +631,9 @@ var _ModalWindow = class extends import_obsidian2.Modal {
       this.leaf = leaf;
       this.associatedLeaf = leaf;
     }
-    this.setContainerHeight(fileContainer, false);
+    setTimeout(() => {
+      this.setContainerHeight(fileContainer, false);
+    }, 100);
     const noteToolbarPlugin = this.getPlugin("note-toolbar");
     if (noteToolbarPlugin) {
       this.setupToolbarObserver();
@@ -615,7 +657,54 @@ var _ModalWindow = class extends import_obsidian2.Modal {
       }
     }
     const surfPlugin = this.getPlugin("surfing");
-    if (surfPlugin) {
+    const webviewPlugin = this.app.internalPlugins.getEnabledPluginById("webviewer");
+    if (webviewPlugin) {
+      this.app.commands.executeCommandById("webviewer:open");
+      const activeLeaf = document.querySelector(".workspace-leaf.mod-active");
+      const webview = activeLeaf ? activeLeaf.querySelector("webview") : null;
+      if (webview) {
+        let checkForSuggestion = function() {
+          if (webview && webview.getAttribute("src") != link) {
+            webview.setAttribute("src", link);
+          }
+          const suggestionContainer = document.querySelector(".suggestion-container");
+          if (suggestionContainer) {
+            const enterEvent = new KeyboardEvent("keydown", {
+              key: "Enter",
+              code: "Enter",
+              keyCode: 13,
+              which: 13,
+              bubbles: true
+            });
+            setTimeout(() => {
+              suggestionContainer.dispatchEvent(enterEvent);
+            }, 100);
+          } else {
+            if (attemptCount < 5) {
+              attemptCount++;
+              setTimeout(() => {
+                requestAnimationFrame(checkForSuggestion);
+              }, 1e3);
+            }
+          }
+        };
+        let attemptCount = 0;
+        requestAnimationFrame(checkForSuggestion);
+        setTimeout(() => {
+          const currentLeaf = this.app.workspace.getLeaf(false);
+          this.handledLeaves.push(currentLeaf);
+          if (this.plugin.settings.hideTabHeader) {
+            currentLeaf.tabHeaderEl.style.display = "none";
+          }
+          linkContainer.appendChild(currentLeaf.view.containerEl);
+          if (this.associatedLeaf) {
+            this.associatedLeaf.detach();
+            this.associatedLeaf = void 0;
+          }
+          this.associatedLeaf = currentLeaf;
+        }, 150);
+      }
+    } else if (surfPlugin) {
       window.open(link);
       setTimeout(() => {
         const currentLeaf = this.app.workspace.getLeaf(false);
@@ -629,12 +718,12 @@ var _ModalWindow = class extends import_obsidian2.Modal {
           this.associatedLeaf = void 0;
         }
         this.associatedLeaf = currentLeaf;
-        this.setContainerHeight(linkContainer, true);
       }, 150);
     } else {
       const frame = linkContainer.createEl("iframe", { cls: "modal-iframe" });
       frame.src = link;
     }
+    this.setContainerHeight(linkContainer, true);
     this.setupDoubleClickHandler();
   }
   getLinkFromTarget(target) {
@@ -707,7 +796,23 @@ var _ModalWindow = class extends import_obsidian2.Modal {
   }
   openExternalLink(link) {
     const surfPlugin = this.getPlugin("surfing");
-    if (surfPlugin) {
+    const webviewPlugin = this.app.internalPlugins.getEnabledPluginById("webviewer");
+    if (webviewPlugin) {
+      this.app.commands.executeCommandById("webviewer:open");
+      const activeLeaf = document.querySelector(".workspace-leaf.mod-active");
+      const webview = activeLeaf ? activeLeaf.querySelector("webview") : null;
+      if (webview) {
+        webview.setAttribute("src", link);
+        setTimeout(() => {
+          this.app.commands.executeCommandById("workspace:undo-close-pane");
+          const leaves = this.app.workspace.getLeavesOfType("webviewer");
+          if (leaves.length > 1) {
+            const previousLeaf = leaves[leaves.length - 2];
+            previousLeaf.detach();
+          }
+        }, 100);
+      }
+    } else if (surfPlugin) {
       window.open(link);
     } else {
       const newLeaf = this.app.workspace.getLeaf(true);
@@ -722,8 +827,21 @@ var _ModalWindow = class extends import_obsidian2.Modal {
     const baseHeight = parseInt(this.plugin.settings.modalHeight, 10);
     let heightAdjustment = 5;
     if (isLinkView) {
-      if (!this.plugin.settings.showLinkViewHeader) {
-        heightAdjustment = this.containerEl.querySelector(".wb-bookmark-bar") ? -1 : 2;
+      const surfingPlugin = this.getPlugin("surfing");
+      const webviewPlugin = this.app.internalPlugins.getEnabledPluginById("webviewer");
+      if (webviewPlugin) {
+        heightAdjustment = 6;
+        const adjustedModalHeight2 = `${baseHeight - heightAdjustment}vh`;
+        container.style.setProperty("--adjusted-modal-height", adjustedModalHeight2);
+        return;
+      } else if (surfingPlugin) {
+        if (!this.plugin.settings.showLinkViewHeader) {
+          heightAdjustment = -1;
+        } else {
+          heightAdjustment = 6;
+        }
+      } else {
+        heightAdjustment = 6;
       }
     } else {
       if (!this.plugin.settings.showFileViewHeader) {
@@ -732,17 +850,27 @@ var _ModalWindow = class extends import_obsidian2.Modal {
           const dataType = leafContent.getAttribute("data-type");
           if (dataType == "canvas" || dataType == "excalidraw" || dataType == "tldraw-view") {
             if (dataType === "canvas") {
-              heightAdjustment = 1;
+              heightAdjustment = 2;
             } else if (dataType === "excalidraw") {
               heightAdjustment = 2;
             } else if (dataType === "tldraw-view") {
               heightAdjustment = -1;
+              if (import_obsidian2.Platform.isMobile) {
+                heightAdjustment = 2;
+              }
             }
           } else {
             const editingPlugin = this.getPlugin("editing-toolbar");
             const toolbarPlugin = this.getPlugin("note-toolbar");
-            if (editingPlugin || toolbarPlugin) {
-              heightAdjustment = toolbarPlugin ? 5 : editingPlugin ? 2 : 1;
+            const topToolbar = this.containerEl.querySelector(".cg-note-toolbar-callout");
+            if (toolbarPlugin || editingPlugin) {
+              if (toolbarPlugin) {
+                heightAdjustment = topToolbar ? 5 : 1;
+              } else {
+                heightAdjustment = 2;
+              }
+            } else {
+              heightAdjustment = 1;
             }
           }
         }
@@ -750,13 +878,24 @@ var _ModalWindow = class extends import_obsidian2.Modal {
         const leafContent = this.containerEl.querySelector(".modal-opener-content .workspace-leaf-content");
         if (leafContent) {
           const dataType = leafContent.getAttribute("data-type");
-          if (dataType == "canvas" || dataType == "excalidraw") {
-            heightAdjustment = dataType === "canvas" ? 5 : dataType === "excalidraw" ? 5 : 2;
+          if (dataType == "canvas" || dataType == "excalidraw" || dataType == "tldraw-view") {
+            if (dataType === "canvas") {
+              heightAdjustment = 6;
+            } else if (dataType === "excalidraw") {
+              heightAdjustment = 6;
+            } else if (dataType === "tldraw-view") {
+              heightAdjustment = 3;
+              if (import_obsidian2.Platform.isMobile) {
+                heightAdjustment = 6;
+              }
+            }
           } else {
             const editingPlugin = this.getPlugin("editing-toolbar");
             const toolbarPlugin = this.getPlugin("note-toolbar");
             if (editingPlugin || toolbarPlugin) {
               heightAdjustment = toolbarPlugin ? 5 : editingPlugin ? 5 : 4;
+            } else {
+              heightAdjustment = 1;
             }
           }
         }
@@ -832,7 +971,8 @@ var _ModalWindow = class extends import_obsidian2.Modal {
     mainButton.setAttribute("title", t("More options"));
     const menuItems = buttonContainer.createEl("div", { cls: "floating-menu-items" });
     const surfPlugin = this.getPlugin("surfing");
-    if (surfPlugin) {
+    const webviewPlugin = this.app.internalPlugins.getEnabledPluginById("webviewer");
+    if (surfPlugin && !webviewPlugin) {
       this.createMenuItem(menuItems, "lucide-sun-moon", t("Switch dark mode"), () => this.toggleDarkMode());
     }
     this.createMenuItem(menuItems, "lucide-compass", t("Open in browser"), () => this.openInBrowser());
@@ -893,7 +1033,10 @@ var _ModalWindow = class extends import_obsidian2.Modal {
       const src = modalContainer.getAttribute("data-src") || "";
       if (this.isValidURL(src)) {
         const surfPlugin = this.getPlugin("surfing");
-        if (surfPlugin) {
+        const webviewPlugin = this.app.internalPlugins.getEnabledPluginById("webviewer");
+        if (webviewPlugin) {
+          window.require("electron").shell.openExternal(this.link);
+        } else if (surfPlugin) {
           this.app.commands.executeCommandById("surfing:open-current-url-with-external-browser");
         } else {
           window.open(src);
@@ -915,6 +1058,8 @@ var DEFAULT_SETTINGS = {
   modalHeight: "86vh",
   dragThreshold: 200,
   enableAnimation: true,
+  enableRounding: false,
+  clickWithoutAlt: false,
   onlyCloseButton: false,
   disableExcalidrawEsc: true,
   customCommands: [],
@@ -924,6 +1069,7 @@ var DEFAULT_SETTINGS = {
   hideTabHeader: true,
   preventsDuplicateTabs: false,
   delayInMs: 100,
+  modalOpenDelay: 0,
   enableRefreshOnClose: true,
   showFloatingButton: true,
   viewOfDisplayButton: "both",
@@ -938,7 +1084,9 @@ var DEFAULT_SETTINGS = {
     vscode: true,
     markmind: true,
     dataloom: true
-  }
+  },
+  showCommandsContainer: true,
+  showDeleteCommands: true
 };
 var ModalOpenerSettingTab = class extends import_obsidian3.PluginSettingTab {
   constructor(app, plugin) {
@@ -991,6 +1139,13 @@ var ModalOpenerSettingTab = class extends import_obsidian3.PluginSettingTab {
       }));
     }
     new import_obsidian3.Setting(containerEl).setName(t("Behavior")).setHeading();
+    if (this.plugin.settings.openMethod === "altclick" || this.plugin.settings.openMethod === "both") {
+      new import_obsidian3.Setting(containerEl).setName(t("Single-click trigger")).setDesc(t("If enabled, clicking links will open them in modal window without holding Alt.")).addToggle((toggle) => toggle.setValue(this.plugin.settings.clickWithoutAlt).onChange(async (value) => {
+        this.plugin.settings.clickWithoutAlt = value;
+        await this.plugin.saveSettings();
+        await this.reloadPlugin();
+      }));
+    }
     new import_obsidian3.Setting(containerEl).setName(t("Disable external click close")).setDesc(t("Use only the Close button and Esc to close.")).addToggle((toggle) => toggle.setValue(this.plugin.settings.onlyCloseButton).onChange(async (value) => {
       this.plugin.settings.onlyCloseButton = value;
       await this.plugin.saveSettings();
@@ -1022,13 +1177,18 @@ var ModalOpenerSettingTab = class extends import_obsidian3.PluginSettingTab {
       this.modalHeight = value;
       await this.plugin.saveSettings();
     }));
-    new import_obsidian3.Setting(containerEl).setName(t("Hide tab header")).setDesc(t("Hides the tab header associated with the modal window")).addToggle((toggle) => toggle.setValue(this.plugin.settings.hideTabHeader).onChange(async (value) => {
-      this.plugin.settings.hideTabHeader = value;
+    new import_obsidian3.Setting(containerEl).setName(t("Enable modal window rounding")).setDesc(t("Toggle to enable or disable modal window rounding")).addToggle((toggle) => toggle.setValue(this.plugin.settings.enableRounding).onChange(async (value) => {
+      this.plugin.settings.enableRounding = value;
       await this.plugin.saveSettings();
       this.plugin.applyStyles();
     }));
     new import_obsidian3.Setting(containerEl).setName(t("Enable animation and blur")).setDesc(t("Toggle to enable or disable animation and blur effects")).addToggle((toggle) => toggle.setValue(this.plugin.settings.enableAnimation).onChange(async (value) => {
       this.plugin.settings.enableAnimation = value;
+      await this.plugin.saveSettings();
+      this.plugin.applyStyles();
+    }));
+    new import_obsidian3.Setting(containerEl).setName(t("Hide tab header")).setDesc(t("Hides the tab header associated with the modal window")).addToggle((toggle) => toggle.setValue(this.plugin.settings.hideTabHeader).onChange(async (value) => {
+      this.plugin.settings.hideTabHeader = value;
       await this.plugin.saveSettings();
       this.plugin.applyStyles();
     }));
@@ -1042,79 +1202,96 @@ var ModalOpenerSettingTab = class extends import_obsidian3.PluginSettingTab {
       await this.plugin.saveSettings();
       this.plugin.applyStyles();
     }));
-    new import_obsidian3.Setting(containerEl).setName(t("Show view header of the link")).setDesc(t("Show the Surfing plugin's navigation bar and bookmarks bar")).addToggle((toggle) => toggle.setValue(this.plugin.settings.showLinkViewHeader).onChange(async (value) => {
-      this.plugin.settings.showLinkViewHeader = value;
-      await this.plugin.saveSettings();
-      this.plugin.applyStyles();
-    }));
-    new import_obsidian3.Setting(containerEl).setName(t("Menu item")).setHeading();
-    new import_obsidian3.Setting(containerEl).setDesc(t("Toggle menu items to show or hide in the right-click context menu"));
-    const commandsContainer = containerEl.createDiv("command-toggle-container");
-    new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Markdown").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.markdown).onChange(async (value) => {
-      this.plugin.settings.enabledCommands.markdown = value;
-      await this.plugin.saveSettings();
-    }));
-    const canvasPlugin = this.app.internalPlugins.getEnabledPluginById("canvas");
-    if (canvasPlugin) {
-      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Canvas").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.canvas).onChange(async (value) => {
-        this.plugin.settings.enabledCommands.canvas = value;
+    if (!import_obsidian3.Platform.isMobile) {
+      new import_obsidian3.Setting(containerEl).setName(t("Show view header of the link")).setDesc(t("Show the Surfing plugin's navigation bar and bookmarks bar")).addToggle((toggle) => toggle.setValue(this.plugin.settings.showLinkViewHeader).onChange(async (value) => {
+        this.plugin.settings.showLinkViewHeader = value;
         await this.plugin.saveSettings();
+        this.plugin.applyStyles();
       }));
     }
-    this.createPluginSetting(
-      commandsContainer,
-      "obsidian-excalidraw-plugin",
-      "Excalidraw",
-      "excalidraw"
-    );
-    this.createPluginSetting(
-      commandsContainer,
-      "obsidian-excalidraw-plugin-ymjr",
-      "Excalidraw-ymjr",
-      "excalidraw"
-    );
-    this.createPluginSetting(
-      commandsContainer,
-      "obsidian-diagrams-net",
-      "Diagrams",
-      "diagrams"
-    );
-    this.createPluginSetting(
-      commandsContainer,
-      "tldraw",
-      "Tldraw",
-      "tldraw"
-    );
-    this.createPluginSetting(
-      commandsContainer,
-      "excel",
-      "Excel",
-      "excel"
-    );
-    this.createPluginSetting(
-      commandsContainer,
-      "sheet-plus",
-      "Sheet Plus",
-      "sheetPlus"
-    );
-    this.createPluginSetting(
-      commandsContainer,
-      "vscode-editor",
-      "Code File",
-      "vscode"
-    );
-    this.createPluginSetting(
-      commandsContainer,
-      "obsidian-markmind",
-      "MarkMind",
-      "markmind"
-    );
-    this.createPluginSetting(
-      commandsContainer,
-      "notion-like-tables",
-      "Dataloom",
-      "dataloom"
-    );
+    new import_obsidian3.Setting(containerEl).setName(t("Menu item")).setHeading();
+    new import_obsidian3.Setting(containerEl).setName(t("Enable the delete Linked attachment menu item")).addToggle((toggle) => toggle.setValue(this.plugin.settings.showDeleteCommands).onChange(async (value) => {
+      this.plugin.settings.showDeleteCommands = value;
+      await this.plugin.saveSettings();
+    }));
+    new import_obsidian3.Setting(containerEl).setName(t("Enable the right-click menu")).setDesc(t("Show or hide the menu and its menu options")).addToggle((toggle) => toggle.setValue(this.plugin.settings.showCommandsContainer).onChange(async (value) => {
+      this.plugin.settings.showCommandsContainer = value;
+      await this.plugin.saveSettings();
+      this.display();
+    }));
+    if (this.plugin.settings.showCommandsContainer) {
+      new import_obsidian3.Setting(containerEl).setName(t("Modal window open delay")).setDesc(t("Set the delay (in milliseconds) before opening modal window after creating new file.")).addSlider((slider) => slider.setLimits(0, 500, 50).setValue(this.plugin.settings.modalOpenDelay).setDynamicTooltip().onChange(async (value) => {
+        this.plugin.settings.modalOpenDelay = value;
+        await this.plugin.saveSettings();
+      }));
+      new import_obsidian3.Setting(containerEl).setDesc(t("Toggle menu items to show or hide in the right-click context menu"));
+      const commandsContainer = containerEl.createDiv("command-toggle-container");
+      new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Markdown").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.markdown).onChange(async (value) => {
+        this.plugin.settings.enabledCommands.markdown = value;
+        await this.plugin.saveSettings();
+      }));
+      const canvasPlugin = this.app.internalPlugins.getEnabledPluginById("canvas");
+      if (canvasPlugin) {
+        new import_obsidian3.Setting(commandsContainer).setClass("command-toggle-item").setName("Canvas").addToggle((toggle) => toggle.setValue(this.plugin.settings.enabledCommands.canvas).onChange(async (value) => {
+          this.plugin.settings.enabledCommands.canvas = value;
+          await this.plugin.saveSettings();
+        }));
+      }
+      this.createPluginSetting(
+        commandsContainer,
+        "obsidian-excalidraw-plugin",
+        "Excalidraw",
+        "excalidraw"
+      );
+      this.createPluginSetting(
+        commandsContainer,
+        "obsidian-excalidraw-plugin-ymjr",
+        "Excalidraw-ymjr",
+        "excalidraw"
+      );
+      this.createPluginSetting(
+        commandsContainer,
+        "obsidian-diagrams-net",
+        "Diagrams",
+        "diagrams"
+      );
+      this.createPluginSetting(
+        commandsContainer,
+        "tldraw",
+        "Tldraw",
+        "tldraw"
+      );
+      this.createPluginSetting(
+        commandsContainer,
+        "excel",
+        "Excel",
+        "excel"
+      );
+      this.createPluginSetting(
+        commandsContainer,
+        "sheet-plus",
+        "Sheet Plus",
+        "sheetPlus"
+      );
+      this.createPluginSetting(
+        commandsContainer,
+        "vscode-editor",
+        "Code File",
+        "vscode"
+      );
+      this.createPluginSetting(
+        commandsContainer,
+        "obsidian-markmind",
+        "MarkMind",
+        "markmind"
+      );
+      this.createPluginSetting(
+        commandsContainer,
+        "notion-like-tables",
+        "Dataloom",
+        "dataloom"
+      );
+    }
     new import_obsidian3.Setting(containerEl).setName(t("Custom commands")).setHeading();
     new import_obsidian3.Setting(containerEl).setName(t("Add custom command")).setDesc(t("Add a new custom command")).addButton((button) => button.setButtonText(t("Add")).onClick(() => {
       this.addCustomCommand();
@@ -1198,7 +1375,12 @@ var ModalOpenerSettingTab = class extends import_obsidian3.PluginSettingTab {
       }));
     } else {
       setting.setName(displayName).setDesc(t("Plugin is not enabled or installed")).addButton((button) => button.setButtonText(t("Details")).onClick(async () => {
-        const repoUrl = pluginId === "obsidian-excalidraw-plugin-ymjr" ? "https://github.com/Bowen-0x00/obsidian-excalidraw-plugin-ymjr" : `https://obsidian.md/plugins?id=${pluginId}`;
+        let repoUrl = `https://obsidian.md/plugins?id=${pluginId}`;
+        if (pluginId == "obsidian-excalidraw-plugin-ymjr") {
+          repoUrl = "https://github.com/Bowen-0x00/obsidian-excalidraw-plugin-ymjr";
+        } else if (pluginId == "obsidian-diagrams-net") {
+          repoUrl = "https://github.com/likemuuxi/obsidian-diagrams-net";
+        }
         window.open(repoUrl, "_blank");
       }));
     }
@@ -1213,8 +1395,12 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
     this.draggedLink = null;
     this.dragStartTime = null;
     this.processors = /* @__PURE__ */ new Map();
+    this.activeLeafChangeTimeout = null;
+    // 用 NodeJS.Timeout 类型
+    this.isProcessing = false;
     this.isValidURL = (url) => ["http://", "https://", "www.", "192.", "127."].some((prefix) => url.startsWith(prefix));
   }
+  // 用于状态锁定
   async onload() {
     await this.loadSettings();
     this.registerOpenHandler();
@@ -1252,6 +1438,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   }
   applyStyles() {
     document.body.classList.toggle("modal-animation-enabled", this.settings.enableAnimation);
+    document.body.classList.toggle("modal-rounding-enabled", this.settings.enableRounding);
     document.body.classList.toggle("show-file-view-header", this.settings.showFileViewHeader);
     document.body.classList.toggle("show-link-view-header", this.settings.showLinkViewHeader);
     document.body.classList.toggle("show-metadata", this.settings.showMetadata);
@@ -1335,6 +1522,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
     }
     if (this.settings.openMethod === "altclick" || this.settings.openMethod === "both") {
       this.registerAltClickHandler();
+      this.registerTouchClickHandler();
     }
   }
   registerDragHandler() {
@@ -1372,6 +1560,13 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
     if (target.classList.contains("canvas-minimap") || target.classList.contains("file-embed-title") || target.classList.contains("markdown-embed-link") || target.closest("svg") || target.closest(".ptl-tldraw-image-container") || target.closest(".dataloom-padding") || target.closest(".dataloom-bottom-bar") || target.closest('[data-viewport-type="element"]') || target.closest(".dataloom-bottom-bar")) {
       target = target.closest(".internal-embed") || target;
     }
+    const linkElement = target.tagName === "A" ? target : target.closest("a");
+    if (linkElement && linkElement.hasAttribute("data-tooltip-position")) {
+      target = linkElement;
+    }
+    if (linkElement == null ? void 0 : linkElement.closest(".block-language-table-of-contents")) {
+      return;
+    }
     if (this.isPreviewModeLink(target)) {
       evt.preventDefault();
       evt.stopImmediatePropagation();
@@ -1386,7 +1581,9 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       }
     }
   }
-  handleEditModeLink(editor) {
+  handleEditModeLink(editor, evt) {
+    evt.preventDefault();
+    evt.stopImmediatePropagation();
     const cursor = editor.getCursor();
     const line = editor.getLine(cursor.line);
     const linkMatch = this.findLinkAtPosition(line, cursor.ch);
@@ -1444,6 +1641,9 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   //     });
   // }
   isInFencedCodeBlock(editor, pos) {
+    if (document.querySelector(".monaco-editor")) {
+      return false;
+    }
     const currentLine = pos.line;
     let fenceCount = 0;
     for (let i = 0; i <= currentLine; i++) {
@@ -1456,63 +1656,74 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   }
   registerAltClickHandler() {
     this.altClickHandler = (evt) => {
-      var _a, _b;
-      if (evt.altKey && evt.ctrlKey && evt.button === 0) {
+      const target = evt.target;
+      const activeView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
+      if (this.settings.clickWithoutAlt && (activeView == null ? void 0 : activeView.getMode()) === "source" && target.classList.contains("cm-link")) {
+        this.handleEditModeLink(activeView.editor, evt);
+      }
+      const shouldTrigger = this.settings.clickWithoutAlt ? evt.button === 0 : evt.altKey && evt.button === 0;
+      if (!shouldTrigger || evt.ctrlKey && evt.button === 0)
+        return;
+      if ((activeView == null ? void 0 : activeView.getMode()) === "source" && this.isInFencedCodeBlock(activeView.editor, activeView.editor.getCursor())) {
+        this.app.commands.executeCommandById("vscode-editor:edit-fence");
         return;
       }
-      if (evt.altKey && evt.button === 0) {
-        const activeView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
-        let targetElement = evt.target;
-        let altText = targetElement.getAttribute("alt");
-        console.log("Clicked element:", targetElement);
-        console.log("Classes:", targetElement.classList);
-        if (activeView) {
-          if (activeView.getMode() === "source") {
-            const editor = activeView.editor;
-            const cursor = editor.getCursor();
-            if (this.isInFencedCodeBlock(editor, cursor)) {
-              this.app.commands.executeCommandById("vscode-editor:edit-fence");
-              return;
-            }
-          }
-          if (this.isPreviewModeLink(targetElement)) {
-            this.handlePreviewModeLink(evt);
-          } else {
-            if (activeView.getMode() === "source") {
-              if (targetElement.closest("svg")) {
-                this.handlePreviewModeLink(evt);
-                return;
-              }
-              if (targetElement.closest("img")) {
-                this.handlePreviewModeLink(evt);
-                return;
-              }
-              if (targetElement.closest(".rich-foot")) {
-                this.handlePreviewModeLink(evt);
-                return;
-              }
-              if (altText && altText.endsWith(".svg")) {
-                return;
-              }
-              this.handleEditModeLink(activeView.editor);
-              evt.preventDefault();
-              evt.stopImmediatePropagation();
-            } else {
-              this.handlePreviewModeLink(evt);
-            }
-          }
-        } else {
-          const excalidrawView = (_a = this.app.workspace.getLeavesOfType("excalidraw").first()) == null ? void 0 : _a.view;
-          const link = (_b = targetElement.textContent) == null ? void 0 : _b.trim().replace(/\[\[(.*?)\]\]/, "$1");
-          if (excalidrawView && link) {
-            this.openInFloatPreview(link);
-          } else if (this.isPreviewModeLink(targetElement)) {
-            this.handlePreviewModeLink(evt);
-          }
-        }
-      }
+      if (this.shouldSkipElement(target))
+        return;
+      if (this.settings.clickWithoutAlt && !this.isValidInternalLink(target))
+        return;
+      this.handleLinkClick(evt, target, activeView);
     };
     document.addEventListener("click", this.altClickHandler, { capture: true });
+  }
+  registerTouchClickHandler() {
+    if (import_obsidian4.Platform.isMobile) {
+      document.addEventListener("touchstart", (touchEvt) => {
+        const target = touchEvt.target;
+        const activeView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
+        if (this.settings.clickWithoutAlt && (activeView == null ? void 0 : activeView.getMode()) === "source" && target.classList.contains("cm-underline")) {
+          touchEvt.preventDefault();
+          touchEvt.stopImmediatePropagation();
+        }
+      }, { capture: true });
+    }
+  }
+  isValidInternalLink(target) {
+    const linkElement = target.tagName === "A" ? target : target.closest("a");
+    if (linkElement == null ? void 0 : linkElement.closest(".block-language-table-of-contents")) {
+      return false;
+    }
+    return !!(linkElement && (linkElement.classList.contains("internal-link") || linkElement.classList.contains("external-link") || linkElement.hasAttribute("data-tooltip-position")) || target.matches(".cm-underline, .cm-hmd-internal-link, .internal-embed, .file-embed-title, .embed-title, .markdown-embed-link, .markdown-embed-content, .canvas-minimap, .excalidraw-hyperlinkContainer-link") || Array.from(target.classList).some((cls) => cls.startsWith("excalidraw-svg")) || target.tagName === "SVG" && target.classList.contains("canvas-minimap") || (target.tagName === "IMG" && target.closest(".ptl-tldraw-image") || target.closest(".ptl-tldraw-image")) || target.closest("svg") && (target.closest(".mm-mindmap-container") || target.closest(".cm-mindmap-container")));
+  }
+  shouldSkipElement(target) {
+    const altText = target.getAttribute("alt");
+    return !!(altText == null ? void 0 : altText.endsWith(".svg"));
+  }
+  handleLinkClick(evt, target, activeView) {
+    var _a, _b;
+    if (activeView) {
+      if (this.isPreviewModeLink(target)) {
+        this.handlePreviewModeLink(evt);
+      } else if (activeView.getMode() === "source") {
+        if (target.closest("svg, img, .rich-foot")) {
+          this.handlePreviewModeLink(evt);
+        } else {
+          this.handleEditModeLink(activeView.editor, evt);
+          evt.preventDefault();
+          evt.stopImmediatePropagation();
+        }
+      } else {
+        this.handlePreviewModeLink(evt);
+      }
+    } else {
+      const excalidrawView = (_a = this.app.workspace.getLeavesOfType("excalidraw").first()) == null ? void 0 : _a.view;
+      const link = (_b = target.textContent) == null ? void 0 : _b.trim().replace(/\[\[(.*?)\]\]/, "$1");
+      if (excalidrawView && link) {
+        this.openInFloatPreview(link);
+      } else if (this.isPreviewModeLink(target)) {
+        this.handlePreviewModeLink(evt);
+      }
+    }
   }
   registerContextMenuHandler() {
     this.registerEvent(
@@ -1544,8 +1755,12 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         if (view.file && view.file.parent) {
           parentPath = view.file.parent.path;
         }
-        this.addCreateFileMenuItem(menu, parentPath);
-        this.addDeleteAttachmentMenuItem(menu, editor);
+        if (this.settings.showDeleteCommands) {
+          this.addDeleteAttachmentMenuItem(menu, editor);
+        }
+        if (this.settings.showCommandsContainer) {
+          this.addCreateFileMenuItem(menu, parentPath);
+        }
       })
     );
   }
@@ -1593,7 +1808,6 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   addFolderFloatMenuItem(menu, link) {
     this.addFloatMenuItem(menu, link || "", t("Open in modal window"), () => {
       if (link) {
-        console.log("folder");
         this.folderNoteOpenInFloatPreview(link);
       }
     });
@@ -1601,7 +1815,6 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   addLinkFloatMenuItem(menu, link) {
     this.addFloatMenuItem(menu, link || "", t("Open in modal window"), () => {
       if (link) {
-        console.log("link");
         this.openInFloatPreview(link);
       }
     });
@@ -1679,7 +1892,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         group1Count++;
         subMenu.addItem(
           (subItem) => subItem.setTitle("Markdown").setIcon("file").onClick(() => {
-            this.createFileAndEditInModal(parentPath, "md");
+            this.createFileAndEditInModal(parentPath, "md", true);
           })
         );
       }
@@ -1688,7 +1901,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         group1Count++;
         subMenu.addItem(
           (subItem) => subItem.setTitle("Canvas").setIcon("layout-dashboard").onClick(() => {
-            this.createFileAndEditInModal(parentPath, "canvas");
+            this.createFileAndEditInModal(parentPath, "canvas", false);
           })
         );
       }
@@ -1701,31 +1914,15 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         group2Count++;
         subMenu.addItem(
           (subItem) => subItem.setTitle("Excalidraw").setIcon("swords").onClick(async () => {
-            const initialLeafCount = this.app.workspace.getLeavesOfType("excalidraw").length;
             let commandId;
             if (excalidrawPlugin) {
-              commandId = "obsidian-excalidraw-plugin:excalidraw-autocreate-and-embed-new-tab";
+              commandId = "obsidian-excalidraw-plugin:excalidraw-autocreate-newtab";
             } else if (excalidrawymjrPlugin) {
-              commandId = "obsidian-excalidraw-plugin-ymjr:excalidraw-autocreate-and-embed-new-tab";
+              commandId = "obsidian-excalidraw-plugin-ymjr:excalidraw-autocreate-newtab";
             }
-            this.app.commands.executeCommandById(commandId);
-            const waitForNewLeaf = () => {
-              return new Promise((resolve) => {
-                const checkLeaf = () => {
-                  const currentLeafCount = this.app.workspace.getLeavesOfType("excalidraw").length;
-                  if (currentLeafCount > initialLeafCount) {
-                    resolve();
-                  } else {
-                    setTimeout(checkLeaf, 50);
-                  }
-                };
-                checkLeaf();
-              });
-            };
-            await waitForNewLeaf();
-            setTimeout(() => {
-              this.openCurrentContentInModal();
-            }, 150);
+            if (commandId) {
+              await this.createFileAndInsertLink(commandId, true, false);
+            }
           })
         );
       }
@@ -1743,10 +1940,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         group2Count++;
         subMenu.addItem(
           (subItem) => subItem.setTitle("Tldraw").setIcon("shapes").onClick(async () => {
-            await this.app.commands.executeCommandById("tldraw:embed-new-tldraw-file-.md-new-tab");
-            setTimeout(() => {
-              this.openCurrentContentInModal();
-            }, 500);
+            await this.createFileAndInsertLink("tldraw:new-tldraw-file-.md-new-tab", true, false);
           })
         );
       }
@@ -1757,7 +1951,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       if (excelPlugin && this.settings.enabledCommands.excel) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("Excel").setIcon("table").onClick(async () => {
-            await this.createFileAndInsertLink("excel:excel-autocreate", true);
+            await this.createFileAndInsertLink("excel:excel-autocreate", true, false);
           })
         );
       }
@@ -1765,7 +1959,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       if (SheetPlugin && this.settings.enabledCommands.sheetPlus) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("Sheet Plus").setIcon("grid").onClick(async () => {
-            await this.createFileAndInsertLink("sheet-plus:spreadsheet-autocreation", true);
+            await this.createFileAndInsertLink("sheet-plus:spreadsheet-autocreation", true, false);
           })
         );
       }
@@ -1781,7 +1975,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       if (markmindPlugin && this.settings.enabledCommands.markmind) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("MarkMind").setIcon("brain-circuit").onClick(async () => {
-            await this.createFileAndInsertLink("obsidian-markmind:Create New MindMap", true);
+            await this.createFileAndInsertLink("obsidian-markmind:Create New MindMap", true, false);
           })
         );
       }
@@ -1789,7 +1983,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       if (dataloomPlugin && this.settings.enabledCommands.dataloom) {
         subMenu.addItem(
           (subItem) => subItem.setTitle("Dataloom").setIcon("container").onClick(async () => {
-            await this.createFileAndInsertLink("notion-like-tables:create", true);
+            await this.createFileAndInsertLink("notion-like-tables:create", true, false);
           })
         );
       }
@@ -1841,7 +2035,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       }
     }
   }
-  async createFileAndInsertLink(commandId, isEmbed) {
+  async createFileAndInsertLink(commandId, isEmbed, isAlias) {
     const previousView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
     let previousEditor = null;
     let previousCursor = null;
@@ -1856,7 +2050,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
     if (activeFile && previousEditor && previousCursor) {
       const fileName = activeFile.name;
       const filePath = activeFile.path;
-      const linkText = isEmbed ? `![[${filePath}|${fileName}]]` : `[[${filePath}|${fileName}]]`;
+      const linkText = `${isEmbed ? "!" : ""}[[${filePath}${isAlias ? `|${fileName}` : ""}]]`;
       if (previousView) {
         this.app.workspace.setActiveLeaf(previousView.leaf, { focus: true });
         previousEditor == null ? void 0 : previousEditor.replaceRange(linkText, previousCursor);
@@ -1868,7 +2062,9 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       previousEditor.setCursor(newCursor);
       this.app.workspace.setActiveLeaf(newLeaf, { focus: true });
     }
-    this.openCurrentContentInModal();
+    setTimeout(() => {
+      this.openCurrentContentInModal();
+    }, this.settings.modalOpenDelay);
   }
   async waitForActiveFile(timeout = 5e3) {
     const startTime = Date.now();
@@ -1883,58 +2079,39 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   }
   async createCodeFileAndOpenInModal() {
     return new Promise((resolve) => {
-      let fileName = "";
-      let fileExtension = "";
       const observer = new MutationObserver((mutations, obs) => {
         for (const mutation of mutations) {
           for (const node of Array.from(mutation.addedNodes)) {
-            if (node instanceof HTMLElement) {
-              if (node.classList.contains("modal-container")) {
-                const confirmButton = node.querySelector(".mod-cta");
-                const inputElement = node.querySelector("input");
-                let selectElement = node.querySelector(".modal_select");
-                const codePlugin = this.getPlugin("code-files");
-                if (codePlugin) {
-                  selectElement = node.querySelector(".dropdown");
-                }
-                if (confirmButton && inputElement && selectElement) {
-                  inputElement.addEventListener("input", () => {
-                    fileName = inputElement.value || "";
-                  });
-                  inputElement.addEventListener("keyup", () => {
-                    fileName = inputElement.value || "";
-                  });
-                  selectElement.addEventListener("change", () => {
-                    fileExtension = selectElement.value;
-                  });
-                  confirmButton.addEventListener("click", async () => {
-                    fileName = inputElement.value || fileName;
-                    fileExtension = selectElement.value || fileExtension;
-                    const fullFileName = `${fileName}.${fileExtension}|${fileName}`;
-                    if (fileName != "") {
-                      this.insertCodeFileLink(fullFileName, "");
-                      setTimeout(() => {
-                        this.openCurrentContentInModal();
-                      }, 150);
-                    }
-                    obs.disconnect();
-                    resolve();
-                  });
-                }
-                return;
+            if (node instanceof HTMLElement && node.classList.contains("modal-container")) {
+              const confirmButton = node.querySelector(".mod-cta");
+              const inputElement = node.querySelector("input");
+              let selectElement = node.querySelector(".modal_select");
+              const codePlugin = this.getPlugin("code-files");
+              if (codePlugin) {
+                selectElement = node.querySelector(".dropdown");
               }
+              if (confirmButton && inputElement && selectElement) {
+                confirmButton.addEventListener("click", () => {
+                  const fileName = inputElement.value;
+                  const fileExtension = selectElement.value;
+                  if (fileName) {
+                    const fullFileName = `${fileName}.${fileExtension}`;
+                    this.insertCodeFileLink(fullFileName, "");
+                    setTimeout(() => {
+                      this.openCurrentContentInModal();
+                    }, 200);
+                  }
+                  obs.disconnect();
+                  resolve();
+                });
+              }
+              return;
             }
           }
         }
       });
       observer.observe(document.body, { childList: true, subtree: true });
-      setTimeout(() => {
-        this.app.commands.executeCommandById("vscode-editor:create");
-      }, 0);
-      setTimeout(() => {
-        observer.disconnect();
-        resolve();
-      }, 1e4);
+      this.app.commands.executeCommandById("vscode-editor:create");
     });
   }
   async getNewFileName(fileType) {
@@ -1998,18 +2175,23 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
   insertCodeFileLink(filePath, content) {
     const activeView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
     if (activeView) {
-      const editor = activeView.editor;
-      const cursor = editor.getCursor();
-      const linkText = `![[${filePath}]]`;
-      editor.replaceRange(linkText, cursor);
+      setTimeout(() => {
+        const file = this.app.metadataCache.getFirstLinkpathDest(`${filePath}`, "");
+        if (file && file instanceof import_obsidian4.TFile) {
+          const editor = activeView.editor;
+          const cursor = editor.getCursor();
+          const linkText = `![[${file.path}]]`;
+          editor.replaceRange(linkText, cursor);
+        }
+      }, 200);
     }
   }
-  insertLinkToActiveFile(filePath, displayName, isEmbed) {
+  insertLinkToActiveFile(filePath, displayName, isEmbed, isAlias) {
     const activeView = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
     if (activeView) {
       const editor = activeView.editor;
       const selection = editor.getSelection();
-      const linkText = isEmbed ? `![[${filePath}|${displayName}]]` : `[[${filePath}|${displayName}]]`;
+      const linkText = `${isEmbed ? "!" : ""}[[${filePath}${isAlias ? `|${displayName}` : ""}]]`;
       if (selection) {
         const from = editor.getCursor("from");
         const to = editor.getCursor("to");
@@ -2020,7 +2202,7 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       }
     }
   }
-  async createFileAndEditInModal(parentPath, fileType) {
+  async createFileAndEditInModal(parentPath, fileType, isAlias) {
     const result = await this.getNewFileName(fileType);
     if (!result)
       return;
@@ -2045,32 +2227,45 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
         this.settings.modalHeight
       ).open();
       const displayName = newFile.basename;
-      this.insertLinkToActiveFile(newFilePath, displayName, isEmbed);
+      isAlias ? this.insertLinkToActiveFile(newFilePath, displayName, isEmbed, true) : this.insertLinkToActiveFile(newFilePath, displayName, isEmbed, false);
     } catch (error) {
       new import_obsidian4.Notice(t("Failed to create file: ") + error.message);
     }
   }
   // no dupe leaf
   async onActiveLeafChange(activeLeaf) {
-    if (!this.settings.preventsDuplicateTabs || activeLeaf.view.containerEl.closest(".modal-opener")) {
-      return;
+    if (this.activeLeafChangeTimeout) {
+      clearTimeout(this.activeLeafChangeTimeout);
     }
-    const { id } = activeLeaf;
-    if (this.processors.has(id)) {
-      return;
-    }
-    const processor = this.processActiveLeaf(activeLeaf);
-    this.processors.set(id, processor);
-    try {
-      await processor;
-    } finally {
-      this.processors.delete(id);
-    }
+    this.activeLeafChangeTimeout = setTimeout(async () => {
+      if (this.isProcessing) {
+        return;
+      }
+      this.isProcessing = true;
+      try {
+        if (!this.settings.preventsDuplicateTabs) {
+          return;
+        }
+        if (activeLeaf.view.containerEl.closest(".modal-opener")) {
+          return;
+        }
+        const { id } = activeLeaf;
+        if (this.processors.has(id)) {
+          return;
+        }
+        const processor = this.processActiveLeaf(activeLeaf);
+        this.processors.set(id, processor);
+        try {
+          await processor;
+        } finally {
+          this.processors.delete(id);
+        }
+      } finally {
+        this.isProcessing = false;
+      }
+    }, 100);
   }
   async processActiveLeaf(activeLeaf) {
-    if (!this.settings.preventsDuplicateTabs) {
-      return;
-    }
     await new Promise((resolve) => setTimeout(resolve, this.settings.delayInMs));
     const filePath = activeLeaf.view.getState().file;
     if (!filePath)

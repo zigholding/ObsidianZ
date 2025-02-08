@@ -1,5 +1,5 @@
 ---
-PrevNote: "[[重启插件]]"
+PrevNote: "[[NoteChain 插入Textarea]]"
 NextNote: "[[YAML - 将潜在链接变为现实]]"
 params:
   folders:
