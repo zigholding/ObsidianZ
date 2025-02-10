@@ -5,12 +5,6 @@ tags:
   - Index
 PrevNote: "[[Files - 历史漫步]]"
 NextNote: "[[Files - 最近访问]]"
-words:
-  2024-06-16: 57
-  2024-09-06: 63
-  2024-10-16: 70
-notechain:
-  level: "\t"
 ---
 
 ```dataviewjs

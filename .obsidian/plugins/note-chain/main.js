@@ -5768,6 +5768,7 @@ var WordCount = class {
     this.plugin = plugin;
     this.app = app;
     this.nretry = 100;
+    this.events = new Array();
     this.register();
   }
   filter(tfile) {
@@ -5858,17 +5859,17 @@ var WordCount = class {
     if (activeView && activeView.file === tfile) {
       let editor = activeView.editor;
       if (editor) {
-        if (editorState.scrollInfo) {
-          editor.scrollTo(editorState.scrollInfo.left, editorState.scrollInfo.top);
-        }
         if (editorState.selection && editorState.sanchor && editorState.shead) {
           try {
-            editor.setSelection(editorState.sanchor, editorState.shead);
+            await editor.setSelection(editorState.sanchor, editorState.shead);
           } catch (error) {
             new import_obsidian6.Notice(`Error setting selection:${error}`, 3e3);
           }
         } else if (editorState.cursor) {
-          editor.setCursor(editorState.cursor);
+          await editor.setCursor(editorState.cursor);
+        }
+        if (editorState.scrollInfo) {
+          await editor.scrollTo(editorState.scrollInfo.left, editorState.scrollInfo.top);
         }
       }
     }
@@ -5942,55 +5943,67 @@ var WordCount = class {
     if (this.plugin.settings.wordcout) {
       this.regeister_editor_change();
       this.regeister_active_leaf_change();
+    } else {
+      this.unregister();
     }
   }
   regeister_editor_change() {
-    this.plugin.registerEvent(
-      this.app.workspace.on("editor-change", async (editor, info) => {
-        var _a;
-        if (((_a = info.file) == null ? void 0 : _a.extension) != "md") {
-          return;
-        }
-        if (this.timerId !== null) {
-          clearTimeout(this.timerId);
-        }
-        if (info.file) {
-          this.timerId = setTimeout(() => {
-            this.update_word_count(info.file);
-          }, 3e3);
-        }
-      })
-    );
+    let e = this.app.workspace.on("editor-change", async (editor, info) => {
+      var _a;
+      if (((_a = info.file) == null ? void 0 : _a.extension) != "md") {
+        return;
+      }
+      if (this.timerId !== null) {
+        clearTimeout(this.timerId);
+      }
+      if (info.file) {
+        this.timerId = setTimeout(() => {
+          this.update_word_count(info.file);
+        }, 3e3);
+      }
+    });
+    this.plugin.registerEvent(e);
+    this.events.push(e);
   }
   regeister_active_leaf_change() {
-    this.plugin.registerEvent(
-      this.app.workspace.on("active-leaf-change", async (leaf) => {
-        var _a, _b;
-        let tfile = (leaf == null ? void 0 : leaf.view).file;
-        if (!(leaf == null ? void 0 : leaf.view)) {
-          return;
-        }
-        if (!(((_b = (_a = leaf.view) == null ? void 0 : _a.file) == null ? void 0 : _b.extension) == "md")) {
-          return;
-        }
-        await this.update_word_count(tfile);
-        if (this.curr_active_file == null) {
-          this.curr_active_file = tfile;
-          return;
-        }
-        if (this.curr_active_file != tfile) {
-          await this.update_word_count(this.curr_active_file);
-          this.curr_active_file = tfile;
-        }
-      })
-    );
+    let e = this.app.workspace.on("active-leaf-change", async (leaf) => {
+      var _a, _b;
+      let tfile = (leaf == null ? void 0 : leaf.view).file;
+      if (!(leaf == null ? void 0 : leaf.view)) {
+        return;
+      }
+      if (!(((_b = (_a = leaf.view) == null ? void 0 : _a.file) == null ? void 0 : _b.extension) == "md")) {
+        return;
+      }
+      await this.update_word_count(tfile);
+      if (this.curr_active_file == null) {
+        this.curr_active_file = tfile;
+        return;
+      }
+      if (this.curr_active_file != tfile) {
+        await this.update_word_count(this.curr_active_file);
+        this.curr_active_file = tfile;
+      }
+    });
+    this.plugin.registerEvent(e);
+    this.events.push(e);
   }
-  get_words_of_tfiles() {
-    return this.plugin.chain.get_all_tfiles().map(
+  unregister() {
+    for (let e of this.events) {
+      e.e.offref(e);
+    }
+    this.events = this.events.slice(-1, 0);
+  }
+  get_words_of_tfiles(files = null) {
+    if (!files) {
+      files = this.plugin.chain.get_all_tfiles();
+    }
+    return files.map(
       (x) => this.plugin.editor.get_frontmatter(x, "words")
     ).filter((x) => x);
   }
-  sum_words_of_tifles(files, begt, endt) {
+  sum_words_of_tifles(files = null, begt = 10, endt = 0) {
+    files = this.get_words_of_tfiles(files);
     if (typeof begt == "number") {
       begt = (0, import_obsidian6.moment)().add(-begt, "days").format("YYYY-MM-DD");
     }
@@ -6710,6 +6723,7 @@ var NCSettingTab = class extends import_obsidian8.PluginSettingTab {
       (text) => text.setValue(this.plugin.settings.wordcout).onChange(async (value) => {
         this.plugin.settings.wordcout = value;
         await this.plugin.saveSettings();
+        this.plugin.wordcout.register();
       })
     );
     new import_obsidian8.Setting(containerEl).setName(this.plugin.strings.setting_wordcout_xfolder).addTextArea(

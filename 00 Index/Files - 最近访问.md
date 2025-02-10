@@ -1,6 +1,6 @@
 ---
 PrevNote: "[[Files - 目录]]"
-NextNote: "[[Files - 出链]]"
+NextNote: "[[Files - 最近修改]]"
 words:
   2024-12-14: 51
 ---

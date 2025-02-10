@@ -9,8 +9,6 @@ NextNote: "[[Files - 同名笔记]]"
 words:
   2024-06-16: 43
   2024-10-16: 52
-notechain:
-  level: "\t"
 ---
 
 ```dataview
