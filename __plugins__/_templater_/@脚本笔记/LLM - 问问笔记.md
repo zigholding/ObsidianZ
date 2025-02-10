@@ -2,7 +2,7 @@
 PrevNote: "[[LLM - 笔记总结]]"
 words:
   2025-01-16: 97
-NextNote: "[[从 gitee 下载示例库文件]]"
+NextNote: "[[下载示例库文件]]"
 ---
 
 
