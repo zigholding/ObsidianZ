@@ -1,0 +1,10 @@
+{
+	"id": "html-tabs",
+	"name": "HTML Tabs",
+	"version": "1.1.0",
+	"minAppVersion": "1.3.3",
+	"description": "Create and render Tabs and tab panels in your notes.",
+	"author": "Patrick Tournet",
+	"authorUrl": "https://github.com/ptournet",
+	"isDesktopOnly": false
+}

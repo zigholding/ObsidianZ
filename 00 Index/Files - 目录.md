@@ -7,6 +7,8 @@ PrevNote: "[[Files - 历史漫步]]"
 NextNote: "[[Files - 最近访问]]"
 ---
 
+
+ 
 ```dataviewjs
 // Files - 目录.md, by Zigholding
 let nc = app.plugins.getPlugin('note-chain')
