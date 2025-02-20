@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00 Index/Files - 目录.md",
+                "file": "__plugins__/_templater_/@脚本笔记/下载示例库文件.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Files - 目录"
+              "title": "下载示例库文件"
             }
           }
         ]
@@ -183,6 +183,7 @@
   },
   "active": "b0e3b2530bb16278",
   "lastOpenFiles": [
+    "00 Index/Files - 目录.md",
     "ObsidianZ.md",
     "__plugins__/_templater_/@脚本笔记/下载示例库文件.md",
     "__plugins__/_templater_/@模板/临时输入.md",
@@ -205,7 +206,6 @@
     "00 Index/Files - 历史漫步.md",
     "00 Index/Files - 笔记链.md",
     "00 Index/Files - 笔记网.md",
-    "00 Index/Files - 目录.md",
     "__plugins__/_templater_/@脚本笔记/test.md",
     "00 Index/Files - 最近修改.md",
     "00 Index/Files - 最近访问.md",
