@@ -25,14 +25,10 @@
             "id": "62147ff67b208f95",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "s.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "s"
+              "title": "New tab"
             }
           }
         ],
@@ -55,7 +51,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"

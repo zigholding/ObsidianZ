@@ -1,4 +1,3 @@
-
 /* .modal-tab-header-hidden .workspace-tab-header.is-active {
     display: none !important;
 } */
@@ -21,7 +20,7 @@
     pointer-events: auto;
 }
 
-.modal-iframe {
+.modal-webview, .modal-iframe {
     width: 100%;
     height: 98%;
     border: 0;
@@ -63,34 +62,39 @@
     padding: 0;
 }
 
+.modal-opener .modal-opener-content {
+    width: 100%;
+    height: 100%;
+}
+
 .modal-opener-content .workspace-leaf-content[data-type="code-editor"] .view-content,
 .modal-opener-content .workspace-leaf-content[data-type="vscode-editor"] .view-content {
     padding: 0;
 }
 
-.modal.modal-opener:has(.workspace-leaf-content[data-type="markdown"]) {
+.modal-opener:has(.workspace-leaf-content[data-type="markdown"]) {
     padding-left: 8px;
     padding-right: 8px;
 }
+
 .modal-opener:has(.workspace-leaf-content[data-type="markdown"]) .modal-close-button {
     top: 5px;
     right: 5px;
 }
 
-
-body:not(.show-file-view-header) .modal-opener-content .workspace-leaf-content:not([data-type="surfing-view"]) .view-header {
-    display: none;
-}
-
-body:not(.show-link-view-header) .modal-opener-content .workspace-leaf-content[data-type="surfing-view"] .view-header,
-/* body:not(.show-link-view-header) .modal-opener-content .workspace-leaf-content[data-type="webviewer"] .view-header, */
-body:not(.show-link-view-header) .modal-opener-content .wb-bookmark-bar { 
-    display: none;
+body:not(.show-file-view-header) .modal-opener-content .workspace-leaf-content:not([data-type="webviewer"]) .view-header,
+body:not(.show-link-view-header) .modal-opener-content .workspace-leaf-content[data-type="webviewer"] .view-header,
+body:not(.show-link-view-header) .modal-opener-content .wb-bookmark-bar  {
+    display: none !important;
 }
 
 body:not(.show-metadata) .modal-opener-content .metadata-container {
     display: none !important;
-} 
+}
+
+body:not(.hider-scroll) .modal-opener-content ::-webkit-scrollbar {
+	display:none !important;
+}
 
 .modal-rounding-enabled .modal:has(.modal-opener-content),
 .modal-rounding-enabled .modal:has(.monaco-editor),
@@ -161,11 +165,6 @@ body:not(.show-metadata) .modal-opener-content .metadata-container {
 
 /* float button */
 
-.modal-opener .modal-opener-content {
-    width: 100%;
-    height: 100%;
-}
-
 .modal-opener .floating-button-container,
 .modal-opener .floating-menu-container {
     position: absolute;
@@ -214,16 +213,138 @@ body:not(.show-metadata) .modal-opener-content .metadata-container {
 
 /* command-toggle */
 
-.command-toggle-container {
+.modal-opener-settings .command-toggle-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    padding: 16px;
+    background: var(--background-secondary);
+    border-radius: 8px;
+    margin: 12px 0;
+}
+
+.modal-opener-settings .command-toggle-item {
+    background: var(--background-primary);
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--background-modifier-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-opener-settings .command-toggle-item .setting-item-name {
+    font-size: 0.95em;
+    margin: 0;
+}
+
+/* 自定义命令区域样式 */
+.modal-opener-settings .custom-commands-container {
+    background: var(--background-secondary);
+    padding: 12px;
+    border-radius: 8px;
     margin-top: 12px;
 }
 
-.command-toggle-item {
+.modal-opener-settings .custom-commands-container .setting-item {
+    background: var(--background-primary);
+    margin-bottom: 8px;
+    padding: 12px;
+}
+
+.modal-opener-settings .custom-command-input {
+    width: 180px !important;
+}
+
+/* 按钮样式优化 */
+.modal-opener-settings button:not(.dropdown) {
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+
+/* 设置项布局优化 */
+.modal-opener-settings .setting-item {
+    padding: 0.75em 1em;
+    border: none;
+    border-radius: 8px;
+}
+
+/* 设置项内部布局 */
+.modal-opener-settings .setting-item-info {
+    flex: 1 1 auto;
+    padding-right: 20px;
+}
+
+.modal-opener-settings .setting-item-name {
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.modal-opener-settings .setting-item-description {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* 设置项控件布局 */
+.modal-opener-settings .setting-item-control {
+    flex: 0 0 auto;
+    padding: 0;
     display: flex;
     align-items: center;
-    padding: 8px;
-    border-top: 0px solid var(--background-modifier-border);  /* 添加边框 */
-    border-right: 1px solid var(--background-modifier-border);
+    gap: 8px;
+}
+
+/* 分组标题样式 */
+.modal-opener-settings .setting-item-heading .setting-item-name {
+    font-size: 1.5em;  /* 调整为二级标题的字号 */
+    font-weight: bold; /* 设置为粗体 */
+}
+
+/* 强制覆盖内联样式 */
+webview[style*="background-color: white"] {
+    background-color: var(--ctp-crust) !important;
+}
+
+.vertical-tab-content-container:has(.modal-opener-settings) ::-webkit-scrollbar {
+	display:none !important;
+}
+
+.modal-opener-settings .modal-opener-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--background-modifier-border);
+    padding-bottom: 6px;
+    width: 100%;
+}
+
+.modal-opener-settings .modal-opener-tabs button {
+    flex: 1;
+    text-align: center;
+    height: 40px;
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: inset 0 0 0 var(--background-modifier-border); /* 初始状态无阴影 */
+    background-color: var(--background-primary);
+}
+
+.modal-opener-settings .modal-opener-tabs button:last-child {
+    margin-right: 0; /* 移除最后一个tab的右边距 */
+}
+
+.modal-opener-settings .modal-opener-tabs button:hover {
+    color: var(--text-normal);
+    background-color: var(--background-modifier-hover);
+}
+
+.modal-opener-settings .modal-opener-tabs button.is-active {
+    color: var(--text-on-accent);
+    background-color: var(--interactive-accent);
+    border-bottom: 1px;
 }

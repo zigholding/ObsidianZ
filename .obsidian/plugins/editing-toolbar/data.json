@@ -1,4 +1,5 @@
 {
+  "lastVersion": "3.1.1",
   "aestheticStyle": "default",
   "positionStyle": "top",
   "menuCommands": [
@@ -183,6 +184,11 @@
       "icon": "lucide-trash-2"
     }
   ],
+  "followingCommands": [],
+  "topCommands": [],
+  "fixedCommands": [],
+  "mobileCommands": [],
+  "enableMultipleConfig": false,
   "appendMethod": "workspace",
   "shouldShowMenuOnSelect": false,
   "cMenuVisibility": true,
@@ -202,5 +208,9 @@
   "custom_fc3": "#245BDB",
   "custom_fc4": "#6425D0",
   "custom_fc5": "#646A73",
-  "isLoadOnMobile": false
+  "isLoadOnMobile": false,
+  "horizontalPosition": 0,
+  "verticalPosition": 0,
+  "formatBrushes": {},
+  "customCommands": []
 }
