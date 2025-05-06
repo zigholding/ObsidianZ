@@ -1,0 +1,9 @@
+{
+	"id": "webview-llm",
+	"name": "WebviewLLM",
+	"version": "0.5.0",
+	"minAppVersion": "1.8.3",
+	"description": "Sync notes or plugins between vaults.",
+	"author": "ZigHolding",
+	"isDesktopOnly": true
+}

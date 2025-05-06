@@ -1,0 +1,13 @@
+/* 按钮条样式 */
+.button-bar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+/* 输入字段样式 */
+.input-field {
+    width: 100%;
+}

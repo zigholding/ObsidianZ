@@ -1,0 +1,9 @@
+{
+	"id": "easyapi",
+	"name": "EasyAPI",
+	"version": "0.5.0",
+	"minAppVersion": "1.8.3",
+	"description": "EasyAPI.",
+	"author": "ZigHolding",
+	"isDesktopOnly": true
+}
