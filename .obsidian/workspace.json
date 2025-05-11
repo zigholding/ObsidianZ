@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ObsidianZ.md",
+                "file": "__plugins__/_templater_/@脚本笔记/下载示例库文件.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ObsidianZ"
+              "title": "下载示例库文件"
             }
           }
         ]
@@ -184,9 +184,11 @@
   "active": "b0e3b2530bb16278",
   "lastOpenFiles": [
     "__plugins__/_templater_/@脚本笔记/下载示例库文件.md",
-    "00 Index/Files - 目录.md",
-    "ObsidianZ.md",
     "__plugins__/_templater_/@模板/临时输入.md",
+    "readMe.md",
+    "__plugins__/_customJS_/TimeLine.js",
+    "ObsidianZ.md",
+    "00 Index/Files - 目录.md",
     "__plugins__/_templater_/@用户函数/@用户函数.md",
     "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
     "__plugins__/@知更鸟在屋顶/示例：如何使用示例库.md",
@@ -194,7 +196,6 @@
     "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
     "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
     "__plugins__/_customJS_/修改显示名称.md",
-    "readMe.md",
     "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
     "__plugins__/_templater_/@脚本笔记/重启插件.md",
     "__plugins__/_templater_/@脚本笔记/LLM - 问问笔记.md",
@@ -212,7 +213,6 @@
     "00 Index/Files - 同名笔记.md",
     "00 Index/Files - 双链数量.md",
     "__plugins__/_attachments_/Pasted image 20250208223856.png",
-    "__plugins__/_templater_/@脚本笔记/渲染代码.md",
     "__plugins__/_attachments_/Pasted image 20250206150246.png",
     "__plugins__/_attachments_/Pasted image 20250117210821.png",
     "__plugins__/_customJS_/DeepSeek.js",
@@ -228,7 +228,6 @@
     "__files__/images",
     "test2",
     "02 InBox",
-    "__files__/software/Obsidian-1.7.7-arm64.AppImage",
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas"
   ]
 }

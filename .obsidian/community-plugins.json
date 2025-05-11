@@ -17,5 +17,8 @@
   "note-gallery",
   "dataview",
   "note-sync",
-  "html-tabs"
+  "html-tabs",
+  "obsidian-timeline",
+  "webview-llm",
+  "easyapi"
 ]
