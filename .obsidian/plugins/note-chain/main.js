@@ -3161,7 +3161,7 @@ __export(main_exports, {
   default: () => NoteChainPlugin
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian12 = require("obsidian");
+var import_obsidian15 = require("obsidian");
 
 // src/NCEditor.ts
 var import_obsidian = require("obsidian");
@@ -3169,7 +3169,7 @@ var NCEditor = class {
   constructor(plugin) {
     this.plugin = plugin;
     this.app = this.plugin.app;
-    this.nretry = 1;
+    this.nretry = 10;
   }
   async set_frontmatter(tfile, key, value, nretry = this.nretry) {
     let kv = {};
@@ -3205,79 +3205,6 @@ var NCEditor = class {
     }
     return flag;
   }
-  _set_(data, key, value) {
-    let items = key.trim().split(".");
-    if (!items) {
-      return;
-    }
-    let curr = data;
-    for (let item of items.slice(0, items.length - 1)) {
-      let kv2 = item.match(/^(.*?)(\[-?\d+\])?$/);
-      if (!kv2) {
-        return;
-      }
-      let k2 = kv2[1];
-      if (kv2[2]) {
-        let i = parseInt(kv2[2].slice(1, kv2[2].length - 1));
-        if (!(k2 in curr)) {
-          curr[k2] = [{}];
-          curr = curr[k2][0];
-        } else {
-          if (Array.isArray(curr[k2])) {
-            let tmp = {};
-            if (i < 0) {
-              curr[k2].splice(-i - 1, 0, tmp);
-            } else if (i < curr[k2].length) {
-              curr[k2][i] = tmp;
-            } else {
-              curr[k2].push(tmp);
-            }
-            curr = tmp;
-          } else {
-            curr[k2] = [{}];
-            curr = curr[k2][0];
-          }
-        }
-      } else {
-        if (!(k2 in curr)) {
-          curr[k2] = {};
-          curr = curr[k2];
-        } else {
-          if (typeof curr[k2] != "object") {
-            curr[k2] = {};
-            curr = curr[k2];
-          } else {
-            curr = curr[k2];
-          }
-        }
-      }
-    }
-    let kv = items[items.length - 1].match(/^(.*?)(\[-?\d+\])?$/);
-    if (!kv) {
-      return;
-    }
-    let k = kv[1];
-    if (kv[2]) {
-      let i = parseInt(kv[2].slice(1, kv[2].length - 1));
-      if (k in curr) {
-        if (Array.isArray(curr[k])) {
-          if (i < 0) {
-            curr[k].splice(-i - 1, 0, value);
-          } else if (i < curr[k].length) {
-            curr[k][i] = value;
-          } else {
-            curr[k].push(value);
-          }
-        } else {
-          curr[k] = value;
-        }
-      } else {
-        curr[k] = [value];
-      }
-    } else {
-      curr[k] = value;
-    }
-  }
   async set_multi_frontmatter(tfile, kv, nretry = this.nretry) {
     if (Array.isArray(tfile)) {
       for (let item of tfile) {
@@ -3298,7 +3225,7 @@ var NCEditor = class {
     while (!flag && nretry > 0) {
       await this.app.fileManager.processFrontMatter(tfile, (fm) => {
         for (let k in kv) {
-          this._set_(fm, k, kv[k]);
+          this.plugin.easyapi.editor.dict_set_value(fm, k, kv[k]);
         }
       });
       await sleep(100);
@@ -3370,7 +3297,11 @@ var NCEditor = class {
     } else {
       let file = this.plugin.chain.get_tfile(tfile.path + "/" + tfile.name + ".md");
       if (file) {
-        let config = this.get_frontmatter(file, key);
+        let config = this.get_frontmatter(file, key + "_folder");
+        if (config) {
+          return config;
+        }
+        config = this.get_frontmatter(file, key);
         if (config) {
           return config;
         }
@@ -3640,7 +3571,9 @@ ${tpl}
   async set_frontmatter_align_file(src, dst, field) {
     if (field) {
       let value = this.get_frontmatter(src, field);
-      await this.set_frontmatter(dst, field, value, 1);
+      if (value) {
+        await this.set_frontmatter(dst, field, value, 1);
+      }
     }
   }
 };
@@ -3814,6 +3747,27 @@ var NoteChain = class {
       this.sort_tfiles(files, sort_mode = sort_mode);
     }
     return files;
+  }
+  get_all_tfiles_tags(tags, sort_mode = "") {
+    if (!Array.isArray(tags)) {
+      tags = [tags];
+    }
+    tags = tags.map((x) => {
+      if (x.startsWith("#")) {
+        return x;
+      } else {
+        return "#" + x;
+      }
+    });
+    let tfiles = this.get_all_tfiles(sort_mode).filter((x) => {
+      let ttags = this.get_tags(x);
+      for (let tag of tags) {
+        if (ttags.contains(tag)) {
+          return true;
+        }
+      }
+    });
+    return tfiles;
   }
   sort_folders_by_mtime(folders, reverse = true) {
     function ufunc(f) {
@@ -4103,6 +4057,41 @@ var NoteChain = class {
     }
     return res;
   }
+  get_tfolders(name) {
+    let folder = this.app.vault.getFolderByPath(name);
+    if (folder) {
+      return [folder];
+    }
+    return this.get_all_folders().filter((x) => x.name == name);
+  }
+  get_group(group) {
+    let tfiles = [];
+    let tags = this.get_all_tfiles_tags(group);
+    for (let f of tags) {
+      if (!tfiles.contains(f)) {
+        tfiles.push(f);
+      }
+    }
+    let folders = this.get_tfolders(group);
+    for (let folder of folders) {
+      let xfiles = this.get_tfiles_of_folder(folder, true);
+      for (let f of xfiles) {
+        if (!tfiles.contains(f)) {
+          tfiles.push(f);
+        }
+      }
+    }
+    let tfile = this.get_tfile(group);
+    if (tfile) {
+      let xfiles = this.get_links(tfile, true);
+      for (let f of xfiles) {
+        if (!tfiles.contains(f)) {
+          tfiles.push(f);
+        }
+      }
+    }
+    return tfiles;
+  }
   get_outlinks(tfile = this.current_note, only_md = true) {
     if (tfile == null) {
       return [];
@@ -4239,30 +4228,17 @@ var NoteChain = class {
     return notes;
   }
   indexOfFolder(tfile, tfiles) {
-    let fnote = this.get_tfile(tfile.name + ".md");
-    if (!fnote) {
-      return -1;
+    let info = this.get_folder_pre_info(tfile);
+    let idx = -1;
+    let anchor = this.get_tfile(info["prev"]);
+    if (anchor) {
+      idx = tfiles.indexOf(anchor);
     }
-    let msg = this.plugin.editor.get_frontmatter(
-      fnote,
-      "FolderPrevNote"
-    );
-    if (!msg || typeof msg != "string") {
-      return -1;
-    }
-    let anchor = this.get_tfile(msg);
-    if (!anchor) {
-      return -1;
-    }
-    let idx = tfiles.indexOf(anchor);
-    let offset = this.plugin.editor.get_frontmatter(
-      fnote,
-      "FolderPrevNoteOffset"
-    );
+    let offset = info["offset"];
     if (typeof offset == "string") {
       idx = idx + parseFloat(offset);
     } else {
-      idx = idx + 0.5;
+      idx = idx + offset;
     }
     return idx;
   }
@@ -4468,6 +4444,15 @@ var NoteChain = class {
       return;
     }
     if (this.get_prev_note(tfile) == prev) {
+      if (prev == null) {
+        if (this.editor.get_frontmatter(tfile, this.prev) != null) {
+          await this.editor.set_frontmatter(
+            tfile,
+            this.prev,
+            null
+          );
+        }
+      }
       return;
     }
     let msg = `Note Chain: ${prev == null ? void 0 : prev.basename} --> \u{1F3E0}${tfile.basename}`;
@@ -4493,6 +4478,15 @@ var NoteChain = class {
       return;
     }
     if (this.get_next_note(tfile) == next) {
+      if (next == null) {
+        if (this.editor.get_frontmatter(tfile, this.next) != null) {
+          await this.editor.set_frontmatter(
+            tfile,
+            this.next,
+            null
+          );
+        }
+      }
       return;
     }
     let msg = `Note Chain: \u{1F3E0}${tfile == null ? void 0 : tfile.basename} <-- ${next == null ? void 0 : next.basename}`;
@@ -4932,6 +4926,112 @@ var NoteChain = class {
     }
     items["\u{1F492} vault"] = this.app.vault.adapter.getFullPath(".");
     return items;
+  }
+  get_folder_pre_info(tfolder) {
+    let note = this.get_tfile(tfolder.path + "/" + tfolder.name + ".md");
+    if (!note) {
+      return {
+        "prev": null,
+        "offset": 0
+      };
+    }
+    let info = {
+      "prev": this.editor.get_frontmatter(note, "FolderPrevNote"),
+      "offset": this.editor.get_frontmatter(note, "FolderPrevNoteOffset")
+    };
+    if (info["offset"] == null) {
+      info["offset"] = 0;
+    }
+    return info;
+  }
+  async set_folder_pre_info(tfolder, prev, offset) {
+    let tfile = await this.get_folder_note(tfolder);
+    let anchor = prev instanceof import_obsidian4.TFile ? prev : this.get_tfile(prev);
+    if (anchor) {
+      await this.plugin.editor.set_multi_frontmatter(
+        tfile,
+        {
+          "FolderPrevNote": `[[${anchor.basename}]]`,
+          "FolderPrevNoteOffset": offset
+        }
+      );
+    } else {
+      await this.plugin.editor.set_multi_frontmatter(
+        tfile,
+        {
+          "FolderPrevNote": null,
+          "FolderPrevNoteOffset": offset
+        }
+      );
+    }
+  }
+  async reset_offset_of_folder(tfolder) {
+    var _a;
+    let prev = this.get_folder_pre_info(tfolder);
+    if (prev["offset"] == null) {
+      return;
+    }
+    let tfolders = (_a = tfolder.parent) == null ? void 0 : _a.children.filter((x) => x instanceof import_obsidian4.TFolder);
+    let folders = [];
+    if (tfolders) {
+      for (let x of tfolders) {
+        let info = this.get_folder_pre_info(x);
+        if (info["prev"] == prev["prev"]) {
+          folders.push(x);
+        }
+      }
+    }
+    folders = folders.sort((a, b) => {
+      let ainfo = this.get_folder_pre_info(a);
+      let binfo = this.get_folder_pre_info(b);
+      return ainfo["offset"] - binfo["offset"];
+    });
+    if (folders.length == 0) {
+      return;
+    }
+    let base = Math.pow(0.1, Math.ceil(Math.log10(folders.length + 1)) + 1);
+    let offset = 0.5 - base;
+    for (let folder of folders) {
+      offset = offset + base;
+      await this.set_folder_pre_info(folder, prev["prev"], offset);
+    }
+  }
+  async get_folder_note(tfolder, create = true) {
+    let note = this.get_tfile(tfolder.path + "/" + tfolder.name + ".md");
+    if (!note && create) {
+      note = await this.app.vault.create(tfolder.path + "/" + tfolder.name + ".md", "");
+    }
+    return note;
+  }
+  async move_folder_as_next_note(tfolder, anchor) {
+    var _a;
+    if (anchor instanceof import_obsidian4.TFolder) {
+      let prev = this.get_folder_pre_info(anchor);
+      await this.set_folder_pre_info(tfolder, prev["prev"], prev["offset"] * 1.001);
+    } else if (anchor instanceof import_obsidian4.TFile) {
+      let prevs = [];
+      let tfolders = (_a = tfolder.parent) == null ? void 0 : _a.children.filter((x) => x instanceof import_obsidian4.TFolder && x != tfolder);
+      if (tfolders) {
+        for (let x of tfolders) {
+          let info = await this.get_folder_pre_info(x);
+          prevs.push(info);
+        }
+      }
+      prevs = prevs.filter((x) => x["prev"] && this.get_tfile(x["prev"]) == anchor).map((x) => x["offset"]);
+      if (prevs.length == 0) {
+        this.set_folder_pre_info(tfolder, anchor, 0.5);
+      } else {
+        this.set_folder_pre_info(tfolder, anchor, Math.min(...prevs) * 1.001);
+      }
+    }
+    await this.reset_offset_of_folder(tfolder);
+  }
+  get_confluence_level(note) {
+    let fm = this.editor.get_frontmatter(note, this.plugin.settings.field_of_confluence_tab_format);
+    if (fm) {
+      return (fm.match(/\t/g) || []).length;
+    }
+    return 0;
   }
 };
 
@@ -5515,14 +5615,14 @@ var Strings = class {
   }
   get chain_move_up_node() {
     if (this.language == "zh") {
-      return "\u6253\u5F00\u524D\u7F6E\u7B14\u8BB0";
+      return "\u5411\u524D\u79FB\u52A8\u7B14\u8BB0\u8282\u70B9";
     } else {
       return "Move node up";
     }
   }
   get chain_move_down_node() {
     if (this.language == "zh") {
-      return "\u6253\u5F00\u524D\u7F6E\u7B14\u8BB0";
+      return "\u5411\u540E\u79FB\u52A8\u7B14\u8BB0\u8282\u70B9";
     } else {
       return "Move node down";
     }
@@ -5749,6 +5849,13 @@ var Strings = class {
       return "\u5934\u50CF";
     } else {
       return "Avata";
+    }
+  }
+  get setting_templater_tag() {
+    if (this.language == "zh") {
+      return "\u811A\u672C\u7B14\u8BB0\u6807\u7B7E\u6216\u76EE\u5F55";
+    } else {
+      return "Tags or folder of script note";
     }
   }
   get setting_wordcout_xfolder() {
@@ -6827,7 +6934,8 @@ var DEFAULT_SETTINGS = {
   wordcountxfolder: "",
   modal_default_width: 800,
   modal_default_height: 600,
-  avata: "avata"
+  avata: "avata",
+  tpl_tags_folder: "\u811A\u672C\u7B14\u8BB0\nScriptNote"
 };
 var NCSettingTab = class extends import_obsidian8.PluginSettingTab {
   constructor(app, plugin) {
@@ -6928,6 +7036,12 @@ var NCSettingTab = class extends import_obsidian8.PluginSettingTab {
         await this.plugin.saveSettings();
       })
     );
+    new import_obsidian8.Setting(containerEl).setName(this.plugin.strings.setting_templater_tag).addTextArea(
+      (text) => text.setValue(this.plugin.settings.tpl_tags_folder).onChange(async (value) => {
+        this.plugin.settings.tpl_tags_folder = value;
+        await this.plugin.saveSettings();
+      })
+    );
   }
 };
 
@@ -6939,22 +7053,59 @@ var cmd_longform2notechain = (plugin) => ({
   icon: "git-pull-request-create-arrow",
   callback: async () => {
     let curr = plugin.chain.current_note;
+    if (curr == null || curr.parent == null) {
+      return;
+    }
+    curr = await plugin.chain.get_folder_note(curr.parent, false);
     if (curr == null) {
       return;
     }
     plugin.app.fileManager.processFrontMatter(
       curr,
       async (fm) => {
-        if (curr == null) {
+        async function set_confluence_level(scenes2, level = 0) {
+          if (Array.isArray(scenes2)) {
+            for (let scene of scenes2) {
+              if (Array.isArray(scene)) {
+                set_confluence_level(scene, level + 1);
+              } else {
+                set_confluence_level(scene, level);
+              }
+            }
+          } else if (typeof scenes2 === "string") {
+            let note = plugin.chain.get_tfile(scenes2);
+            if (note) {
+              let slevel = "	".repeat(level);
+              let prelevel = plugin.editor.get_frontmatter(note, plugin.settings.field_of_confluence_tab_format);
+              if (prelevel == slevel || prelevel == null && slevel == "") {
+                return;
+              }
+              await plugin.editor.set_frontmatter(
+                note,
+                plugin.settings.field_of_confluence_tab_format,
+                slevel
+              );
+            }
+          }
+        }
+        if (!curr) {
           return;
         }
         if (fm["longform"] == null) {
           return;
         }
         let scenes = plugin.utils.concat_array(fm.longform.scenes);
+        await set_confluence_level(fm.longform.scenes);
         let ignoredFiles = plugin.utils.concat_array(fm.longform.ignoredFiles);
+        await set_confluence_level(fm.longform.ignoredFiles);
         ignoredFiles = ignoredFiles.filter((f) => !scenes.contains(f));
         let notes = plugin.utils.concat_array([scenes, ignoredFiles]);
+        if (!notes || notes.length == 0) {
+          return;
+        }
+        if (!notes.contains(curr.basename)) {
+          notes.unshift(curr.basename);
+        }
         notes = notes.map((f) => plugin.chain.get_tfile(f));
         if (curr.parent == null) {
           return;
@@ -6986,7 +7137,7 @@ var cmd_longform4notechain = (plugin) => ({
         ""
       );
     }
-    await nc.app.fileManager.processFrontMatter(
+    await plugin.app.fileManager.processFrontMatter(
       dst,
       (fm) => {
         if (fm["longform"] == null) {
@@ -6999,11 +7150,6 @@ var cmd_longform4notechain = (plugin) => ({
             "ignoredFiles": []
           };
         }
-      }
-    );
-    await plugin.app.fileManager.processFrontMatter(
-      dst,
-      (fm) => {
         if (dst == null) {
           return;
         }
@@ -7016,7 +7162,25 @@ var cmd_longform4notechain = (plugin) => ({
         }
         let notes = plugin.chain.get_tfiles_of_folder(dst.parent);
         notes = plugin.chain.sort_tfiles_by_chain(notes);
-        fm.longform.scenes = notes.map((f) => f.basename);
+        let levels = notes.map((f) => plugin.chain.get_confluence_level(f));
+        notes = notes.map((x) => x.basename);
+        if (notes.length > 0) {
+          let source = `scenes:
+`;
+          for (let i in notes) {
+            let note = notes[i];
+            let level = levels[i];
+            source += "  ";
+            for (let j = -1; j < level; j++) {
+              source += `- `;
+            }
+            source += `${note}
+`;
+          }
+          let config = plugin.easyapi.editor.yamljs.load(source);
+          notes = config["scenes"];
+        }
+        fm.longform.scenes = notes;
       }
     );
     await nc.chain.open_note(dst);
@@ -7028,6 +7192,8 @@ var cmd_sort_file_explorer = (plugin) => ({
   icon: "arrow-down-wide-narrow",
   callback: async () => {
     await plugin.explorer.sort(0, true);
+    await plugin.explorer.set_fileitem_style();
+    await plugin.explorer.set_display_text();
   }
 });
 var cmd_open_notes_smarter = (plugin) => ({
@@ -7398,20 +7564,32 @@ var cmd_execute_template_modal = (plugin) => ({
     if (!tpl) {
       return;
     }
+    let tfiles = [];
     let folder = plugin.app.vault.getFolderByPath(tpl.settings.templates_folder);
-    let tfiles;
     if (folder) {
-      tfiles = plugin.chain.get_tfiles_of_folder(folder, true);
+      let xfiles = plugin.chain.get_tfiles_of_folder(folder, true);
       let tfile2 = plugin.chain.get_tfile(folder.path + "/" + folder.name + ".md");
       let infiles = plugin.chain.get_links(tfile2);
       for (let f of infiles) {
-        if (!tfiles.contains(f)) {
-          tfiles.push(f);
+        if (!xfiles.contains(f)) {
+          xfiles.push(f);
         }
       }
-      tfiles = plugin.chain.sort_tfiles_by_chain(tfiles);
-    } else {
-      tfiles = plugin.chain.get_all_tfiles();
+      xfiles = plugin.chain.sort_tfiles_by_chain(xfiles);
+      for (let f of xfiles) {
+        tfiles.push(f);
+      }
+    }
+    let items = plugin.settings.tpl_tags_folder.trim().split("\n");
+    if (items.length > 0) {
+      for (let item of items) {
+        let xfiles = plugin.chain.get_group(item);
+        for (let f of xfiles) {
+          if (!tfiles.contains(f)) {
+            tfiles.push(f);
+          }
+        }
+      }
     }
     let tfile = await plugin.chain.sugguster_note(tfiles, 0, true);
     if (tfile) {
@@ -7808,8 +7986,452 @@ async function dialog_prompt(header = "Input", placeholder = "", value = "") {
   }
 }
 
+// src/easyapi/gui/inputSuggester.ts
+var import_obsidian12 = require("obsidian");
+var InputSuggester2 = class extends import_obsidian12.FuzzySuggestModal {
+  constructor(app, displayItems, items, options = {}) {
+    super(app);
+    this.displayItems = displayItems;
+    this.items = items;
+    this.promise = new Promise((resolve, reject) => {
+      this.resolvePromise = resolve;
+      this.rejectPromise = reject;
+    });
+    this.inputEl.addEventListener("keydown", (event) => {
+      var _a;
+      if (event.code !== "Tab") {
+        return;
+      }
+      const self = this;
+      const { values, selectedItem } = self.chooser;
+      const { value } = this.inputEl;
+      this.inputEl.value = (_a = values[selectedItem].item) != null ? _a : value;
+    });
+    if (options.placeholder)
+      this.setPlaceholder(options.placeholder);
+    if (options.limit)
+      this.limit = options.limit;
+    if (options.emptyStateText)
+      this.emptyStateText = options.emptyStateText;
+    this.open();
+  }
+  static Suggest(app, displayItems, items, options = {}) {
+    const newSuggester = new InputSuggester2(
+      app,
+      displayItems,
+      items,
+      options
+    );
+    return newSuggester.promise;
+  }
+  getItemText(item) {
+    if (item === this.inputEl.value)
+      return item;
+    return this.displayItems[this.items.indexOf(item)];
+  }
+  getItems() {
+    if (this.inputEl.value === "")
+      return this.items;
+    return [this.inputEl.value, ...this.items];
+  }
+  selectSuggestion(value, evt) {
+    this.resolved = true;
+    super.selectSuggestion(value, evt);
+  }
+  onChooseItem(item, evt) {
+    this.resolved = true;
+    this.resolvePromise(item);
+  }
+  onClose() {
+    super.onClose();
+    if (!this.resolved)
+      this.rejectPromise("no input given.");
+  }
+};
+async function dialog_suggest2(displayItems, items, placeholder = "") {
+  try {
+    return await InputSuggester2.Suggest(
+      this.app,
+      displayItems,
+      items,
+      {
+        placeholder
+      }
+    );
+  } catch (error) {
+    return null;
+  }
+}
+
+// src/easyapi/gui/inputPrompt.ts
+var import_obsidian13 = require("obsidian");
+var InputPrompt2 = class extends import_obsidian13.Modal {
+  constructor(app, header, placeholder, value) {
+    super(app);
+    this.header = header;
+    this.didSubmit = false;
+    this.submitClickCallback = (evt) => this.submit();
+    this.cancelClickCallback = (evt) => this.cancel();
+    this.submitEnterCallback = (evt) => {
+      if (!evt.isComposing && evt.key === "Enter") {
+        evt.preventDefault();
+        this.submit();
+      }
+    };
+    this.placeholder = placeholder != null ? placeholder : "";
+    this.input = value != null ? value : "";
+    this.waitForClose = new Promise((resolve, reject) => {
+      this.resolvePromise = resolve;
+      this.rejectPromise = reject;
+    });
+    this.display();
+    this.open();
+  }
+  static Prompt(app, header, placeholder, value) {
+    const newPromptModal = new InputPrompt2(
+      app,
+      header,
+      placeholder,
+      value
+    );
+    return newPromptModal.waitForClose;
+  }
+  display() {
+    this.containerEl.addClass("quickAddModal", "qaInputPrompt");
+    this.contentEl.empty();
+    this.titleEl.textContent = this.header;
+    const mainContentContainer = this.contentEl.createDiv();
+    this.inputComponent = this.createInputField(
+      mainContentContainer,
+      this.placeholder,
+      this.input
+    );
+    this.createButtonBar(mainContentContainer);
+  }
+  createInputField(container, placeholder, value) {
+    const textComponent = new import_obsidian13.TextComponent(container);
+    textComponent.inputEl.classList.add("input-field");
+    textComponent.setPlaceholder(placeholder != null ? placeholder : "").setValue(value != null ? value : "").onChange((value2) => this.input = value2).inputEl.addEventListener("keydown", this.submitEnterCallback);
+    return textComponent;
+  }
+  createButton(container, text, callback) {
+    const btn = new import_obsidian13.ButtonComponent(container);
+    btn.setButtonText(text).onClick(callback);
+    return btn;
+  }
+  createButtonBar(mainContentContainer) {
+    const buttonBarContainer = mainContentContainer.createDiv();
+    this.createButton(
+      buttonBarContainer,
+      "Ok",
+      this.submitClickCallback
+    ).setCta();
+    this.createButton(
+      buttonBarContainer,
+      "Cancel",
+      this.cancelClickCallback
+    );
+    buttonBarContainer.classList.add("button-bar");
+  }
+  submit() {
+    this.didSubmit = true;
+    this.close();
+  }
+  cancel() {
+    this.close();
+  }
+  resolveInput() {
+    if (!this.didSubmit)
+      this.rejectPromise("No input given.");
+    else
+      this.resolvePromise(this.input);
+  }
+  removeInputListener() {
+    this.inputComponent.inputEl.removeEventListener(
+      "keydown",
+      this.submitEnterCallback
+    );
+  }
+  onOpen() {
+    super.onOpen();
+    this.inputComponent.inputEl.focus();
+    this.inputComponent.inputEl.select();
+  }
+  onClose() {
+    super.onClose();
+    this.resolveInput();
+    this.removeInputListener();
+  }
+};
+async function dialog_prompt2(header = "Input", placeholder = "", value = "") {
+  try {
+    return await InputPrompt2.Prompt(
+      this.app,
+      header,
+      placeholder,
+      value
+    );
+  } catch (e) {
+    return null;
+  }
+}
+
+// src/easyapi/editor.ts
+var EasyEditor = class {
+  constructor(app, api) {
+    this.yamljs = require_js_yaml();
+    this.app = app;
+    this.api = api;
+  }
+  async get_selection(cancel_selection = false) {
+    var _a;
+    let editor = (_a = this.app.workspace.getActiveFileView()) == null ? void 0 : _a.editor;
+    if (editor) {
+      let sel = editor.getSelection();
+      if (cancel_selection) {
+        let cursor = editor.getCursor();
+        await editor.setSelection(cursor, cursor);
+      }
+      return sel;
+    } else {
+      return "";
+    }
+  }
+  async get_code_section(tfile, ctype = "", idx = 0, as_simple = true) {
+    var _a;
+    let dvmeta = this.app.metadataCache.getFileCache(tfile);
+    let ctx = await this.app.vault.cachedRead(tfile);
+    let section = (_a = dvmeta == null ? void 0 : dvmeta.sections) == null ? void 0 : _a.filter((x) => x.type == "code").filter((x) => {
+      let c = ctx.slice(x.position.start.offset, x.position.end.offset).trim();
+      return c.startsWith("```" + ctype) || c.startsWith("~~~" + ctype);
+    })[idx];
+    if (section) {
+      let c = ctx.slice(
+        section.position.start.offset,
+        section.position.end.offset
+      );
+      if (as_simple) {
+        return c.slice(4 + ctype.length, c.length - 4);
+      } else {
+        let res = {
+          code: c,
+          section,
+          ctx
+        };
+        return res;
+      }
+    }
+  }
+  async get_heading_section(tfile, heading, idx = 0, with_heading = true) {
+    var _a;
+    let dvmeta = this.app.metadataCache.getFileCache(tfile);
+    let ctx = await this.app.vault.cachedRead(tfile);
+    if (!(dvmeta == null ? void 0 : dvmeta.headings)) {
+      return "";
+    }
+    let section = (_a = dvmeta == null ? void 0 : dvmeta.headings) == null ? void 0 : _a.filter((x) => x.heading == heading)[idx];
+    if (section) {
+      let idx2 = dvmeta.headings.indexOf(section) + 1;
+      while (idx2 < dvmeta.headings.length) {
+        let csec = dvmeta.headings[idx2];
+        if (csec.level <= section.level) {
+          break;
+        }
+        idx2 = idx2 + 1;
+      }
+      if (idx2 < dvmeta.headings.length) {
+        let csec = dvmeta.headings[idx2];
+        let c = ctx.slice(
+          with_heading ? section.position.start.offset : section.position.end.offset,
+          csec.position.start.offset
+        );
+        return c;
+      } else {
+        let c = ctx.slice(
+          with_heading ? section.position.start.offset : section.position.end.offset
+        );
+        return c;
+      }
+    }
+  }
+  async get_current_section() {
+    var _a;
+    let editor = this.api.ceditor;
+    let tfile = this.api.cfile;
+    if (!editor || !tfile) {
+      return null;
+    }
+    let cursor = editor.getCursor();
+    let cache = this.app.metadataCache.getFileCache(tfile);
+    if (!cache) {
+      return null;
+    }
+    if (cursor) {
+      let section = (_a = cache == null ? void 0 : cache.sections) == null ? void 0 : _a.filter(
+        (x) => {
+          return x.position.start.line <= cursor.line && x.position.end.line >= cursor.line;
+        }
+      )[0];
+      let ctx = await this.app.vault.cachedRead(tfile);
+      if (!section) {
+        return "";
+      }
+      return ctx.slice(
+        section.position.start.offset,
+        section.position.end.offset
+      );
+    } else {
+      return null;
+    }
+  }
+  dict_set_value(data, key, value) {
+    let items = key.trim().split(".");
+    if (!items) {
+      return;
+    }
+    let curr = data;
+    for (let item of items.slice(0, items.length - 1)) {
+      let kv2 = item.match(/^(.*?)(\[-?\d+\])?$/);
+      if (!kv2) {
+        return;
+      }
+      let k2 = kv2[1];
+      if (kv2[2]) {
+        let i = parseInt(kv2[2].slice(1, kv2[2].length - 1));
+        if (!(k2 in curr)) {
+          curr[k2] = [{}];
+          curr = curr[k2][0];
+        } else {
+          if (Array.isArray(curr[k2])) {
+            let tmp = {};
+            if (i < 0) {
+              curr[k2].splice(-i - 1, 0, tmp);
+            } else if (i < curr[k2].length) {
+              curr[k2][i] = tmp;
+            } else {
+              curr[k2].push(tmp);
+            }
+            curr = tmp;
+          } else {
+            curr[k2] = [{}];
+            curr = curr[k2][0];
+          }
+        }
+      } else {
+        if (!(k2 in curr)) {
+          curr[k2] = {};
+          curr = curr[k2];
+        } else {
+          if (typeof curr[k2] != "object") {
+            curr[k2] = {};
+            curr = curr[k2];
+          } else {
+            curr = curr[k2];
+          }
+        }
+      }
+    }
+    let kv = items[items.length - 1].match(/^(.*?)(\[-?\d+\])?$/);
+    if (!kv) {
+      return;
+    }
+    let k = kv[1];
+    if (kv[2]) {
+      let i = parseInt(kv[2].slice(1, kv[2].length - 1));
+      if (k in curr) {
+        if (Array.isArray(curr[k])) {
+          if (i < 0) {
+            curr[k].splice(-i - 1, 0, value);
+          } else if (i < curr[k].length) {
+            curr[k][i] = value;
+          } else {
+            curr[k].push(value);
+          }
+        } else {
+          curr[k] = value;
+        }
+      } else {
+        curr[k] = [value];
+      }
+    } else {
+      curr[k] = value;
+    }
+  }
+};
+
+// src/easyapi/file.ts
+var import_obsidian14 = require("obsidian");
+var File = class {
+  constructor(app, api) {
+    this.app = app;
+    this.api = api;
+  }
+  generate_structure(tfolder, depth = 0, isRoot = true, only_folder = false, only_md = true) {
+    let structure = "";
+    const indentUnit = "    ";
+    const verticalLine = "\u2502   ";
+    const indent = verticalLine.repeat(Math.max(depth - 1, 0)) + indentUnit.repeat(depth > 0 ? 1 : 0);
+    const children = tfolder.children || [];
+    if (isRoot) {
+      structure += `${tfolder.name}/
+`;
+      isRoot = false;
+    }
+    children.forEach((child, index) => {
+      const isLast = index === children.length - 1;
+      const prefix = isLast ? "\u2514\u2500\u2500 " : "\u251C\u2500\u2500 ";
+      if (child instanceof import_obsidian14.TFolder) {
+        structure += `${indent}${prefix}${child.name}/
+`;
+        structure += this.generate_structure(child, depth + 1, isRoot, only_folder, only_md);
+      } else if (!only_folder) {
+        if (only_md && child.extension != "md") {
+          return;
+        }
+        structure += `${indent}${prefix}${child.name}
+`;
+      }
+    });
+    return structure;
+  }
+};
+
+// src/easyapi/easyapi.ts
+var EasyAPI = class {
+  constructor(app) {
+    this.app = app;
+    this.dialog_suggest = dialog_suggest2;
+    this.dialog_prompt = dialog_prompt2;
+    this.editor = new EasyEditor(app, this);
+    this.file = new File(app, this);
+  }
+  get_plugin(name) {
+    var _a;
+    return (_a = this.app.plugins) == null ? void 0 : _a.plugins[name];
+  }
+  get nc() {
+    return this.get_plugin("note-chain");
+  }
+  get cfile() {
+    return this.app.workspace.getActiveFile();
+  }
+  get cfolder() {
+    var _a;
+    return (_a = this.cfile) == null ? void 0 : _a.parent;
+  }
+  get cview() {
+    let view = this.app.workspace.getActiveFileView();
+    return view;
+  }
+  get ceditor() {
+    var _a;
+    let editor = (_a = this.cview) == null ? void 0 : _a.editor;
+    return editor;
+  }
+};
+
 // main.ts
-var NoteChainPlugin = class extends import_obsidian12.Plugin {
+var NoteChainPlugin = class extends import_obsidian15.Plugin {
   async onload() {
     this.dialog_suggest = dialog_suggest;
     this.dialog_prompt = dialog_prompt;
@@ -7845,6 +8467,7 @@ var NoteChainPlugin = class extends import_obsidian12.Plugin {
     this.mermaid = new MermaidGraph(this);
     this.canvas = new CanvasGraph(this);
     this.strings = new Strings();
+    this.easyapi = new EasyAPI(this.app);
     addCommands(this);
     this.addSettingTab(new NCSettingTab(this.app, this));
     this.registerEvent(
@@ -7878,7 +8501,7 @@ var NoteChainPlugin = class extends import_obsidian12.Plugin {
     ));
     this.registerEvent(
       this.app.workspace.on("file-menu", (menu, file) => {
-        if (file instanceof import_obsidian12.TFile) {
+        if (file instanceof import_obsidian15.TFile) {
           menu.addItem((item) => {
             item.setTitle(this.strings.filemenu_create_next_note).setIcon("file-plus").onClick(async () => {
               let filename = await this.dialog_prompt("File name");
@@ -7887,7 +8510,7 @@ var NoteChainPlugin = class extends import_obsidian12.Plugin {
               }
               let dst = file.parent ? file.parent.path + "/" + filename + ".md" : filename + ".md";
               if (this.chain.get_tfile(dst)) {
-                new import_obsidian12.Notice("Exists:" + file.path, 3e3);
+                new import_obsidian15.Notice("Exists:" + file.path, 3e3);
               } else {
                 let tfile = await this.app.vault.create(dst, "");
                 await this.chain.chain_insert_node_after(tfile, file);
@@ -7905,7 +8528,7 @@ var NoteChainPlugin = class extends import_obsidian12.Plugin {
     );
     this.registerEvent(
       this.app.workspace.on("file-menu", (menu, file) => {
-        if (file instanceof import_obsidian12.TFile && file.extension == "md") {
+        if (file instanceof import_obsidian15.TFile && file.extension == "md") {
           menu.addItem((item) => {
             item.setTitle(this.strings.filemenu_move_as_next_note).setIcon("hand").onClick(async () => {
               let anchor = await this.chain.sugguster_note();
@@ -7924,32 +8547,25 @@ var NoteChainPlugin = class extends import_obsidian12.Plugin {
               }
             });
           });
-        } else if (file instanceof import_obsidian12.TFolder) {
+        } else if (file instanceof import_obsidian15.TFolder) {
           menu.addItem((item) => {
             item.setTitle(this.strings.filemenu_move_as_next_note).setIcon("hand").onClick(async () => {
               var _a;
               let notes = (_a = file.parent) == null ? void 0 : _a.children;
               if (notes) {
+                notes = this.chain.sort_tfiles_by_chain(notes);
+                notes = notes.filter((x) => x != file);
                 let anchor = await this.dialog_suggest(
-                  (f) => f.name,
-                  notes.filter((x) => x instanceof import_obsidian12.TFile)
+                  notes.map((x) => x instanceof import_obsidian15.TFile ? "\u{1F4C3}" + x.basename : "\u{1F4C1}" + x.name),
+                  notes
                 );
-                let note = this.chain.get_tfile(file.path + "/" + file.name + ".md");
-                if (!note) {
-                  note = await this.app.vault.create(
-                    file.path + "/" + file.name + ".md",
-                    ""
-                  );
+                if (!anchor) {
+                  return;
                 }
-                await this.editor.set_multi_frontmatter(
-                  note,
-                  {
-                    "FolderPrevNote": `[[${anchor.basename}]]`,
-                    "FolderPrevNoteOffset": 0.5
-                  }
-                );
+                await this.chain.move_folder_as_next_note(file, anchor);
+                new import_obsidian15.Notice(`${anchor instanceof import_obsidian15.TFile ? anchor.basename : anchor.name}-->${file.name}`);
                 this.chain.refresh_tfile(file);
-                await this.explorer.sort(0, false);
+                await this.explorer.sort(0, true);
               }
             });
           });

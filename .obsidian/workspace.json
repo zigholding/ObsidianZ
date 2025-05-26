@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "__plugins__/_templater_/@脚本笔记/下载示例库文件.md",
+                "file": "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "下载示例库文件"
+              "title": "@知更鸟在屋顶"
             }
           }
         ]
@@ -181,9 +181,17 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "b0e3b2530bb16278",
+  "active": "e15731cb7fa19dc8",
   "lastOpenFiles": [
+    "__plugins__/_attachments_/__files__.md",
+    "00 Index/00 Index.md",
     "__plugins__/_templater_/@脚本笔记/下载示例库文件.md",
+    "__plugins__/@知更鸟在屋顶/条件语句.md",
+    "__plugins__/@知更鸟在屋顶/条件语句2.md",
+    "00 Index/条件语句.md",
+    "__plugins__/_excalidraw_/font/font.md",
+    "__plugins__/_attachments_/_attachments_.md",
+    "__plugins__/_excalidraw_/_excalidraw_.md",
     "__plugins__/_templater_/@模板/临时输入.md",
     "readMe.md",
     "__plugins__/_customJS_/TimeLine.js",
@@ -205,13 +213,6 @@
     "__plugins__/_attachments_/Pasted image 20250209180045.png",
     "__files__",
     "00 Index/Files - 历史漫步.md",
-    "00 Index/Files - 笔记链.md",
-    "00 Index/Files - 笔记网.md",
-    "__plugins__/_templater_/@脚本笔记/test.md",
-    "00 Index/Files - 最近修改.md",
-    "00 Index/Files - 最近访问.md",
-    "00 Index/Files - 同名笔记.md",
-    "00 Index/Files - 双链数量.md",
     "__plugins__/_attachments_/Pasted image 20250208223856.png",
     "__plugins__/_attachments_/Pasted image 20250206150246.png",
     "__plugins__/_attachments_/Pasted image 20250117210821.png",

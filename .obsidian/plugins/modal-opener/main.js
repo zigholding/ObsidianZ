@@ -451,7 +451,7 @@ var _ModalWindow = class extends import_obsidian2.Modal {
       setTimeout(() => {
         const editView = view.currentMode;
         editView.applyScroll(scrollPosition);
-      }, 500);
+      }, 200);
     };
     this.plugin = plugin;
     this.link = link;
@@ -569,7 +569,7 @@ var _ModalWindow = class extends import_obsidian2.Modal {
     if (this.plugin.settings.enableRefreshOnClose && (dataType == "canvas" || dataType == "mindmapview")) {
       setTimeout(() => {
         this.refreshMarkdownViews();
-      }, this.plugin.settings.delayInMs);
+      }, 100);
     }
     if (this.observer) {
       this.observer.disconnect();
@@ -2043,32 +2043,36 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
       const target = evt.target;
       const activeView = (_a = this.app.workspace.getMostRecentLeaf()) == null ? void 0 : _a.view;
       const editor = (_b = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView)) == null ? void 0 : _b.editor;
-      const singleClick = !import_obsidian4.Platform.isMobile ? this.settings.clickWithoutAlt : this.settings.clickWithoutAltOnMobile;
-      const singleClickType = !import_obsidian4.Platform.isMobile ? this.settings.typeOfClickTrigger : this.settings.typeOfClickTriggerOnMobile;
       const isAltClick = evt.altKey && evt.button === 0;
-      if (!isAltClick && !singleClick)
+      const isSingleClick = !import_obsidian4.Platform.isMobile ? this.settings.clickWithoutAlt : this.settings.clickWithoutAltOnMobile;
+      const singleClickType = !import_obsidian4.Platform.isMobile ? this.settings.typeOfClickTrigger : this.settings.typeOfClickTriggerOnMobile;
+      if (evt.button !== 0)
+        return;
+      if (evt.ctrlKey || evt.shiftKey)
+        return;
+      if (!isAltClick && !isSingleClick)
         return;
       if (editor && editor.somethingSelected())
         return;
-      if (!(evt.button === 0 && (!evt.ctrlKey || evt.altKey)))
-        return;
       if ((_c = target.getAttribute("alt")) == null ? void 0 : _c.endsWith(".svg"))
         return;
-      if (singleClick && !isAltClick && singleClickType !== "external") {
+      if (!isAltClick && isSingleClick && singleClickType !== "external") {
         const currentFilePath = (_d = this.app.workspace.getActiveFile()) == null ? void 0 : _d.path;
         if (currentFilePath && this.excludeFiles.length > 0) {
-          const isExcluded = this.excludeFiles.some((file) => currentFilePath === file);
-          if (isExcluded) {
+          const isExcluded = this.excludeFiles.includes(currentFilePath);
+          if (isExcluded)
             return;
-          }
         }
       }
       if (this.isPreviewModeLink(target)) {
         this.handlePreviewModeLink(evt, isAltClick);
-      } else if (activeView instanceof import_obsidian4.MarkdownView && activeView.getMode() === "source") {
+        return;
+      }
+      if (activeView instanceof import_obsidian4.MarkdownView && activeView.getMode() === "source") {
         if (target.closest(".markdown-source-view")) {
-          if (this.isInFencedCodeBlock(activeView.editor, activeView.editor.getCursor())) {
-            if (!singleClick || singleClick && isAltClick) {
+          const cursor = activeView.editor.getCursor();
+          if (this.isInFencedCodeBlock(activeView.editor, cursor)) {
+            if (!isSingleClick || isSingleClick && isAltClick) {
               this.app.commands.executeCommandById("vscode-editor:edit-fence");
               return;
             }
@@ -2077,7 +2081,6 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
             this.handleSourceModeLink(activeView.editor, evt, isAltClick);
           }
         }
-      } else {
       }
     };
     document.addEventListener("click", this.altClickHandler, { capture: true });
@@ -2457,7 +2460,8 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
               const excalidrawFileName = hasCustomName ? fileName + (useExcalidrawExtension ? ".excalidraw.md" : ".md") : defaultNameWithExt;
               try {
                 const file = await excalidrawPlugin.createDrawing(excalidrawFileName);
-                await this.insertLinkToPreviousView(file.path);
+                const fileDirWithoutExt = file.path.replace(/\.excalidraw\.md$/, "").replace(/\.md$/, "");
+                await this.insertLinkToPreviousView(useExcalidrawExtension ? fileDirWithoutExt + ".excalidraw" : fileDirWithoutExt + ".md");
                 new ModalWindow(this, "", file, "").open();
               } catch (e) {
                 console.error("createExcalidrawFile failed:", e);
@@ -2922,8 +2926,9 @@ var _ModalOpenerPlugin = class extends import_obsidian4.Plugin {
     const { fileName, isEmbed } = result;
     const activeFile = this.app.workspace.getActiveFile();
     const sourcePath = activeFile ? activeFile.path : "";
+    const newFileName = `${fileName}.${fileType}`;
     const folder = this.app.fileManager.getNewFileParent(sourcePath, fileName);
-    const newFilePath = folder.path === "/" ? fileName : `${folder.path}/${fileName}`;
+    const newFilePath = folder.path === "/" ? newFileName : `${folder.path}/${newFileName}`;
     try {
       const newFile = await this.app.vault.create(newFilePath, "");
       const displayName = newFile.basename;
