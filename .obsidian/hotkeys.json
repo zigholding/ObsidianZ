@@ -634,5 +634,13 @@
       ],
       "key": "Y"
     }
+  ],
+  "quickadd:choice:fd01bf57-81ff-4484-9ffb-8c4c118cfb97": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "R"
+    }
   ]
 }

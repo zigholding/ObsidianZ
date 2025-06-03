@@ -1,0 +1,25 @@
+{
+  "daily": {
+    "useQuickAdd": true,
+    "quickAddChoice": "创建周期笔记"
+  },
+  "weekly": {
+    "useQuickAdd": true,
+    "quickAddChoice": "创建周期笔记"
+  },
+  "monthly": {
+    "useQuickAdd": true,
+    "quickAddChoice": "创建周期笔记"
+  },
+  "quarterly": {
+    "useQuickAdd": true,
+    "quickAddChoice": "创建周期笔记"
+  },
+  "yearly": {
+    "useQuickAdd": true,
+    "quickAddChoice": "创建周期笔记"
+  },
+  "appearance": {
+    "useScale": false
+  }
+}

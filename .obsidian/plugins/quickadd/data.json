@@ -36,12 +36,12 @@
       "openFileInMode": "default"
     },
     {
-      "id": "e368f83c-25ed-4c52-b751-2126263a2727",
-      "name": "move_next_level",
+      "id": "36a6da35-9a59-416d-a65f-363e5efaa8c4",
+      "name": "创建周期笔记",
       "type": "Capture",
-      "command": true,
+      "command": false,
       "appendLink": false,
-      "captureTo": "__plugins__/_templater_/@模板/临时输入.md",
+      "captureTo": "ObsidianZ.md",
       "captureToActiveFile": false,
       "createFileIfItDoesntExist": {
         "enabled": false,
@@ -50,77 +50,7 @@
       },
       "format": {
         "enabled": true,
-        "format": "```js quickadd\nlet nc=app.plugins.plugins['note-chain']\nawait nc.utils.parse_templater(app,'move_next_level.md')\n```"
-      },
-      "insertAfter": {
-        "enabled": false,
-        "after": "",
-        "insertAtEnd": false,
-        "considerSubsections": false,
-        "createIfNotFound": false,
-        "createIfNotFoundLocation": "top"
-      },
-      "prepend": false,
-      "task": false,
-      "openFileInNewTab": {
-        "enabled": false,
-        "direction": "vertical",
-        "focus": true
-      },
-      "openFile": false,
-      "openFileInMode": "default"
-    },
-    {
-      "id": "6381fdc1-5fda-45a1-8784-e555abed1fad",
-      "name": "move_prev_level",
-      "type": "Capture",
-      "command": true,
-      "appendLink": false,
-      "captureTo": "__plugins__/_templater_/@模板/临时输入.md",
-      "captureToActiveFile": false,
-      "createFileIfItDoesntExist": {
-        "enabled": false,
-        "createWithTemplate": false,
-        "template": ""
-      },
-      "format": {
-        "enabled": true,
-        "format": "```js quickadd\nlet nc=app.plugins.plugins['note-chain']\nawait nc.utils.parse_templater(app,'move_prev_level.md')\n```"
-      },
-      "insertAfter": {
-        "enabled": false,
-        "after": "",
-        "insertAtEnd": false,
-        "considerSubsections": false,
-        "createIfNotFound": false,
-        "createIfNotFoundLocation": "top"
-      },
-      "prepend": false,
-      "task": false,
-      "openFileInNewTab": {
-        "enabled": false,
-        "direction": "vertical",
-        "focus": true
-      },
-      "openFile": false,
-      "openFileInMode": "default"
-    },
-    {
-      "id": "d26c3c76-f335-452b-9269-be98a3ef2c8d",
-      "name": "move_none_level",
-      "type": "Capture",
-      "command": true,
-      "appendLink": false,
-      "captureTo": "__plugins__/_templater_/@模板/临时输入.md",
-      "captureToActiveFile": false,
-      "createFileIfItDoesntExist": {
-        "enabled": false,
-        "createWithTemplate": false,
-        "template": ""
-      },
-      "format": {
-        "enabled": true,
-        "format": "```js quickadd\nlet nc=app.plugins.plugins['note-chain']\nawait nc.utils.parse_templater(app,'move_none_level.md')\n```"
+        "format": "```js quickadd\nlet nc=app.plugins.getPlugin('note-chain');\nconsole.log(nc)\nawait nc.utils.parse_templater(app,'创建周期笔记.md',true,this.variables);\n```"
       },
       "insertAfter": {
         "enabled": false,
