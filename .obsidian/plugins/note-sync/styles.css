@@ -1,8 +1,13 @@
-/*
+/* 按钮条样式 */
+.button-bar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
-
-If your plugin does not need CSS, delete this file.
-
-*/
+/* 输入字段样式 */
+.input-field {
+    width: 100%;
+}
