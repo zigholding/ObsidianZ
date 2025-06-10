@@ -3,11 +3,17 @@ ctime: 2024-05-23 22:07
 tags:
   - conote
   - Index
-PrevNote: "[[Files - 历史漫步]]"
-NextNote: "[[Files - 最近访问]]"
+PrevNote: "[[章节索引]]"
+NextNote: "[[Files - 目录弹窗]]"
+words:
+  2024-06-16: 57
+  2024-09-06: 63
+  2024-10-16: 70
+  2025-02-19: 118
+  2025-05-05: 134
+  2025-05-15: 118
+  2025-06-10: 70
 ---
-
-
  
 ```dataviewjs
 // Files - 目录.md, by Zigholding
@@ -24,5 +30,5 @@ if(cfile){
 		data.map(x=>[x.file.path==cfile.path?'🏠':x.file.link])
 	);
 }
-
 ```
+

@@ -1,8 +1,9 @@
 ---
 PrevNote: "[[ECharts 绘制热力图日历]]"
-NextNote: "[[笔记画廊]]"
+NextNote: 
 words:
   2025-06-06: 261
+  2025-06-09: 274
 ---
 
 ```js //templater
@@ -80,7 +81,9 @@ class HotKeys{
 		let kv = this.hotkeys()
 		for(let item of items){
 			let prev = kv[kv.map(x=>x[0]).indexOf(item[0])]
+			console.log('prev',prev)
 			if(prev&&prev[1]==item[1]){
+				console.log('已设置')
 				continue
 			}
 			if(item[1]==''){
@@ -98,11 +101,12 @@ class HotKeys{
 	}
 }
 
+let hotkeys = new HotKeys();
 if(app.tpl){
-	app.tpl.HotKeys = HotKeys
+	app.tpl.hotkeys = hotkeys
 }else{
 	app.tpl = {
-		HotKeys: HotKeys
+		hotkeys: hotkeys
 	}
 }
 

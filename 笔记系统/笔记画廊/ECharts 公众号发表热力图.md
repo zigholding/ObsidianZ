@@ -8,6 +8,7 @@ words:
   2025-06-03: 43
   2025-06-04: 117
   2025-06-08: 128
+  2025-06-10: 148
 ---
 
 
@@ -32,8 +33,15 @@ tfiles.forEach(x=>{
 })
 let year = moment().year();
 let hmap = new app.tpl.HeatmapCalendar(dv,year);
-if(this.container.querySelectorAll('div.echarts-container').length==0){
-	hmap.render_daily_value(this.container,daily,"公众号文章发表与阅读数",true,'2+12');
+for(let k in daily){
+	if(k.localeCompare('2023-11-01')<0){
+		delete daily[k]
+	}
 }
+console.log(daily)
+if(this.container.querySelectorAll('div.echarts-container').length==0){
+	hmap.render_daily_value(this.container,daily,"公众号文章发表与阅读数",true,'2+13');
+}
+app.c = this.container
 ```
 

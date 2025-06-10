@@ -55,8 +55,8 @@ class HeatmapCalendar{
 		let vmax = Math.max(...data.map(x=>x[1]));
 		vmax = 5*(Math.floor(vmax/5)+1);
 		const options = {
-		  width:1200,
-		  height: 300,
+		  width:800,
+		  height: 250,
 		  title: {
 			top: 30,
 			left: 'center',
