@@ -10,11 +10,17 @@
           {
             "id": "b0e3b2530bb16278",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "知止后定/日拱一卒/2025/2025.06/2025-06-10.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "2025-06-10"
             }
           }
         ]
@@ -136,12 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "知止后定/日拱一卒/2025/2025.06/2025-06-10.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 2025-06-10"
             }
           }
         ],
@@ -191,6 +198,17 @@
   },
   "active": "b0e3b2530bb16278",
   "lastOpenFiles": [
+    "笔记系统/启动脚本/启动脚本.md",
+    "知止后定/日拱一卒/2025/2025.06/2025-06-10.md",
+    "知止后定/日拱一卒/2025/2025.06",
+    "知止后定/日拱一卒/2025",
+    "知止后定/日拱一卒",
+    "知止后定",
+    "笔记系统/笔记画廊/ECharts 每日编辑字数热力图日历.md",
+    "home.md",
+    "笔记系统/启动脚本/Untitled.md",
+    "笔记系统/笔记画廊/ECharts 公众号发表热力图.md",
+    "ObsidianZ.md",
     "笔记管理/脚本笔记/创建周期笔记.md",
     "__plugins__/@知更鸟在屋顶/@知更鸟在屋顶.md",
     "__plugins__/_attachments_/__files__.md",
@@ -205,19 +223,12 @@
     "__plugins__/_templater_/@模板/临时输入.md",
     "readMe.md",
     "__plugins__/_customJS_/TimeLine.js",
-    "ObsidianZ.md",
     "Index/Files - 目录.md",
     "__plugins__/_templater_/@用户函数/@用户函数.md",
     "__plugins__/@知更鸟在屋顶/示例：如何使用示例库.md",
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.md",
     "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 编辑笔记块.md",
     "__plugins__/@知更鸟在屋顶/示例：通过 ModalOpener 实现富文本输入框.md",
-    "__plugins__/_customJS_/修改显示名称.md",
-    "__plugins__/_templater_/@脚本笔记/执行当前脚本笔记.md",
-    "__plugins__/_templater_/@脚本笔记/重启插件.md",
-    "__plugins__/_templater_/@脚本笔记/LLM - 问问笔记.md",
-    "Index/Files - 当日修改.md",
-    "__plugins__/_templater_/@脚本笔记/从 gitee 下载示例库文件.md",
     "__plugins__/_attachments_/Pasted image 20250209180311.png",
     "__plugins__/_attachments_/Pasted image 20250209180045.png",
     "__files__",
@@ -233,10 +244,6 @@
     "__plugins__/_attachments2_/Pasted image 20241201201310.png",
     "__plugins__/_attachments2_",
     "tmp",
-    "__files__/images/202411",
-    "__files__/images",
-    "test2",
-    "02 InBox",
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas"
   ]
 }

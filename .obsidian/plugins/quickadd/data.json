@@ -6,7 +6,7 @@
       "type": "Capture",
       "command": true,
       "appendLink": false,
-      "captureTo": "__plugins__/_templater_/@模板/临时输入.md",
+      "captureTo": "home.md",
       "captureToActiveFile": false,
       "createFileIfItDoesntExist": {
         "enabled": false,

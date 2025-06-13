@@ -1,6 +1,6 @@
 {
   "command_timeout": 5,
-  "templates_folder": "__plugins__/_templater_",
+  "templates_folder": "笔记系统/模板笔记",
   "templates_pairs": [
     [
       "",
@@ -11,7 +11,7 @@
   "auto_jump_to_cursor": false,
   "enable_system_commands": true,
   "shell_path": "",
-  "user_scripts_folder": "__plugins__/_templater_/@用户函数",
+  "user_scripts_folder": "笔记系统/插件配置/Templater用户函数",
   "enable_folder_templates": true,
   "folder_templates": [
     {
@@ -32,7 +32,8 @@
     ""
   ],
   "startup_templates": [
-    ""
+    "笔记系统/启动脚本/启动脚本.md"
   ],
+  "intellisense_render": 1,
   "enable_ribbon_icon": true
 }
