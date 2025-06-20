@@ -3,8 +3,8 @@ ctime: 2024-05-23 22:07
 tags:
   - conote
   - Index
-PrevNote: "[[章节索引]]"
-NextNote: "[[Files - 目录弹窗]]"
+PrevNote: "[[索引笔记]]"
+NextNote: "[[Files - 最近访问]]"
 words:
   2024-06-16: 57
   2024-09-06: 63

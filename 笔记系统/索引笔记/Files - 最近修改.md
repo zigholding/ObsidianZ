@@ -1,8 +1,8 @@
 ---
 tags:
   - Index
-PrevNote: "[[Files - 最近访问弹窗]]"
-NextNote: "[[Files - 最近修改弹窗]]"
+PrevNote: "[[Files - 最近访问]]"
+NextNote: "[[Files - 当日修改]]"
 ctime: 2024-05-26 13:31
 words:
   2024-06-16: 23

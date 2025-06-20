@@ -1,11 +1,12 @@
 ---
-PrevNote: "[[Heatmap 绘制热力图日历]]"
-NextNote: "[[Hotkeys库 - 设置快捷键]]"
+PrevNote: "[[NoteGalleryAPI]]"
 words:
   2025-06-04: 144
   2025-06-05: 264
+  2025-06-10: 265
 tags:
-  - 启动脚本
+  - 脚本笔记
+NextNote: "[[ea.hotkeys - 设置快捷键]]"
 ---
 
 
@@ -42,7 +43,7 @@ class HeatmapCalendar{
 		}
 	}
 
-	render_daily_value(container,daily,title,drop_zero=true,range='years'){
+	render_daily_value(container,daily,title,drop_zero=true,range='2+13'){
 		let data = []
 		for(let k in daily){
 			data.push([k,daily[k]])

@@ -1,10 +1,12 @@
 ---
-PrevNote: "[[类库笔记]]"
-NextNote: "[[ECharts 绘制热力图日历]]"
+PrevNote: "[[DailyStats - 每日统计库]]"
+NextNote: "[[MediaCardAPI]]"
 words:
   2025-06-03: 263
   2025-06-04: 265
   2025-06-08: 267
+tags:
+  - 脚本笔记
 ---
 
 
