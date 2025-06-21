@@ -1,6 +1,6 @@
 ---
 PrevNote: "[[DailyStats - 每日统计库]]"
-NextNote: "[[MediaCardAPI]]"
+NextNote: "[[NoteGalleryAPI]]"
 words:
   2025-06-03: 263
   2025-06-04: 265

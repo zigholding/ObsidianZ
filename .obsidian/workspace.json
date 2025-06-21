@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记系统/类库笔记/MediaCardAPI.md",
+                "file": "笔记系统/类库笔记/ea.random.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MediaCardAPI"
+              "title": "ea.random"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记系统/类库笔记/MediaCardAPI.md",
+                "file": "笔记系统/类库笔记/ea.random.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of MediaCardAPI"
+              "title": "Outline of ea.random"
             }
           }
         ],
@@ -213,8 +213,12 @@
   },
   "active": "fef8fff805967fbb",
   "lastOpenFiles": [
-    "笔记系统/脚本笔记/NoteChain 1.1.20：TextArea 再进化.md",
+    "笔记系统/类库笔记/ea.plugin.md",
     "笔记系统/类库笔记/MediaCardAPI.md",
+    "笔记系统/脚本笔记/Alias - 修改别名.md",
+    "笔记系统/脚本笔记/别名修改.md",
+    "笔记系统/启动脚本/~syncthing~启动脚本.md.tmp",
+    "笔记系统/脚本笔记/NoteChain 1.1.20：TextArea 再进化.md",
     "笔记系统/脚本笔记/整理笔记/Files - 附件移到到同级目录.sync-conflict-20250620-093228-2T4YJII.md",
     "笔记系统/脚本笔记/整理笔记/Files - 附件移到到同级目录.sync-conflict-20250620-093132-LCIFVV4.md",
     "笔记系统/脚本笔记/整理笔记/Files - 附件移到到同级目录.sync-conflict-20250620-093130-2T4YJII.md",
@@ -246,9 +250,6 @@
     "Index/00 Index.md",
     "__plugins__/_templater_/@脚本笔记/下载示例库文件.md",
     "__plugins__/@知更鸟在屋顶/条件语句.md",
-    "__plugins__/@知更鸟在屋顶/条件语句2.md",
-    "00 Index/条件语句.md",
-    "__plugins__/_excalidraw_/font/font.md",
     "__plugins__/_customJS_/TimeLine.js",
     "__plugins__/_attachments_/Pasted image 20250209180311.png",
     "__plugins__/_attachments_/Pasted image 20250209180045.png",
@@ -257,7 +258,6 @@
     "__plugins__/_attachments_/Pasted image 20250206150246.png",
     "__plugins__/_attachments_/Pasted image 20250117210821.png",
     "__plugins__/_customJS_/DeepSeek.js",
-    "~syncthing~ObsidianZ.md.tmp",
     "__plugins__/_attachments2_/Pasted image 20241201203516.png",
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas"
   ]
