@@ -1,5 +1,5 @@
 ---
-PrevNote: "[[ECharts 每日编辑字数热力图日历]]"
+PrevNote: "[[近期发表]]"
 NextNote: "[[Files - 出链]]"
 类库笔记:
   - "[[ECharts 绘制热力图日历]]"
