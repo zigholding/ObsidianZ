@@ -1,5 +1,6 @@
 ---
 tags:
+  - Publish/ObsidianZ
   - Index
 PrevNote: "[[Files - 最近访问]]"
 NextNote: "[[Files - 当日修改]]"
@@ -9,6 +10,7 @@ words:
   2024-10-16: 32
   2025-05-05: 48
   2025-06-10: 32
+emoji: 📣
 ---
 
 ```dataview

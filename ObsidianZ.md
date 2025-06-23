@@ -5,16 +5,18 @@ words:
   2024-11-30: 88
   2024-12-01: 229
   2024-12-13: 429
+  2025-06-23: 734
 note-sync:
-  Dir: /storage/emulated/0/ObsidianZ
-  Name: readMe2
-  Assets: ./__plugins__/_attachments_
+  Dir: D:\github\ObsidianZ
+  Name: readMe
+  Assets: 笔记系统/assets
   RemoveMeta: true
   UseGitLink: true
 status: 🌱
 notechain:
   display: <level><notechain.alias[0]|$0>
-PrevNote: "[[示例：通过脚本笔记设置快捷键]]"
+PrevNote: "[[home]]"
+NextNote: "[[readMe]]"
 ---
 
 [github](https://github.com/zigholding/ObsidianZ) | [gitee](https://gitee.com/zigholding/ObsidianZ.git)

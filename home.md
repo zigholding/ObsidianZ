@@ -1,0 +1,3 @@
+---
+NextNote: "[[ObsidianZ]]"
+---

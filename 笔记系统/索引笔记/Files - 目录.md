@@ -1,6 +1,7 @@
 ---
 ctime: 2024-05-23 22:07
 tags:
+  - Publish/ObsidianZ
   - conote
   - Index
 PrevNote: "[[索引笔记]]"
@@ -13,6 +14,7 @@ words:
   2025-05-05: 134
   2025-05-15: 118
   2025-06-10: 70
+emoji: 📣
 ---
  
 ```dataviewjs

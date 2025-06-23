@@ -1,0 +1,9 @@
+{
+	"id": "easyapi",
+	"name": "EasyAPI",
+	"version": "0.7.1",
+	"minAppVersion": "1.7.7",
+	"description": "EasyAPI for Obsidian Developer",
+	"author": "ZigHolding",
+	"isDesktopOnly": false
+}

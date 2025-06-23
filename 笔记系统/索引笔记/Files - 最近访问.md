@@ -1,5 +1,6 @@
 ---
 tags:
+  - Publish/ObsidianZ
   - Index
 ctime: 2024-05-23 21:38
 PrevNote: "[[Files - 目录]]"
@@ -8,6 +9,7 @@ words:
   2024-06-16: 35
   2024-08-03: 41
   2024-10-16: 51
+emoji: 📣
 ---
 
 ```dataviewjs

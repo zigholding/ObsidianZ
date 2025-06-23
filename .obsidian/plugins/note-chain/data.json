@@ -2,6 +2,7 @@
   "PrevChain": "10",
   "NextChain": "10",
   "field_of_display_text": "notechain.display",
+  "field_of_confluence_tab_format": "notechain.level",
   "field_of_background_color": "notechain.style",
   "auto_notechain": true,
   "notice_while_modify_chain": false,
@@ -9,10 +10,12 @@
   "refreshTasks": true,
   "isSortFileExplorer": true,
   "isFolderFirst": true,
+  "isdraged": true,
   "suggesterNotesMode": "item_get_brothers",
   "wordcout": true,
-  "wordcountxfolder": "__plugins__/_templater_/@模板\n/\n00 Index",
+  "wordcountxfolder": "笔记系统/模板笔记",
   "modal_default_width": 800,
   "modal_default_height": 600,
-  "avata": "avata"
+  "avata": "avata",
+  "tpl_tags_folder": "脚本笔记\nScriptNote"
 }
