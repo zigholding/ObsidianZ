@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ObsidianZ.md",
-                "mode": "source",
+                "file": "知止后定/日拱一卒/2025/2025.06/2025-06-24.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "ObsidianZ"
+              "title": "2025-06-24"
             }
           }
         ]
@@ -36,7 +36,8 @@
         "state": {
           "type": "file-explorer",
           "state": {
-            "sortOrder": "alphabetical"
+            "sortOrder": "alphabetical",
+            "autoReveal": false
           },
           "icon": "lucide-folder-closed",
           "title": "文件列表"
@@ -95,7 +96,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "ObsidianZ.md",
+            "file": "知止后定/日拱一卒/2025/2025.06/2025-06-24.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -130,9 +131,21 @@
           "icon": "lucide-list",
           "title": "大纲"
         }
+      },
+      {
+        "id": "79faa792f5c6e78b",
+        "type": "leaf",
+        "state": {
+          "type": "note-content-view",
+          "state": {
+            "content": "---\nPrevNote: \"[[Alt+F 打开按钮]]\"\nwords:\n  2025-06-09: 66\n  2025-06-10: 58\n  2025-06-12: 265\n  2025-06-13: 137\n  2025-06-21: 7\nNextNote: \"[[电脑弹窗按钮]]\"\nbuttons:\n  - - 🎵\n    - \"[[Alt+2 插入瞬时笔记]]\"\n    - niceButton2\n  - - ⛳\n    - \"[[Alt+1 插入任务]]\"\n    - niceButton2\n  - - 📅\n    - \"[[今日事项]]\"\n    - niceButton2\n  - - 🎲\n    - \"[[Files - 历史随机漫步]]\"\n    - niceButton2\n  - - 🎉\n    - Textarea 记录完成事项\nbuttons_open:\n  - - 目录\n    - \"[[Files - 目录]]\"\n    - mod-cta\n  - - 修改\n    - \"[[Files - 最近修改]]\"\n    - mod-cta\n  - - 历史\n    - \"[[Files - 最近访问]]\"\n    - mod-cta\n  - - 当日\n    - \"[[Files - 当日修改]]\"\n    - mod-cta\nbuttons_para:\n  - - 复制\n    - \"[[Editor - 复制段落]]\"\n    - mod-cta\n  - - 修改\n    - \"[[Editor - 修改段落]]\"\n    - mod-cta\n  - - 替换\n    - \"[[Editor - 替换段落]]\"\n    - mod-cta\nbuttons_tpl:\n  - - 颜色\n    - \"[[Files - 设置文件列表显示颜色]]\"\n    - mod-cta\n  - - 文本\n    - \"[[Files - 设置文件列表显示文本]]\"\n    - mod-cta\n  - - 标签\n    - \"[[Tag 添加标签]]\"\n    - mod-cta\n  - - 别名\n    - \"[[Alias - 修改别名]]\"\n    - mod-cta\nbuttons_insert:\n  - - 函数\n    - \"[[插入代码执行脚本笔记]]\"\n    - mod-cta\n  - - 执行当前脚本\n    - \"[[执行当前脚本笔记]]\"\n    - mod-cta\nnotechain:\n  level: \"\\t\"\ntags:\n  - Publish/ObsidianZ\nemoji: 📣\n---\n\n\n```textarea\ntextarea:\n  style:\n    width: 300px\n    height: 100px\n```\n\n",
+            "sourcePath": "笔记系统/脚本笔记/手机弹窜按钮.md"
+          },
+          "title": "Note Preview"
+        }
       }
     ],
-    "currentTab": 0
+    "currentTab": 3
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -147,8 +160,9 @@
   },
   "active": "f39dc1b845048aa0",
   "lastOpenFiles": [
-    "tmp/Untitled.md",
+    "笔记系统/启动脚本/启动脚本.md",
     "ObsidianZ.md",
+    "tmp/Untitled.md",
     "readMe.md"
   ]
 }

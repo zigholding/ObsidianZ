@@ -7,7 +7,6 @@
   "modalforms",
   "quickadd",
   "customjs",
-  "oz-clear-unused-images",
   "copy-document-as-html",
   "obsidian-excalidraw-plugin",
   "dataview",
@@ -17,5 +16,5 @@
   "cmdr",
   "note-gallery",
   "note-sync",
-  "vconsole"
+  "easyapi"
 ]
