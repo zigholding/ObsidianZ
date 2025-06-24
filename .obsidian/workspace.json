@@ -24,21 +24,37 @@
             }
           },
           {
-            "id": "cdc82b71c9c14187",
+            "id": "48d51c8ce4c7d3c5",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "知止后定/日拱一卒/2025/2025.06/2025-06-24.md",
+                "mode": "preview",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "2025-06-24"
+            }
+          },
+          {
+            "id": "1c6e69f3079f235d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "readMe.md",
+                "file": "笔记系统/脚本笔记/Alias - 修改别名.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "readMe"
+              "title": "Alias - 修改别名"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -104,6 +120,7 @@
       {
         "id": "67e734afd2c6eb6b",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "91d19d56e6225344",
@@ -111,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "readMe.md",
+                "file": "笔记系统/assets/Pasted image 20250618153114.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +138,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for readMe"
+              "title": "Backlinks for Pasted image 20250618153114"
             }
           },
           {
@@ -130,12 +147,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "readMe.md",
+                "file": "笔记系统/assets/Pasted image 20250618153114.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from readMe"
+              "title": "Outgoing links from Pasted image 20250618153114"
             }
           },
           {
@@ -157,13 +174,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "readMe.md",
+                "file": "笔记系统/assets/Pasted image 20250618153114.png",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of readMe"
+              "title": "Outline of Pasted image 20250618153114"
             }
           },
           {
@@ -184,6 +201,7 @@
       {
         "id": "680c5afbb4023306",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "45c1cb75abef19aa",
@@ -223,27 +241,32 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "cdc82b71c9c14187",
+  "active": "1c6e69f3079f235d",
   "lastOpenFiles": [
-    "readMe2.md",
-    "readMe.md",
+    "笔记系统/assets/Pasted image 20250529215136 1.png",
+    "笔记系统/assets/Pasted image 20250527212331 1.png",
+    "笔记系统/assets/Pasted image 20250530222859 1.png",
+    "笔记系统/脚本笔记/Alias - 修改别名.md",
+    "笔记系统/脚本笔记/Alt+2 插入瞬时笔记.md",
+    "笔记系统/脚本笔记/Alt+1 插入任务.md",
+    "知止后定/日拱一卒/2025/2025.06/2025-06-24.md",
     "ObsidianZ.md",
-    "笔记系统/笔记画廊/Media Card 默认封面.md",
+    "__files__",
+    "笔记系统/笔记系统.md",
     "知止后定/日拱一卒/2025/2025.06/2025-06-23.md",
+    "笔记系统/assets/Pasted image 20250618153114.png",
+    "笔记系统/assets/Pasted image 20250618152847.png",
+    "笔记系统/assets/Pasted image 20250617195431.png",
+    "笔记系统/assets/Pasted image 20250617195412.png",
+    "笔记系统/assets/Pasted image 20250616202336.png",
+    "笔记系统/assets/Pasted image 20250530222859.png",
+    "笔记系统/assets/Pasted image 20250527212331.png",
+    "readMe.md",
+    "readMe2.md",
+    "笔记系统/笔记画廊/Media Card 默认封面.md",
     "笔记系统/模板笔记/模板笔记.md",
     "笔记系统/模板笔记/季度笔记模板.md",
-    "笔记系统/笔记系统.md",
     "笔记系统/笔记画廊/笔记画廊.md",
-    "笔记系统/assets/Pasted image 20241228093515.png",
-    "笔记系统/assets/Pasted image 20241228093450.png",
-    "笔记系统/assets/Pasted image 20241228092723.png",
-    "笔记系统/assets/Pasted image 20241217215234.png",
-    "笔记系统/assets/Pasted image 20241201202436.png",
-    "笔记系统/assets/Pasted image 20241201202235.png",
-    "笔记系统/assets/Pasted image 20241211193618.png",
-    "笔记系统/assets/Pasted image 20241211193545.png",
-    "笔记系统/assets/Pasted image 20241211193118.png",
-    "笔记系统/assets/Pasted image 20241211193016.png",
     "__plugins__/_attachments_",
     "__plugins__",
     "笔记系统/脚本笔记/创建周期笔记/创建周期笔记.md",
@@ -252,25 +275,19 @@
     "笔记系统/脚本笔记/插入 WebViewer 链接.md",
     "笔记系统/脚本笔记/Editor - 复制段落.md",
     "笔记系统/脚本笔记/电脑视图按钮.md",
-    "笔记系统/脚本笔记/Alias - 修改别名.md",
-    "笔记系统/脚本笔记/Alt+2 插入瞬时笔记.md",
     "笔记系统/脚本笔记/电脑弹窗按钮.md",
-    "笔记系统/脚本笔记/Alt+1 插入任务.md",
     "笔记系统/脚本笔记/Editor - 复制、替换或修改段落.md",
     "笔记系统/脚本笔记/Editor - 替换段落.md",
     "笔记系统/脚本笔记/Editor - 修改段落.md",
     "笔记系统/脚本笔记/Tag 添加标签.md",
     "笔记系统/脚本笔记/Textarea 记录完成事项.md",
     "笔记系统/索引笔记/今日事项.md",
-    "笔记系统/样式笔记/样式笔记.sync-conflict-20250623-213338-TJ7455F.md",
-    "笔记系统/样式笔记/Files - 设置文件列表显示文本.md",
     "笔记系统/插件配置/customJS代码/DailyJob.js",
     "笔记系统/插件配置/Templater用户函数/add_weekly_task.js",
     "笔记系统/插件配置/Templater用户函数/add_monthly_task.js",
     "笔记系统/插件配置/Templater用户函数/add_birthday_task.js",
     "知止后定/日拱一卒/2025/2025.06",
     "知止后定/日拱一卒/2025",
-    "知止后定/日拱一卒",
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas"
   ]
 }
