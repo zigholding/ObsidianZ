@@ -1,6 +1,6 @@
 ---
-PrevNote: "[[样式笔记]]"
-NextNote: 
+PrevNote: "[[Files - 添加前缀]]"
+NextNote: "[[阅读模式下显示特定属性]]"
 words:
   2025-06-13: 86
 tags:

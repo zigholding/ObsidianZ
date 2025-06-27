@@ -4,5 +4,6 @@
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,
   "attachmentFolderPath": "__plugins__/_attachments_",
-  "promptDelete": false
+  "promptDelete": false,
+  "defaultViewMode": "preview"
 }
