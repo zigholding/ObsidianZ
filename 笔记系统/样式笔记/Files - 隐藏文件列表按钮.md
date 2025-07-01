@@ -1,5 +1,5 @@
 ---
-PrevNote: "[[Files - 添加前缀]]"
+PrevNote: "[[Files - 添加前缀图标]]"
 NextNote: "[[阅读模式下显示特定属性]]"
 words:
   2025-06-13: 86

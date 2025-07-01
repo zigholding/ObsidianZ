@@ -1,6 +1,6 @@
 ---
 PrevNote: "[[Files - 设置文件列表显示颜色]]"
-NextNote: "[[Files - 添加前缀]]"
+NextNote: "[[Files - 添加前缀图标]]"
 tags:
   - Publish/ObsidianZ
   - 脚本笔记

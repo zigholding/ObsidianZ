@@ -1,10 +1,11 @@
 ---
 PrevNote: "[[Textarea 记录完成事项]]"
-NextNote: "[[Alt+1 插入任务]]"
+NextNote: "[[执行当前脚本笔记]]"
 notechain:
   level: "\t"
 words:
   2025-05-22: 480
+  2025-06-27: 481
 tags:
   - Publish/ObsidianZ
   - 脚本笔记
@@ -103,7 +104,7 @@ if(aliases.length==0){
 	let dst = await easyapi.dialog_prompt('添加别名');
 	await add_alias(tfile,dst)
 }else{
-	let src = await easyapi.dialog_suggest(aliases,aliases);
+	let src = await easyapi.dialog_suggest(aliases,aliases,'',true);
 	if(!src){return}
 	
 	let dst = await easyapi.dialog_prompt('新别名','',src);

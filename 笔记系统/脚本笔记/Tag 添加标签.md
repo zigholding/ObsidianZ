@@ -6,6 +6,7 @@ words:
   2025-06-01: 801
   2025-06-16: 811
   2025-06-23: 801
+  2025-06-28: 803
 tags:
   - Publish/ObsidianZ
   - 脚本笔记
@@ -44,7 +45,8 @@ let items = [
 	'索引笔记',
 	'启动脚本',
 
-	'Publish/ObsidianZ'
+	'Publish/ObsidianZ',
+	'Publish/ima',
 ];
 
 let target =  await tp.system.suggester(

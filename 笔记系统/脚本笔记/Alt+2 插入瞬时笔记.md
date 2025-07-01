@@ -11,6 +11,7 @@ words:
   2025-06-09: 392
   2025-06-12: 397
   2025-06-24: 248
+  2025-06-25: 249
 NextNote: "[[Editor - 复制、替换或修改段落]]"
 tags:
   - Publish/ObsidianZ
@@ -39,8 +40,9 @@ if(area){
 	}
 	// NoteChain Textarea 调用
 	notes = area.value;
-	
-}else{
+}
+
+if(!notes){
 	// 通过 quickadd 输入
 	let qa = app.plugins.plugins['quickadd'].api;
 	notes = await qa.inputPrompt('🎵fleeting','Type text here');

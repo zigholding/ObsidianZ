@@ -45,4 +45,3 @@ let t = tfile.basename;
 let files = app.vault.getMarkdownFiles().filter(x=>Math.abs(nc.wordcout.get_new_words(x,t))>0)
 tfiles_to_table(files.slice(0,100));
 ```
-

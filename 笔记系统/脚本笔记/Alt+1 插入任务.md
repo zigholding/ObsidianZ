@@ -1,5 +1,5 @@
 ---
-PrevNote: "[[Alias - 修改别名]]"
+PrevNote: "[[执行当前脚本笔记]]"
 hotkey: Alt+1
 words:
   2024-10-28: 372
@@ -9,6 +9,7 @@ words:
   2025-06-09: 405
   2025-06-17: 753
   2025-06-24: 399
+  2025-06-26: 365
 NextNote: "[[Alt+2 插入瞬时笔记]]"
 emoji: 📣
 tags:
@@ -88,21 +89,14 @@ if(!aline){return}
 let TODAY = moment().format('YYYY-MM-DD')
 let LINE = '> [!note]+ 新建事项New\n';
 let tfile = ea.nc.chain.get_last_daily_note();
-if(!tfile){return}
-let ctx = await app.vault.cachedRead(tfile)
 
-let idx = ctx.indexOf(LINE)
-if(idx==-1){
-	ctx = `${ctx}\n\n${aline}`
-}else{
-	ctx = `${ctx.slice(0,idx+LINE.length)}\n${aline}${ctx.slice(idx+LINE.length)}`
-}
-	
-await app.vault.modify(tfile,ctx)
+let flag = await ea.editor.insert_after_line(tfile,aline,LINE);
 
 if(area){
 	area.value = '';
 }
-await ea.nc.chain.open_note_in_modal('今日事项')
+if(flag){
+	await ea.nc.chain.open_note_in_modal('今日事项')
+}
 ```
 

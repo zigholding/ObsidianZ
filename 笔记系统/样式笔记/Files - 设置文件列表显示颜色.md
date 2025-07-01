@@ -1,5 +1,5 @@
 ---
-PrevNote: "[[设置编辑器颜色]]"
+PrevNote: "[[设置编辑器标题颜色]]"
 tags:
   - Publish/ObsidianZ
   - 脚本笔记
@@ -71,7 +71,7 @@ nc.editor.set_frontmatter(
 
 脚本里预设了好几种颜色：
 
-![[Pasted image 20250527212331 1.png]]
+![[Pasted image 20250527212331.png]]
 
 如果你不知道怎么怎么搭配，可以直接问元宝：
 
@@ -93,7 +93,7 @@ nc.editor.set_frontmatter(
 
 前提是你的 CSS 主题支持这个字段（不过现在很多主题和插件都已经兼容了），一旦写进去了，笔记的背景色就变了！是不是很爽？
 
-![[设置颜色 1.gif]]
+![[设置颜色.gif]]
 
 
 ### 三、一句话总结：用颜色，让笔记也有情绪！
