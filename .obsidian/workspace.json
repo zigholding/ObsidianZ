@@ -42,19 +42,21 @@
           {
             "id": "1c6e69f3079f235d",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记系统/脚本笔记/Alias - 修改别名.md",
+                "file": "知止后定/日拱一卒/2025/2025.07/2025-07-01.md",
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "Alias - 修改别名"
+              "title": "2025-07-01"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -189,7 +191,7 @@
             "state": {
               "type": "note-content-view",
               "state": {
-                "content": "---\nPrevNote: \"[[电脑弹窗按钮]]\"\nNextNote: \"[[脚本笔记]]\"\ncssClasses:\n  - embed_noline\nnotechain:\n  level: \"\\t\"\nbuttons:\n  - - 🎵\n    - \"[[Alt+2 插入瞬时笔记]]\"\n    - niceButton2\n  - - ⛳\n    - \"[[Alt+1 插入任务]]\"\n    - niceButton2\n  - - 📅\n    - \"[[今日事项]]\"\n    - niceButton2\n  - - 🎲\n    - \"[[Files - 历史随机漫步]]\"\n    - niceButton2\n  - - 🎉\n    - \"[[Textarea 记录完成事项]]\"\nbuttons_open:\n  - - 目录\n    - Files - 目录\n    - mod-cta\n  - - 修改\n    - Files - 最近修改\n    - mod-cta\n  - - 历史\n    - Files - 最近访问\n    - mod-cta\nbuttons_para:\n  - - 复制\n    - Editor - 复制段落\n    - mod-cta\n  - - 修改\n    - Editor - 修改段落\n    - mod-cta\n  - - 替换\n    - Editor - 替换段落\n    - mod-cta\nbuttons_tpl:\n  - - 颜色\n    - Files - 设置文件列表显示颜色\n    - mod-cta\n  - - 文本\n    - Files - 设置文件列表显示文本\n    - mod-cta\n  - - 标签\n    - \"[[Tag 添加标签]]\"\n    - mod-cta\n  - - 别名\n    - \"[[Alias - 修改别名]]\"\n    - mod-cta\nbuttons_insert:\n  - - 函数\n    - 插入代码执行脚本笔记\n    - mod-cta\nbuttons_insert2:\n  - - 插入 WebViewer 链接\n    - \"[[插入 WebViewer 链接]]\"\n    - mod-cta\nwords:\n  2025-06-13: 137\n  2025-06-17: 158\n  2025-06-19: 168\n  2025-06-20: 166\n  2025-06-22: 187\ntags:\n  - Publish/ObsidianZ\nemoji: 📣\n---\n\n```textarea\nfocus: false\ntextarea:\n  style:\n    width: 450px\n    height: 100px\nbuttons:\n  - [🎵,Alt+2 插入瞬时笔记,niceButton2]\n  - [⛳,Alt+1 插入任务,niceButton2]\n  - [📅,今日事项,niceButton2]\nbuttons_open:\n  - [目录,Files - 目录,mod-cta]\n  - [修改,Files - 最近修改,mod-cta]\n  - [历史,Files - 最近访问,mod-cta]\nbuttons_para:\n  - [复制,Editor - 复制段落,mod-cta]\n  - [修改,Editor - 修改段落,mod-cta]\n  - [替换,Editor - 替换段落,mod-cta]\nbuttons_tpl:\n  - [颜色,Files - 设置文件列表显示颜色,mod-cta]\n  - [文本,Files - 设置文件列表显示文本,mod-cta]\n  - [标签,Tag 添加标签,mod-cta]\nbuttons_insert:\n  - [函数,插入代码执行脚本笔记,mod-cta]\n```\n\n[[每日发表公众号文章]]\n[[Files - 当日修改]]\n[[Files - 最近访问]]\n[[Files - 最近修改]]\n\n",
+                "content": "---\nPrevNote: \"[[电脑弹窗按钮]]\"\nNextNote: \"[[脚本笔记]]\"\ncssClasses:\n  - embed_noline\nnotechain:\n  level: \"\\t\"\nbuttons:\n  - - 🎵\n    - \"[[Alt+2 插入瞬时笔记]]\"\n    - niceButton2\n  - - ⛳\n    - \"[[Alt+1 插入任务]]\"\n    - niceButton2\n  - - 📅\n    - \"[[今日事项]]\"\n    - niceButton2\n  - - 🎲\n    - \"[[Files - 历史随机漫步]]\"\n    - niceButton2\n  - - 🎉\n    - \"[[Textarea 记录完成事项]]\"\n  - - 🍅\n    - \"[[番茄时钟定时器]]\"\nbuttons_open:\n  - - 目录\n    - Files - 目录\n    - mod-cta\n  - - 修改\n    - Files - 最近修改\n    - mod-cta\n  - - 历史\n    - Files - 最近访问\n    - mod-cta\nbuttons_para:\n  - - 复制\n    - Editor - 复制段落\n    - mod-cta\n  - - 修改\n    - Editor - 修改段落\n    - mod-cta\n  - - 替换\n    - Editor - 替换段落\n    - mod-cta\nbuttons_tpl:\n  - - 颜色\n    - Files - 设置文件列表显示颜色\n    - mod-cta\n  - - 文本\n    - Files - 设置文件列表显示文本\n    - mod-cta\n  - - 标签\n    - \"[[Tag 添加标签]]\"\n    - mod-cta\n  - - 别名\n    - \"[[Alias - 修改别名]]\"\n    - mod-cta\nbuttons_insert:\n  - - 函数\n    - 插入代码执行脚本笔记\n    - mod-cta\nbuttons_insert2:\n  - - 插入 WebViewer 链接\n    - \"[[插入 WebViewer 链接]]\"\n    - mod-cta\nwords:\n  2025-06-13: 137\n  2025-06-17: 158\n  2025-06-19: 168\n  2025-06-20: 166\n  2025-06-22: 187\ntags:\n  - Publish/ObsidianZ\nemoji: 📣\n---\n\n\n```textarea\nfocus: false\ntextarea:\n  style:\n    width: 450px\n    height: 100px\nbuttons:\n  - [🎵,Alt+2 插入瞬时笔记,niceButton2]\n  - [⛳,Alt+1 插入任务,niceButton2]\n  - [📅,今日事项,niceButton2]\nbuttons_open:\n  - [目录,Files - 目录,mod-cta]\n  - [修改,Files - 最近修改,mod-cta]\n  - [历史,Files - 最近访问,mod-cta]\nbuttons_para:\n  - [复制,Editor - 复制段落,mod-cta]\n  - [修改,Editor - 修改段落,mod-cta]\n  - [替换,Editor - 替换段落,mod-cta]\nbuttons_tpl:\n  - [颜色,Files - 设置文件列表显示颜色,mod-cta]\n  - [文本,Files - 设置文件列表显示文本,mod-cta]\n  - [标签,Tag 添加标签,mod-cta]\nbuttons_insert:\n  - [函数,插入代码执行脚本笔记,mod-cta]\n```\n\n[[每日发表公众号文章]]\n[[Files - 当日修改]]\n[[Files - 最近访问]]\n[[Files - 最近修改]]\n\n",
                 "sourcePath": "笔记系统/脚本笔记/电脑视图按钮.md"
               },
               "title": "Note Preview"
@@ -241,11 +243,15 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "1c6e69f3079f235d",
+  "active": "48d51c8ce4c7d3c5",
   "lastOpenFiles": [
+    "知止后定/日拱一卒/2025/2025.07/2025-07-01.md",
+    "笔记系统/脚本笔记/每日发表公众号文章.md",
+    "笔记系统/脚本笔记/创建周期笔记/打开每日笔记.md",
+    "知止后定/日拱一卒/2025/2025.07",
+    "笔记系统/脚本笔记/Alias - 修改别名.md",
     "笔记系统/assets/Pasted image 20250529215136 1.png",
     "笔记系统/assets/Pasted image 20250530222859 1.png",
-    "笔记系统/脚本笔记/Alias - 修改别名.md",
     "笔记系统/样式笔记/阅读模式下显示特定属性.md",
     "__files__",
     "笔记系统/脚本笔记/执行当前脚本笔记.md",
@@ -280,12 +286,9 @@
     "笔记系统/脚本笔记/电脑视图按钮.md",
     "笔记系统/脚本笔记/电脑弹窗按钮.md",
     "笔记系统/脚本笔记/Editor - 复制、替换或修改段落.md",
-    "笔记系统/脚本笔记/Editor - 替换段落.md",
-    "笔记系统/脚本笔记/Editor - 修改段落.md",
     "笔记系统/插件配置/customJS代码/DailyJob.js",
     "笔记系统/插件配置/Templater用户函数/add_weekly_task.js",
     "笔记系统/插件配置/Templater用户函数/add_monthly_task.js",
-    "笔记系统/插件配置/Templater用户函数/add_birthday_task.js",
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas"
   ]
 }
