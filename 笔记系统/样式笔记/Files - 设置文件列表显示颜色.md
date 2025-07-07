@@ -1,5 +1,5 @@
 ---
-PrevNote: "[[设置编辑器标题颜色]]"
+PrevNote: "[[阅读模式下显示特定属性]]"
 tags:
   - Publish/ObsidianZ
   - 脚本笔记
