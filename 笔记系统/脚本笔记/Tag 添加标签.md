@@ -1,12 +1,13 @@
 ---
-PrevNote: "[[Editor - 复制段落]]"
-NextNote: 
+PrevNote: "[[windows 软链接 mklink]]"
+NextNote: "[[Editor 复制网页代码]]"
 words:
   2025-05-05: 113
   2025-06-01: 801
   2025-06-16: 811
   2025-06-23: 801
   2025-06-28: 803
+  2025-07-11: 804
 tags:
   - Publish/ObsidianZ
   - 脚本笔记
@@ -47,6 +48,8 @@ let items = [
 
 	'Publish/ObsidianZ',
 	'Publish/ima',
+
+	'prompt'
 ];
 
 let target =  await tp.system.suggester(
