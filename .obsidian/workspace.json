@@ -4,59 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "5f6ffa97adb99a5f",
+        "id": "57e997265956bfa0",
         "type": "tabs",
         "children": [
           {
-            "id": "122af5af30a0be55",
+            "id": "f476af1b4f3abdb7",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "知止后定/日拱一卒/2025/2025.06/2025-06-23.md",
+                "file": "ObsidianZ.md",
                 "mode": "source",
                 "source": false
               },
-              "pinned": true,
               "icon": "lucide-file",
-              "title": "2025-06-23"
-            }
-          },
-          {
-            "id": "48d51c8ce4c7d3c5",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "知止后定/日拱一卒/2025/2025.06/2025-06-24.md",
-                "mode": "preview",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "2025-06-24"
-            }
-          },
-          {
-            "id": "1c6e69f3079f235d",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "知止后定/日拱一卒/2025/2025.07/2025-07-01.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "2025-07-01"
+              "title": "ObsidianZ"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -243,13 +208,15 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "1c6e69f3079f235d",
+  "active": "f476af1b4f3abdb7",
   "lastOpenFiles": [
+    "home.md",
+    "知止后定/日拱一卒/2025/2025.06/2025-06-23.md",
+    "知止后定/日拱一卒/2025/2025.06/2025-06-24.md",
+    "知止后定/日拱一卒/2025/2025.07/2025-07-01.md",
     "笔记系统/assets/Pasted image 20250530222859 1.png",
     "笔记系统/assets/Pasted image 20250529215136 1.png",
-    "知止后定/日拱一卒/2025/2025.06/2025-06-24.md",
     "笔记系统/类库笔记/test.md",
-    "知止后定/日拱一卒/2025/2025.07/2025-07-01.md",
     "笔记系统/脚本笔记/每日发表公众号文章.md",
     "笔记系统/脚本笔记/创建周期笔记/打开每日笔记.md",
     "知止后定/日拱一卒/2025/2025.07",
@@ -265,7 +232,6 @@
     "笔记系统/脚本笔记/Alt+1 插入任务.md",
     "ObsidianZ.md",
     "笔记系统/笔记系统.md",
-    "知止后定/日拱一卒/2025/2025.06/2025-06-23.md",
     "笔记系统/assets/Pasted image 20250618153114.png",
     "笔记系统/assets/Pasted image 20250618152847.png",
     "笔记系统/assets/Pasted image 20250617195431.png",

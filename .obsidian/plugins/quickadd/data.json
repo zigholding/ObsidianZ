@@ -41,7 +41,7 @@
       "type": "Capture",
       "command": false,
       "appendLink": false,
-      "captureTo": "ObsidianZ.md",
+      "captureTo": "home.md",
       "captureToActiveFile": false,
       "createFileIfItDoesntExist": {
         "enabled": false,
