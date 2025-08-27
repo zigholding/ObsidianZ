@@ -10,15 +10,17 @@
           {
             "id": "f476af1b4f3abdb7",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ObsidianZ.md",
+                "file": "知止后定/日拱一卒/2025/2025.08/2025-08-26.md",
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "ObsidianZ"
+              "title": "2025-08-26"
             }
           }
         ]
@@ -199,6 +201,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -210,6 +213,9 @@
   },
   "active": "f476af1b4f3abdb7",
   "lastOpenFiles": [
+    "ObsidianZ.md",
+    "知止后定/日拱一卒/2025/2025.08/2025-08-26.md",
+    "知止后定/日拱一卒/2025/2025.08",
     "home.md",
     "知止后定/日拱一卒/2025/2025.06/2025-06-23.md",
     "知止后定/日拱一卒/2025/2025.06/2025-06-24.md",
@@ -230,7 +236,6 @@
     "笔记系统/assets/Pasted image 20250527212331 1.png",
     "笔记系统/脚本笔记/Alt+2 插入瞬时笔记.md",
     "笔记系统/脚本笔记/Alt+1 插入任务.md",
-    "ObsidianZ.md",
     "笔记系统/笔记系统.md",
     "笔记系统/assets/Pasted image 20250618153114.png",
     "笔记系统/assets/Pasted image 20250618152847.png",
@@ -250,10 +255,8 @@
     "笔记系统/assets",
     "笔记系统/脚本笔记/插入 WebViewer 链接.md",
     "笔记系统/脚本笔记/Editor - 复制段落.md",
-    "笔记系统/脚本笔记/电脑视图按钮.md",
     "笔记系统/插件配置/customJS代码/DailyJob.js",
     "笔记系统/插件配置/Templater用户函数/add_weekly_task.js",
-    "笔记系统/插件配置/Templater用户函数/add_monthly_task.js",
     "__plugins__/@知更鸟在屋顶/示例：通过脚本笔记设置快捷键.canvas"
   ]
 }
