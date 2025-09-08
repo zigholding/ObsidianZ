@@ -22,6 +22,20 @@
               "icon": "lucide-file",
               "title": "2025-08-26"
             }
+          },
+          {
+            "id": "a89ffb8a5d9b7efe",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://yuanbao.tencent.com/chat/naQivTmsDa",
+                "title": "腾讯元宝 - 轻松工作 多点生活",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "腾讯元宝 - 轻松工作 多点生活"
+            }
           }
         ]
       }
@@ -213,8 +227,8 @@
   },
   "active": "f476af1b4f3abdb7",
   "lastOpenFiles": [
-    "ObsidianZ.md",
     "知止后定/日拱一卒/2025/2025.08/2025-08-26.md",
+    "ObsidianZ.md",
     "知止后定/日拱一卒/2025/2025.08",
     "home.md",
     "知止后定/日拱一卒/2025/2025.06/2025-06-23.md",
