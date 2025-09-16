@@ -1,7 +1,7 @@
 {
 	"id": "webview-llm",
 	"name": "WebviewLLM",
-	"version": "0.5.5",
+	"version": "0.5.6",
 	"minAppVersion": "1.8.3",
 	"description": "WebviewLLM.",
 	"author": "ZigHolding",
