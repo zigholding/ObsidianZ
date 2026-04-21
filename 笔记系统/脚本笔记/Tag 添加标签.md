@@ -8,12 +8,37 @@ words:
   2025-06-23: 801
   2025-06-28: 803
   2025-07-11: 804
+  2025-09-10: 810
+  2025-09-18: 827
+  2025-11-20: 828
+  2026-03-18: 760
 tags:
   - Publish/ObsidianZ
   - 脚本笔记
   - 笔记森林/🌲常青
-  - 脚本笔记
+  - sf
 emoji: 📣
+tags_sel:
+  - Project/⭐Star
+  - Project/📖Open
+  - Project/📕Close
+  - 笔记森林/🎵瞬时
+  - 笔记森林/🌰种子
+  - 笔记森林/🌱幼苗
+  - 笔记森林/🌴树苗
+  - 笔记森林/🌲常青
+  - 笔记森林/🎼永久
+  - 脚本笔记
+  - 索引笔记
+  - 启动脚本
+  - Publish/ObsidianZ
+  - Publish/ima
+  - prompt
+  - paper
+  - benchmark
+  - 公众号/✍️创作中
+  - 公众号/⏳待发表
+  - 公众号/📢已发表
 ---
 
 你有没有过这种感受：
@@ -30,35 +55,24 @@ emoji: 📣
 
 ```js //templater
 let nc=app.plugins.getPlugin("note-chain");
-let items = [
-	"Project/⭐Star",
-	"Project/📖Open", 
-	"Project/📕Close",
-	
-	"笔记森林/🎵瞬时",
-	"笔记森林/🌰种子", 
-	"笔记森林/🌱幼苗", 
-	"笔记森林/🌴树苗", 
-	"笔记森林/🌲常青", 
-	"笔记森林/🎼永久", 
-	
-	'脚本笔记',
-	'索引笔记',
-	'启动脚本',
+let items = ea.nc.editor.get_frontmatter(tp.config.template_file,'tags_sel');
 
-	'Publish/ObsidianZ',
-	'Publish/ima',
-
-	'prompt'
-];
-
-let target =  await tp.system.suggester(
+let target =  await ea.dialog_suggest(
 	nc.utils.array_prefix_id(items),
-	items
+	items,
+	'',
+	true
 );
 
 if(target){
-	let tfiles = nc.chain.get_selected_files();
+	if(!items.contains(target)){
+		items.push(target)
+		await app.fileManager.processFrontMatter(tp.config.template_file,fm =>{
+			fm['tags_sel'] = items;
+		})
+		
+	}
+	let tfiles = ea.file.get_selected_files();
 	for(let tfile of tfiles){
 		await app.fileManager.processFrontMatter(tfile,fm =>{
 			if(fm['tags']==null){

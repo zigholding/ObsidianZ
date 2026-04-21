@@ -1,118 +1,231 @@
 import pygame
 import random
 import math
-import sys
+import colorsys
+import os
 
-def show_fireworks():
-    """在桌面上显示一次烟花效果（按ESC退出）"""
-    # 初始化pygame
-    pygame.init()
-    
-    # 屏幕设置（全屏/窗口模式）
-    WIDTH, HEIGHT = 1200, 800
-    screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.NOFRAME)
-    pygame.display.set_caption("烟花盛宴")
+WIDTH, HEIGHT = 1200, 800
 
-    # 颜色定义
-    BLACK = (0, 0, 0)
-    COLORS = [
-        (255, 0, 0), (0, 255, 0), (0, 0, 255),
-        (255, 255, 0), (255, 0, 255), (0, 255, 255),
-        (255, 165, 0), (128, 0, 128)
-    ]
+pygame.init()
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("终极烟花秀")
+clock = pygame.time.Clock()
 
-    class Particle:
-        """烟花粒子"""
-        def __init__(self, x, y, color):
-            self.x = x
-            self.y = y
-            self.color = color
-            self.radius = random.randint(2, 4)
-            self.speed = random.uniform(2, 6)
-            self.angle = random.uniform(0, math.pi * 2)
-            self.vx = math.cos(self.angle) * self.speed
-            self.vy = math.sin(self.angle) * self.speed
-            self.gravity = 0.1
-            self.life = 100
+# 🌌 星空
+stars = [(random.randint(0, WIDTH), random.randint(0, HEIGHT), random.randint(1,3)) for _ in range(120)]
 
-        def update(self):
-            self.x += self.vx
+def draw_stars():
+    for x, y, r in stars:
+        pygame.draw.circle(screen, (200,200,200), (x,y), r)
+
+# 🌈 HSV
+def hsv_color(t):
+    r, g, b = colorsys.hsv_to_rgb(t % 1.0, 1, 1)
+    return int(r*255), int(g*255), int(b*255)
+
+# 🎯 粒子
+class Particle:
+    def __init__(self, x, y, vx, vy, hue):
+        self.x, self.y = x, y
+        self.vx, self.vy = vx, vy
+        self.life = 100
+        self.max_life = 100
+        self.hue = hue
+        self.gravity = 0.12
+        self.drag = 0.985
+        self.trail = []
+
+    def update(self):
+        self.trail.append((self.x, self.y))
+        if len(self.trail) > 8:
+            self.trail.pop(0)
+
+        self.vx *= self.drag
+        self.vy *= self.drag
+        self.vy += self.gravity
+
+        self.x += self.vx
+        self.y += self.vy
+        self.life -= 1
+
+    def draw(self):
+        if self.life <= 0:
+            return
+
+        color = hsv_color(self.hue + (1 - self.life/self.max_life)*0.2)
+
+        for i, pos in enumerate(self.trail):
+            alpha = int(255 * i / len(self.trail))
+            surf = pygame.Surface((6,6), pygame.SRCALPHA)
+            pygame.draw.circle(surf, (*color, alpha), (3,3), 3)
+            screen.blit(surf, pos)
+
+        alpha = int(255 * self.life/self.max_life)
+        surf = pygame.Surface((6,6), pygame.SRCALPHA)
+        pygame.draw.circle(surf, (*color, alpha), (3,3), 3)
+        screen.blit(surf, (self.x, self.y))
+
+# ❤️ 心形
+def heart(x, y, hue):
+    ps = []
+    for t in [i*0.1 for i in range(60)]:
+        px = 16 * math.sin(t)**3
+        py = 13*math.cos(t)-5*math.cos(2*t)-2*math.cos(3*t)-math.cos(4*t)
+        ps.append(Particle(x, y, px*0.4, -py*0.4, hue))
+    return ps
+
+# 🈶 中文烟花（核心）
+def chinese_firework(x, y, text, hue):
+    particles = []
+
+    # 自动寻找字体
+    font_path = None
+    for path in [
+        "C:/Windows/Fonts/msyh.ttc",
+        "C:/Windows/Fonts/simhei.ttf"
+    ]:
+        if os.path.exists(path):
+            font_path = path
+            break
+
+    font = pygame.font.Font(font_path, 120)
+
+    surf = font.render(text, True, (255,255,255))
+    w, h = surf.get_size()
+
+    for px in range(0, w, 3):
+        for py in range(0, h, 3):
+            if surf.get_at((px, py))[0] > 0:
+                vx = (px - w/2) * 0.08
+                vy = (py - h/2) * 0.08
+                particles.append(Particle(x, y, vx, vy, hue))
+
+    return particles
+
+# 🎇 烟花
+class Firework:
+    def __init__(self, x, mode="random", text=""):
+        self.x = x
+        self.y = HEIGHT
+        self.vy = random.uniform(-10, -12)
+        self.exploded = False
+        self.particles = []
+        self.mode = mode
+        self.text = text
+        self.hue = random.random()
+
+    def explode(self):
+        if self.mode == "heart":
+            self.particles += heart(self.x, self.y, self.hue)
+
+        elif self.mode in ["text", "chinese"]:
+            self.particles += chinese_firework(self.x, self.y, self.text, self.hue)
+
+        else:
+            for _ in range(120):
+                angle = random.uniform(0, math.pi*2)
+                speed = random.uniform(2,6)
+                vx = math.cos(angle)*speed
+                vy = math.sin(angle)*speed
+                self.particles.append(Particle(self.x, self.y, vx, vy, self.hue))
+
+        self.exploded = True
+
+    def update(self):
+        if not self.exploded:
             self.y += self.vy
-            self.vy += self.gravity
-            self.life -= 1
+            self.vy += 0.15
+            if self.vy >= 0:
+                self.explode()
 
-        def draw(self, screen):
-            alpha = min(255, self.life * 3)
-            color = (*self.color[:3], alpha) if len(self.color) == 4 else self.color
-            pygame.draw.circle(screen, color, (int(self.x), int(self.y)), self.radius)
+        for p in self.particles:
+            p.update()
 
-    class Firework:
-        """单个烟花"""
-        def __init__(self, x, y):
-            self.x = x
-            self.y = y
-            self.color = random.choice(COLORS)
-            self.particles = []
-            self.exploded = False
+        self.particles = [p for p in self.particles if p.life > 0]
 
-        def explode(self):
-            for _ in range(100):
-                self.particles.append(Particle(self.x, self.y, self.color))
-            self.exploded = True
+    def draw(self):
+        if not self.exploded:
+            pygame.draw.line(screen, (255,255,255),
+                             (self.x,self.y),
+                             (self.x,self.y+12), 2)
 
-        def update(self):
-            if not self.exploded:
-                self.y -= 5
-                if self.y <= random.randint(50, HEIGHT // 2):
-                    self.explode()
+        for p in self.particles:
+            p.draw()
 
-            for particle in self.particles[:]:
-                particle.update()
-                if particle.life <= 0:
-                    self.particles.remove(particle)
+# 🎮 状态
+fireworks = []
+input_text = ""
+typing = False
 
-        def draw(self, screen):
-            if not self.exploded:
-                pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), 3)
+fade = pygame.Surface((WIDTH, HEIGHT))
+fade.set_alpha(40)
+fade.fill((0,0,0))
 
-            for particle in self.particles:
-                particle.draw(screen)
+font_ui = pygame.font.SysFont(None, 36)
 
-    # 主渲染逻辑
-    fireworks = []
-    clock = pygame.time.Clock()
-    running = True
-    start_time = pygame.time.get_ticks()
-    duration = 10000  # 演示10秒
+running = True
 
-    while running:
-        current_time = pygame.time.get_ticks()
-        if current_time - start_time >= duration:
+while running:
+    screen.blit(fade, (0,0))
+    draw_stars()
+
+    # 自动烟花
+    if random.random() < 0.04:
+        fireworks.append(Firework(random.randint(100, WIDTH-100)))
+
+    for fw in fireworks[:]:
+        fw.update()
+        fw.draw()
+        if fw.exploded and not fw.particles:
+            fireworks.remove(fw)
+
+    # UI 输入提示
+    if typing:
+        txt = font_ui.render("输入: " + input_text, True, (255,255,255))
+        screen.blit(txt, (20, HEIGHT - 50))
+
+    pygame.display.flip()
+    clock.tick(60)
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
             running = False
 
-        screen.fill(BLACK)
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            x, y = pygame.mouse.get_pos()
+            fw = Firework(x)
+            fw.y = y
+            fw.explode()
+            fireworks.append(fw)
 
-        # 持续生成新烟花（前8秒）
-        if current_time - start_time < 8000 and random.random() < 0.05:
-            fireworks.append(Firework(random.randint(50, WIDTH - 50), HEIGHT))
+        elif event.type == pygame.KEYDOWN:
 
-        # 更新和绘制所有烟花
-        for firework in fireworks[:]:
-            firework.update()
-            firework.draw(screen)
-            if firework.exploded and len(firework.particles) == 0:
-                fireworks.remove(firework)
+            if typing:
+                if event.key == pygame.K_RETURN:
+                    fireworks.append(Firework(WIDTH//2, "chinese", input_text))
+                    typing = False
 
-        pygame.display.flip()
-        clock.tick(60)
+                elif event.key == pygame.K_BACKSPACE:
+                    input_text = input_text[:-1]
 
-        # 检测退出事件
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
-                running = False
+                elif event.key == pygame.K_ESCAPE:
+                    typing = False
 
-    pygame.quit()
+                else:
+                    input_text += event.unicode
 
-if __name__ == "__main__":
-    # 直接运行时演示一次
-    show_fireworks()
+            else:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
+
+                elif event.key == pygame.K_h:
+                    fireworks.append(Firework(random.randint(200,1000), "heart"))
+
+                elif event.key == pygame.K_t:
+                    typing = True
+                    input_text = ""
+
+                elif event.key == pygame.K_c:
+                    fireworks.append(Firework(random.randint(200,1000)))
+
+pygame.quit()

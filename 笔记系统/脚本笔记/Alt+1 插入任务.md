@@ -1,5 +1,5 @@
 ---
-PrevNote: "[[执行当前脚本笔记]]"
+PrevNote: "[[脚本笔记]]"
 hotkey: Alt+1
 words:
   2024-10-28: 372
@@ -10,7 +10,21 @@ words:
   2025-06-17: 753
   2025-06-24: 399
   2025-06-26: 365
+  2025-07-25: 389
+  2025-11-07: 483
 NextNote: "[[Alt+2 插入瞬时笔记]]"
+mcp_tool: true
+description: 插入任务事项
+inputSchema:
+  properties:
+    date:
+      type: string
+      description: 事项完成时间，格式YYYY-mm-dd，如2025-01-01
+    content:
+      type: string
+      description: 任务内容
+  required:
+    - notes
 emoji: 📣
 tags:
   - Publish/ObsidianZ
@@ -35,68 +49,93 @@ tags:
 
 
 ```js //templater
+// templater
+let task_date = tp.config.extra?.date || null;
+let task_ctx = tp.config.extra?.content || null;
+let area_is_task = false;
 let qa = app.plugins.plugins['quickadd'].api;
+let area = null;
 
 let task = {
 	date: moment().format('YYYY-MM-DD'),
 	item: ''
+};
+
+// ✅ 优先使用传入的 task_date / task_ctx
+if (task_date) {
+	task.date = task_date;
+}
+if (task_ctx) {
+	task.item = task_ctx;
 }
 
-let area = tp.config.extra?.area;
-if(area){
-	task['item'] = area.value.replace(/\n/g,'');
+// ✅ 如果两者都存在，则直接跳过后续提取逻辑
+if (!(task_date && task_ctx)) {
+
+	area = tp.config.extra?.area;
+	if (area) {
+		if (!ea.time.parse_time(area.value.split('\n')[0].trim())) {
+			task['item'] = area.value.replace(/\n/g, '');
+			area_is_task = true;
+		}
+	}
+
+	if (!task['item']) {
+		task['item'] = ea.ceditor?.getSelection();
+	}
+
+	if (!task['item']) {
+		// 通过 quickadd 输入
+		let qa = app.plugins.plugins['quickadd'].api;
+		task['item'] = await qa.inputPrompt('⛳task', 'Type text here');
+		if (!task['item']) { return; }
+	}
+
+	let cmsg = ea.time.extract_chinese_date(task['item']);
+	if (cmsg.date) {
+		task.date = cmsg.date.format('YYYY-MM-DD');
+		task.item = cmsg.text;
+	}
 }
 
-if(!task['item']){
-	task['item'] = ea.ceditor?.getSelection()
+// 校验任务内容
+if (task.item.trim() == '') {
+	new Notice('请输入具体事项');
+	return;
 }
 
-if(!task['item']){
-	// 通过 quickadd 输入
-	let qa = app.plugins.plugins['quickadd'].api;
-	task['item'] = await qa.inputPrompt('⛳task','Type text here');
-	if(!task['item']){return}
-}
-let cmsg = ea.time.extract_chinese_date(task['item']);
-if(cmsg.date){
-	task.date = cmsg.date.format('YYYY-MM-DD');
-	task.item = cmsg.text;
-}
-if(task.item.trim()==''){
-	new Notice('请输入具体事项')
-	return 
-}
-
-if(false){
+// 调试模式（YAML 编辑）
+if (false) {
 	let stask = ea.editor.yamljs.dump(task);
-	stask = await qa.wideInputPrompt('输入任务','使用Yaml格式',stask);
-	if(!stask){return}
+	stask = await qa.wideInputPrompt('输入任务', '使用Yaml格式', stask);
+	if (!stask) { return; }
 	task = ea.editor.yamljs.load(stask);
 }
 
-let aline = '- [ ]'
-
-aline = aline + ` (item::${task.item}) 📅 ${task.date}`
-for(let k in task){
-	let skip = ['date','item'];
-	if(skip.contains(k)){continue}
-	aline = aline + ` (${k}::${task[k]})`
+// 构造任务行
+let aline = '- [ ]';
+aline = aline + ` (item::${task.item}) 📅 ${task.date}`;
+for (let k in task) {
+	let skip = ['date', 'item'];
+	if (skip.contains(k)) { continue; }
+	aline = aline + ` (${k}::${task[k]})`;
 }
-
 aline = aline.trim();
-if(!aline){return}
+if (!aline) { return; }
 
-let TODAY = moment().format('YYYY-MM-DD')
+// 插入到“今日事项”
+let TODAY = moment().format('YYYY-MM-DD');
 let LINE = '> [!note]+ 新建事项New\n';
 let tfile = ea.nc.chain.get_last_daily_note();
 
-let flag = await ea.editor.insert_after_line(tfile,aline,LINE);
+let flag = await ea.editor.insert_after_line(tfile, aline, LINE);
 
-if(area){
+if (area && area_is_task) {
 	area.value = '';
 }
-if(flag){
-	await ea.nc.chain.open_note_in_modal('今日事项')
+
+if (flag) {
+	// await ea.nc.chain.open_note_in_modal('今日事项');
 }
 ```
 

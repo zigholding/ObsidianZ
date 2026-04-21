@@ -7,6 +7,7 @@ tags:
 words:
   2025-06-11: 42
   2025-07-02: 43
+  2026-03-05: 44
 emoji: 📣
 ---
 
@@ -18,7 +19,11 @@ emoji: '<emoji> <$0>'
 `;
 
 styles = ea.editor.yamljs.load(styles);
-let style = await easyapi.dialog_suggest(Object.keys(styles),Object.values(styles));
+let style = await easyapi.dialog_suggest(
+	Object.keys(styles),
+	Object.values(styles),
+	'',true
+);
 if(!style){return}
 ea.nc.editor.set_frontmatter(
 	easyapi.cfile,
@@ -26,3 +31,4 @@ ea.nc.editor.set_frontmatter(
 	style
 )
 ```
+

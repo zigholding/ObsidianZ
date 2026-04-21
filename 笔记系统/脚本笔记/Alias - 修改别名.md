@@ -1,6 +1,6 @@
 ---
-PrevNote: "[[Textarea 记录完成事项]]"
-NextNote: "[[执行当前脚本笔记]]"
+PrevNote: "[[快捷键]]"
+NextNote: "[[删除属性]]"
 notechain:
   level: "\t"
 words:
@@ -31,7 +31,7 @@ function get_aliases(tfile,with_link=true){
 	
 	if(!with_link){return aliases}
 	
-	let inlinks = nc.chain.get_inlinks(tfile);
+	let inlinks = ea.file.get_inlinks(tfile);
 	for(let link of inlinks){
 		let meta = app.metadataCache.getFileCache(link);
 		if(meta.links){
@@ -47,7 +47,7 @@ function get_aliases(tfile,with_link=true){
 
 async function rename_alias(tfile,src,dst){
 	if(src==dst && dst!=tfile.basename){return}
-	let inlinks = nc.chain.get_inlinks(tfile);
+	let inlinks = ea.file.get_inlinks(tfile);
 	for(let link of inlinks){
 		let meta = app.metadataCache.getFileCache(link);
 		if(meta.links){
@@ -97,17 +97,17 @@ async function add_alias(tfile,dst){
 	});
 }
 
-let tfile = easyapi.cfile;
+let tfile = ea.cfile;
 
 let aliases = get_aliases(tfile);
 if(aliases.length==0){
-	let dst = await easyapi.dialog_prompt('添加别名');
+	let dst = await ea.dialog_prompt('添加别名');
 	await add_alias(tfile,dst)
 }else{
-	let src = await easyapi.dialog_suggest(aliases,aliases,'',true);
+	let src = await ea.dialog_suggest(aliases,aliases,'',true);
 	if(!src){return}
 	
-	let dst = await easyapi.dialog_prompt('新别名','',src);
+	let dst = await ea.dialog_prompt('新别名','',src);
 	if(!dst){return}
 	if(aliases.contains(src)){
 		await rename_alias(tfile,src,dst);

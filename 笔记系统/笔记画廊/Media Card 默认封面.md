@@ -1,6 +1,6 @@
 ---
 PrevNote: "[[ECharts 公众号发表热力图]]"
-NextNote: "[[笔记发布]]"
+NextNote: "[[闪念卡片]]"
 words:
   2025-06-17: 452
   2025-06-18: 584
@@ -30,10 +30,6 @@ images:
 ![[Pasted image 20250626231019.png]]
 ![[Pasted image 20250626231152.png]]
 ```
-
-
-
-
 
 
 

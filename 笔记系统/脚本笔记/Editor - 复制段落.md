@@ -1,6 +1,6 @@
 ---
-PrevNote: "[[Editor - 修改段落]]"
-NextNote: "[[Tag 添加标签]]"
+PrevNote: "[[Editor 复制网页代码]]"
+NextNote: "[[Editor - 剪切段落]]"
 tags:
   - Publish/ObsidianZ
   - 脚本笔记
@@ -14,5 +14,6 @@ emoji: 📣
 ---
 
 ```js //templater
-await ea.nc.utils.parse_templater(app,'Editor - 复制、替换或修改段落',true,'copy_section');
+await ea.ea.tpl.parse_templater(
+'Editor - 复制、替换或修改段落',true,'copy_section');
 ```

@@ -18,7 +18,7 @@ emoji: 📣
 //Files - 双链.md, by Zigholding
 let nc = app.plugins.getPlugin('note-chain');
 let cfile = nc.chain.get_last_activate_leaf().view.file;
-let files = nc.chain.get_links(cfile);
+let files = ea.file.get_links(cfile);
 let data = files.map(
 	x=>dv.page(x.path)
 ).filter(x=>x);

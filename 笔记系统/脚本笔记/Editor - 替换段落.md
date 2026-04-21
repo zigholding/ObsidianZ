@@ -14,5 +14,6 @@ emoji: 📣
 
 
 ```js //templater
-await ea.nc.utils.parse_templater(app,'Editor - 复制、替换或修改段落',true,'replace_section');
+await ea.ea.tpl.parse_templater(
+'Editor - 复制、替换或修改段落',true,'replace_section');
 ```

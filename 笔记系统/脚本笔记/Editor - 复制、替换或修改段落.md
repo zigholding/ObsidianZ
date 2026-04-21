@@ -1,9 +1,10 @@
 ---
-PrevNote: "[[Alt+2 插入瞬时笔记]]"
+PrevNote: "[[Canvas 笔记转白板]]"
 NextNote: "[[Editor - 替换段落]]"
 words:
   2025-06-04: 416
   2025-06-09: 454
+  2026-03-17: 453
 tags:
   - Publish/ObsidianZ
 emoji: 📣
@@ -47,7 +48,7 @@ class Editor {
 	        sections.unshift(i)
         }
         
-        let sec = await this.nc.dialog_suggest(
+        let sec = await ea.dialog_suggest(
             prompts.map(x=>x.split('\n').slice(0,10).join('\n')),
             sections
         )
